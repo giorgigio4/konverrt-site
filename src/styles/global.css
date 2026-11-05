@@ -24,10 +24,10 @@
   --color-card: #ffffff;
 
   /* Second brand colour: the owner's side of the letter. Blue stays Konverrt's side. */
-  --color-mark: #b23a27;
+  --color-mark: #1e5fd1;
 
-  --font-display: "Instrument Serif", Georgia, serif;
-  --font-body: "Instrument Sans Variable", system-ui, sans-serif;
+  --font-display: "Libre Caslon Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
   --text-xs: 12px;  --text-xs--line-height: 18px;
@@ -47,53 +47,42 @@
 }
 
 /* ---------- Themes. Default (no attribute) = 1. Postmark. ?theme=tile / ?theme=ledger preview the others. ---------- */
-:root { --display-weight: 400; --display-tracking: -0.015em; --display-settings: normal; }
-
-[data-theme="tile"] {
-  --color-paper: #f7f4ee;
-  --color-paper-2: #efe9df;
-  --color-accent: #1f4fb4;
-  --color-accent-ink: #183f91;
-  --color-mark: #b4532a;
-  --font-display: "Fraunces Variable", Georgia, serif;
-  --display-weight: 420;
-  --display-tracking: -0.02em;
-  --display-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
-}
-[data-theme="ledger"] {
-  --color-mark: #2f5d50;
-  --font-display: "Libre Caslon Display", Georgia, serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  --display-tracking: -0.01em;
-}
+:root { --display-weight: 400; --display-tracking: -0.01em; --display-settings: normal; }
 
 
-/* 4. Noir: black and white, elegant. Ivory type on near-black, blue kept only for links and the underline. */
-[data-theme="noir"] {
-  --color-paper: #0b0b0c;
-  --color-paper-2: #141416;
-  --color-card: #161618;
-  --color-ink: #f4f1ea;
-  --color-ink-2: #c9c5bc;
-  --color-muted: #8d8a84;
-  --color-line: #26262a;
-  --color-line-2: #3a3a3f;
-  --color-accent: #8fb3ff;
-  --color-accent-ink: #b7ceff;
-  --color-ok: #7fd1a4;
-  --color-ok-bg: #12251b;
-  --color-mark: #8fb3ff;
-  --font-display: "Libre Caslon Display", Georgia, serif;
-  --display-tracking: -0.005em;
+
+
+/* Dark mode (default). Light mode = html[data-mode="light"].
+   Eye-comfort rules (Material dark theme, APCA research):
+   - never pure black: surface #141416, cards a step lighter for elevation
+   - never pure white text: ivory #ECE8E1 = 14.6:1, body grey #CFCBC3 = 11.4:1, muted #B3AFA7 = 8.3:1 (>= 7.4:1 on cards)
+   - small text kept >= 7:1 because WCAG 4.5:1 overrates contrast on dark backgrounds
+   - accent desaturated to a lighter blue so it does not vibrate on black
+   - body text a touch looser (tracking +0.01em, taller line-height) to offset halation */
+html:not([data-mode="light"]) {
+  --color-paper: #141416;
+  --color-paper-2: #1a1a1d;
+  --color-card: #1d1d20;
+  --color-ink: #ece8e1;
+  --color-ink-2: #cfcbc3;
+  --color-muted: #b3afa7;
+  --color-line: #2e2e33;
+  --color-line-2: #45454c;
+  --color-accent: #9dbcf5;
+  --color-accent-ink: #c2d5fa;
+  --color-ok: #8fd6ae;
+  --color-ok-bg: #15281e;
+  --color-mark: #9dbcf5;
   --shadow-ink: 0 1px 0 rgb(255 255 255 / .03);
-  --shadow-letter: 0 1px 0 rgb(255 255 255 / .04), 0 18px 40px -18px rgb(0 0 0 / .8);
+  --shadow-letter: 0 1px 0 rgb(255 255 255 / .04), 0 18px 40px -18px rgb(0 0 0 / .7);
   color-scheme: dark;
 }
-[data-theme="noir"] .btn-primary { background: var(--color-ink); color: #0b0b0c; }
-[data-theme="noir"] .btn-primary:hover { background: #ffffff; }
-[data-theme="noir"] .hero-photo { filter: grayscale(1) contrast(1.1); opacity: .28 !important; }
-[data-theme="noir"] .sys-node.is-out .sys-ico { color: #0b0b0c; }
-[data-theme="noir"] .viewer-body img, [data-theme="noir"] figure img { background: #fff; }
+html:not([data-mode="light"]) body { letter-spacing: 0.01em; line-height: 27px; }
+html:not([data-mode="light"]) .btn-primary { background: var(--color-ink); color: #141416; }
+html:not([data-mode="light"]) .btn-primary:hover { background: #f6f3ee; }
+html:not([data-mode="light"]) .hero-photo { filter: grayscale(1) contrast(1.1); opacity: .28 !important; }
+html:not([data-mode="light"]) .sys-node.is-out .sys-ico { color: #141416; }
+html:not([data-mode="light"]) .viewer-body img, html:not([data-mode="light"]) figure img { background: #fff; }
 
 html { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
 body { font-size: var(--text-base); line-height: var(--text-base--line-height); }
@@ -261,5 +250,10 @@ input, textarea, select { font: inherit; }
 .obj-bar { height: 10px; border-radius: 999px; background: var(--color-line); overflow: hidden; }
 .obj-bar > span { display: block; height: 100%; border-radius: 999px; background: var(--color-accent); }
 @media (max-width: 767px) { .obj-row { grid-template-columns: 1fr 28px; row-gap: 5px; padding-bottom: 10px; } .obj-row .obj-bar { grid-column: 1 / -1; grid-row: 2; } }
-[data-theme="noir"] .vsl-play { background: var(--color-ink); color: #0b0b0c; }
-[data-theme="noir"] { --color-line: #2c2c31; }
+html:not([data-mode="light"]) .vsl-play { background: var(--color-ink); color: #141416; }
+
+/* Light/dark toggle */
+.mode-btn { height: 40px; width: 40px; display: grid; place-items: center; border-radius: var(--radius-sm); border: 1px solid var(--color-line-2); color: var(--color-ink); background: transparent; cursor: pointer; }
+.mode-btn:hover { border-color: var(--color-ink); }
+.mode-btn .i-sun { display: none; } .mode-btn .i-moon { display: block; }
+html:not([data-mode="light"]) .mode-btn .i-sun { display: block; } html:not([data-mode="light"]) .mode-btn .i-moon { display: none; }

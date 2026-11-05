@@ -3,10 +3,17 @@ import Base from '../layouts/Base.astro';
 import Mark from '../components/Mark.astro';
 import Section from '../components/Section.astro';
 import Cta from '../components/Cta.astro';
+import YouTubeFacade from '../components/YouTubeFacade.astro';
 import { site } from '../data/site';
 import { webPage, breadcrumb } from '../lib/schema';
 const title = 'About Konverrt: owner outreach for M&A advisors and PE firms';
 const description = 'Hi, I am Gio. I run Konverrt with a small team that researches your market, writes the copy and reads every reply.';
+const videos = [
+  { id: 'qx8x0Iw7a2s', title: "DON'T work with a cold email agency until you watch this" },
+  { id: 'rFOT6ve0gRU', title: 'Cold email setup to NEVER land in spam' },
+  { id: 'TVNjdZtkBRQ', title: 'Do This To 10x Your Cold Email Campaign Results' },
+  { id: 'tdkEvZu7qmY', title: "I Scraped THOUSANDS of Leads on Crunchbase for FREE (Here's How)" },
+];
 const refuse = [
   'Count a "remove me", a broker or an out-of-office as a lead',
   'Send the same owner to two clients',
@@ -43,8 +50,20 @@ const refuse = [
         <li class="flex gap-3 text-ink-2"><svg class="mt-1 shrink-0 text-accent" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>{r}</span></li>
       ))}
     </ul>
-    <p class="mt-10 text-ink-2 max-w-prose">I also write and record about cold email for M&A on <a class="link" href={site.youtube} rel="me noopener">YouTube</a>, and you can find me on <a class="link" href={site.founderLinkedin} rel="me noopener">LinkedIn</a>.</p>
+
     <p class="mt-10 mono">{site.name} · Registration number {site.regNumber} · {site.address.street}, {site.address.city}, {site.address.country} · <a href={`mailto:${site.email}`}>{site.email}</a></p>
+  </Section>
+  <Section title="I also record on YouTube" tight band>
+    <p class="text-ink-2 max-w-prose">How we set up cold email, keep it out of spam and pick the right partner. You can also find me on <a class="link" href={site.founderLinkedin} target="_blank" rel="me noopener">LinkedIn</a>.</p>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2">
+      {videos.map((v) => (
+        <figure>
+          <YouTubeFacade id={v.id} title={v.title} />
+          <figcaption class="mt-3 text-sm text-ink">{v.title}</figcaption>
+        </figure>
+      ))}
+    </div>
+    <p class="mt-8"><a class="link" href={site.youtube} target="_blank" rel="me noopener">All videos on YouTube</a></p>
   </Section>
   <Cta />
 </Base>

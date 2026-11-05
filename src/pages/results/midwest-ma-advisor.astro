@@ -32,7 +32,7 @@ const img = (f: string) => `/case/midwest/${f}.webp`;
 
     <dl class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-line border border-line rounded-md overflow-hidden max-w-4xl">
       {stats.map((s) => (
-        <div class="bg-white p-5">
+        <div class="bg-card p-5">
           <dt class="sr-only">{s.label}</dt>
           <dd class="figure text-2xl tabular-nums">{s.value}</dd>
           <dd class="mt-1 text-sm text-muted">{s.label}</dd>
@@ -228,7 +228,7 @@ const img = (f: string) => `/case/midwest/${f}.webp`;
         <p>If you run an M&A advisory firm and you're tired of firms who don't understand your sales cycle, your ICP, or your industry - let's talk.</p>
         <p>In just a 30-minute conversation, I'll understand more about your target market, your deal range, and whether cold email outbound makes sense for your firm.</p>
       </div>
-      <a href={site.calendly} rel="noopener" class="mt-6 card p-5 flex items-center justify-between gap-4 max-w-prose hover:border-ink">
+      <a href={site.calendly} target="_blank" rel="noopener" class="mt-6 card p-5 flex items-center justify-between gap-4 max-w-prose hover:border-ink">
         <span><span class="mono block">Calendly</span><span class="block mt-1 text-ink">30-Minute Discovery Call - Gio Bezhanishvili</span><span class="block mt-1 text-sm text-muted">Let's chat and determine whether we can generate you 15-20 qualified conversations with ready-to-sell/buy prospects every 90 days with our Done-For-You outbound system.</span></span>
         <span class="text-accent shrink-0" aria-hidden="true">→</span>
       </a>
