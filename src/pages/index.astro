@@ -4,12 +4,17 @@ import Section from '../components/Section.astro';
 import ForwardCard from '../components/ForwardCard.astro';
 import ReplyQuote from '../components/ReplyQuote.astro';
 import FaqList from '../components/FaqList.astro';
-import Steps from '../components/Steps.astro';
+import Vsl from '../components/Vsl.astro';
+import SystemDiagram from '../components/SystemDiagram.astro';
 import Cta from '../components/Cta.astro';
 import Mark from '../components/Mark.astro';
+import ViewLink from '../components/ViewLink.astro';
 import Stamp from '../components/Stamp.astro';
 import ReplyGlyph from '../components/ReplyGlyph.astro';
 import { site, stats, cta } from '../data/site';
+import iconCheck from 'lucide-static/icons/mail-check.svg?raw';
+import iconEye from 'lucide-static/icons/list-checks.svg?raw';
+import iconShield from 'lucide-static/icons/shield-check.svg?raw';
 import { replies } from '../data/replies';
 import { faqs } from '../data/faq';
 import { service, faqPage, webPage } from '../lib/schema';
@@ -20,18 +25,11 @@ const hero = replies.find((r) => r.n === 8)!;
 const strip = [2, 3, 7].map((n) => replies.find((r) => r.n === n)!);
 const lead = replies.find((r) => r.n === 4)!;
 const homeFaqs = faqs.filter((f) => f.home);
-const steps = [
-  { t: 'Mandate', d: 'You tell us the owner you want: industry, size band, geography, ownership.' },
-  { t: 'Market sizing', d: 'We count the owner-run companies that fit before we quote a batch.' },
-  { t: 'Outreach', d: 'Plain emails, our domains, your approval, human volumes.' },
-  { t: 'Qualification', d: 'Every reply researched against your criteria; misses declined for you.' },
-  { t: 'Handoff', d: "The thread, the fit note, and the owner's words, delivered how you work." },
-];
 ---
 <Base {title} {description} path="/" schema={[webPage(title, '/', description), service(), faqPage(homeFaqs)]}>
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 -z-10 bg-cover bg-center opacity-35" style="background-image:url('/hero-lisbon.jpg'); mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,0)); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,0));" aria-hidden="true"></div>
-    <div class="mx-auto max-w-6xl px-5 pt-14 pb-10 md:pt-20 md:pb-16 grid gap-12 md:grid-cols-[1.35fr_1fr] md:items-center">
+    <div class="mx-auto max-w-6xl px-5 pt-14 pb-10 md:pt-20 md:pb-16 grid gap-12 md:grid-cols-[1fr_1.05fr] md:items-center">
     <div>
       <h1 class="h-hero">Owners who said yes to a conversation about selling, delivered <Mark>hot to your inbox</Mark></h1>
       <p class="mt-6 text-lg text-ink-2 max-w-prose">In batches of 10. No retainers. Month to month. Deal origination for M&A advisors and lower-middle-market PE firms: every lead is a business owner who replied in their own words, and any we miss is refunded.</p>
@@ -40,14 +38,8 @@ const steps = [
         <a href="/results/" class="link text-sm">See the replies</a>
       </div>
     </div>
-    <div class="relative mt-14 md:mt-6">
-    <Stamp top="Replied" bottom={`step 2 · ${hero.date.slice(5)}/${hero.date.slice(2, 4)}`} />
-    <ForwardCard
-      note="Owner-operator, privately held manufacturer, Wisconsin. Replied to step 2. Open to a call next week - calendar link sent."
-      quote={hero.quote}
-      who={hero.who}
-      img={hero.img}
-    />
+    <div class="md:mt-2">
+      <Vsl id="6a53843e56f44a4693cc54b7dd84d637" title="How the deal sourcing system works, walked through by Gio" minutes={7} poster="/vsl-poster.jpg" />
     </div>
     </div>
   </section>
@@ -63,36 +55,34 @@ const steps = [
     </dl>
   </section>
 
-  <Section title="What you get">
-    <div class="grid gap-x-10 gap-y-10 md:grid-cols-2">
-      <div class="max-w-prose">
-        <h3>A batch is ten conversations, not ten names</h3>
-        <p class="mt-2 text-ink-2">Each lead is a business owner who replied to our email and said, in their own words, that they are open to talking. We check the company against your criteria before it reaches you, write one line on why it fits, and forward the thread. You take it from there, or we book it for you.</p>
-      </div>
-      <div class="max-w-prose">
-        <h3>You see every email before it sends</h3>
-        <p class="mt-2 text-ink-2">Short, plain emails in the owner's language, from domains that never touch your firm's name. You approve every word. If you want them to go out under your own name instead, that is a setting, not a negotiation.</p>
-      </div>
-      <div class="max-w-prose">
-        <h3>Handoff the way your firm already works</h3>
-        <p class="mt-2 text-ink-2">Forwarded email with the thread and a fit note. CC your partner, a shared sheet, or your CRM if you prefer. One client wanted the owner introduced straight to their operating partner; we built that in a week.</p>
-      </div>
-      <div class="max-w-prose">
-        <h3>Sent from infrastructure that is already warm</h3>
-        <p class="mt-2 text-ink-2">We run our own estate of aged domains and warmed mailboxes, built for deliverability, so your first emails go out within days and your firm's domain never touches cold outreach. If you want the emails under your own name, we set up a dedicated estate for you as a one-time investment.</p>
+  <Section title="What lands in your inbox" intro="Each lead is a business owner who replied and said, in their own words, that they are open to talking. We check the company against your criteria, add one line on why it fits, and forward the thread.">
+    <div class="grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-center">
+      <ul class="space-y-6">
+        <li class="flex gap-4"><span class="sys-ico shrink-0" aria-hidden="true" set:html={iconCheck} /><div><h3>Ten conversations, not ten names</h3><p class="mt-1 text-ink-2">A reply that says yes to a call. Out-of-offices, brokers and "remove me" never count.</p></div></li>
+        <li class="flex gap-4"><span class="sys-ico shrink-0" aria-hidden="true" set:html={iconEye} /><div><h3>You approve every email</h3><p class="mt-1 text-ink-2">Short and plain, in the owner's language. Nothing sends without your yes.</p></div></li>
+        <li class="flex gap-4"><span class="sys-ico shrink-0" aria-hidden="true" set:html={iconShield} /><div><h3>Warm infrastructure, not your domain</h3><p class="mt-1 text-ink-2">Our own aged domains and warmed mailboxes, so emails go out within days. A dedicated set under your name is a one-time setup.</p></div></li>
+      </ul>
+      <div class="relative mt-14 md:mt-0">
+        <Stamp top="Replied" bottom={`step 2 · ${hero.date.slice(5)}/${hero.date.slice(2, 4)}`} />
+        <ForwardCard
+          note="Owner-operator, privately held manufacturer, Wisconsin. Replied to step 2. Open to a call next week - calendar link sent."
+          quote={hero.quote}
+          who={hero.who}
+          img={hero.img}
+        />
       </div>
     </div>
   </Section>
 
-  <Section title="How it works" intro="Five steps from your mandate to a forwarded owner reply.">
-    <Steps items={steps} />
-    <p class="mt-6"><a href="/how-it-works/" class="link text-sm">What you see at each step</a></p>
+  <Section title="The system that surfaces qualified owners on repeat" mark="on repeat" intro="Five stages, run for every batch. The whole market goes in; only owners who said yes come out." band>
+    <SystemDiagram />
+    <p class="mt-6"><a href="/how-it-works/" class="link text-sm">What you see at each stage</a></p>
   </Section>
 
-  <Section title="What owners wrote back" mark="wrote back" intro="Unedited replies to emails we sent for clients. Names and companies removed; the words are theirs." loud band>
+  <Section title="What owners wrote back" mark="wrote back" intro="Unedited replies to emails we sent for clients. Names and companies removed; the words are theirs." loud>
     <figure class="max-w-4xl mb-14">
       <blockquote class="quote-lg flex gap-4"><span class="mt-2 md:mt-3 shrink-0"><ReplyGlyph /></span><span>{lead.quote}</span></blockquote>
-      <figcaption class="mt-4 ml-9 text-sm text-muted">{lead.who} · <a class="link" href={lead.img} target="_blank" rel="noopener">View the email</a></figcaption>
+      <figcaption class="mt-4 ml-9 text-sm text-muted">{lead.who} · <ViewLink img={lead.img} alt={`Redacted reply: ${lead.who}`} class="link" /></figcaption>
     </figure>
     <div class="desk desk-3">
       {strip.map((r) => <ReplyQuote quote={r.quote} who={r.who} img={r.img} />)}

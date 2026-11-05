@@ -1,0 +1,40 @@
+---
+// The loop that surfaces qualified owners on repeat. Icons: lucide-static, one size, one stroke.
+import target from 'lucide-static/icons/target.svg?raw';
+import map from 'lucide-static/icons/map.svg?raw';
+import send from 'lucide-static/icons/send.svg?raw';
+import scan from 'lucide-static/icons/scan-search.svg?raw';
+import inbox from 'lucide-static/icons/inbox.svg?raw';
+import repeat from 'lucide-static/icons/repeat.svg?raw';
+const nodes = [
+  { i: target, t: 'Mandate', d: 'You name the owner you want: industry, size, geography, ownership.' },
+  { i: map, t: 'Market map', d: 'We find every owner-run company that fits and count them before we quote.' },
+  { i: send, t: 'Outreach', d: 'Short plain emails from our warmed, aged domains. You approve every word.' },
+  { i: scan, t: 'Qualify', d: 'Every reply is researched against your criteria. Misses are declined for you.' },
+  { i: inbox, t: 'Your inbox', d: "The owner's words, the thread and a fit note, forwarded to you.", out: true },
+];
+const funnel = [
+  { w: 100, l: 'Whole market' },
+  { w: 78, l: 'Fits the mandate' },
+  { w: 56, l: 'Emailed' },
+  { w: 34, l: 'Replied' },
+  { w: 14, l: 'Qualified, yours' },
+];
+---
+<div>
+  <ol class="sys" aria-label="How the system works, five stages">
+    {nodes.map((n, k) => (
+      <li class:list={['sys-node', n.out && 'is-out']}>
+        <span class="sys-ico" aria-hidden="true" set:html={n.i} />
+        <span class="mono sys-n">{String(k + 1).padStart(2, '0')}</span>
+        <h3>{n.t}</h3>
+        <p>{n.d}</p>
+        {k < nodes.length - 1 && <svg class="sys-arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1.5 8.5 6 2 10.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>}
+      </li>
+    ))}
+  </ol>
+  <div class="sys-funnel" aria-hidden="true">
+    {funnel.map((f, k) => <div><div class:list={['sys-bar', k === 4 && 'is-out']} style={`width:${f.w}%`}></div><span class="mono mt-2 block">{f.l}</span></div>)}
+  </div>
+  <div class="sys-loop"><span aria-hidden="true" set:html={repeat} /><span>Every reply, including every no, goes back into the list and the copy. Each batch starts sharper than the last, which is why it works on repeat.</span></div>
+</div>

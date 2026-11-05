@@ -1,5 +1,6 @@
 ---
 import ReplyGlyph from './ReplyGlyph.astro';
+import ViewLink from './ViewLink.astro';
 interface Props { quote: string; who: string; img?: string; size?: 'base' | 'lg' }
 const { quote, who, img, size = 'base' } = Astro.props;
 ---
@@ -10,6 +11,6 @@ const { quote, who, img, size = 'base' } = Astro.props;
   </div>
   <figcaption class="mt-auto flex items-end justify-between gap-4 text-sm text-muted">
     <span>{who}</span>
-    {img && <a href={img} class="mono whitespace-nowrap hover:text-accent" target="_blank" rel="noopener">View the email</a>}
+    {img && <ViewLink img={img} alt={`Redacted reply: ${who}`} />}
   </figcaption>
 </figure>

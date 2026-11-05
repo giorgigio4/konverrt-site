@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Mark from '../components/Mark.astro';
 import Section from '../components/Section.astro';
 import Cta from '../components/Cta.astro';
+import SystemDiagram from '../components/SystemDiagram.astro';
 import { webPage, breadcrumb } from '../lib/schema';
 const title = 'How Konverrt finds owners who want to talk';
 const description = 'The five steps from your mandate to a forwarded owner reply: list, infrastructure, copy, qualification, handoff.';
@@ -20,7 +21,9 @@ const steps = [
       <h1>From your mandate to a <Mark>forwarded owner reply</Mark></h1>
       <p class="mt-6 text-lg text-ink-2">Most origination vendors sell a list or a meeting count. We sell the step in between: an owner who replied, checked against your criteria, in your inbox with a note on why it fits. Here is each step and what you see at each one.</p>
     </div>
-    <ol class="mt-12 border-t border-line">
+    <div class="mt-12"><SystemDiagram /></div>
+    <h2 class="mt-16">Each stage, in detail</h2>
+    <ol class="mt-6 border-t border-line">
       {steps.map((s, i) => (
         <li class="grid gap-3 md:grid-cols-[48px_280px_1fr] md:gap-8 py-8 border-b border-line">
           <span class="mono">{String(i + 1).padStart(2, '0')}</span>

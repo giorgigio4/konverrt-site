@@ -1,0 +1,26 @@
+---
+// Founder VSL. Poster + play button; the Loom player loads only on click (keeps the page fast for crawlers and phones).
+interface Props { id: string; title: string; minutes: number; poster: string }
+const { id, title, minutes, poster } = Astro.props;
+---
+<figure>
+  <button type="button" class="vsl" data-loom={id} aria-label={`Play video: ${title}`}>
+    <img src={poster} alt={`${title}, video by Gio`} width="1000" height="562" fetchpriority="high" />
+    <span class="vsl-play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l10.5-6.5z"/></svg></span>
+    <span class="vsl-meta">{minutes} min · Gio explains the system</span>
+  </button>
+  <figcaption class="mt-3 text-sm text-muted">{title}</figcaption>
+</figure>
+<script>
+  document.querySelectorAll<HTMLButtonElement>('button.vsl[data-loom]').forEach((b) => {
+    b.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = `https://www.loom.com/embed/${b.dataset.loom}?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true`;
+      f.allow = 'autoplay; fullscreen; picture-in-picture';
+      f.allowFullscreen = true;
+      f.title = b.getAttribute('aria-label') || 'Video';
+      b.replaceChildren(f);
+      b.removeAttribute('aria-label');
+    }, { once: true });
+  });
+</script>

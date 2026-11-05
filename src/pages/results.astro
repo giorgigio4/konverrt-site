@@ -5,6 +5,7 @@ import ReplyQuote from '../components/ReplyQuote.astro';
 import ReplyGlyph from '../components/ReplyGlyph.astro';
 import Cta from '../components/Cta.astro';
 import Mark from '../components/Mark.astro';
+import ViewLink from '../components/ViewLink.astro';
 import { replies, testimonials } from '../data/replies';
 import { webPage, breadcrumb } from '../lib/schema';
 const title = 'Results - real owner replies and two case studies';
@@ -23,7 +24,7 @@ const buy = replies.filter((r) => r.side === 'buy');
   <Section title="Sell-side outreach" intro="Owners of $2M to $50M companies, contacted for an M&A advisory firm. Industry and state shown where known." id="sell-side" band>
     <figure class="max-w-4xl mb-14">
       <blockquote class="quote-lg flex gap-4"><span class="mt-2 md:mt-3 shrink-0"><ReplyGlyph /></span><span>{sell[0].quote}</span></blockquote>
-      <figcaption class="mt-4 ml-9 text-sm text-muted">{sell[0].who} · <a class="link" href={sell[0].img} target="_blank" rel="noopener">View the email</a></figcaption>
+      <figcaption class="mt-4 ml-9 text-sm text-muted">{sell[0].who} · <ViewLink img={sell[0].img} alt={`Redacted reply: ${sell[0].who}`} class="link" /></figcaption>
     </figure>
     <div class="desk">
       {sell.slice(1).map((r) => <ReplyQuote quote={r.quote} who={r.who} img={r.img} />)}
@@ -33,7 +34,7 @@ const buy = replies.filter((r) => r.side === 'buy');
   <Section title="Buy-side search" intro="Owner-run companies that fit a buyer's thesis. Industry and size shown; location withheld to protect the search." id="buy-side">
     <figure class="max-w-4xl mb-14">
       <blockquote class="quote-lg flex gap-4"><span class="mt-2 md:mt-3 shrink-0"><ReplyGlyph /></span><span>{buy[3].quote}</span></blockquote>
-      <figcaption class="mt-4 ml-9 text-sm text-muted">{buy[3].who} · <a class="link" href={buy[3].img} target="_blank" rel="noopener">View the email</a></figcaption>
+      <figcaption class="mt-4 ml-9 text-sm text-muted">{buy[3].who} · <ViewLink img={buy[3].img} alt={`Redacted reply: ${buy[3].who}`} class="link" /></figcaption>
     </figure>
     <div class="desk">
       {buy.filter((_, i) => i !== 3).map((r) => <ReplyQuote quote={r.quote} who={r.who} img={r.img} />)}
@@ -42,7 +43,9 @@ const buy = replies.filter((r) => r.side === 'buy');
 
   <Section title="Two case studies" id="case-studies">
     <div class="grid gap-6 md:grid-cols-2">
-      <article class="card p-6 md:p-8" id="midwest-ma-advisor">
+      <article class="card overflow-hidden flex flex-col" id="midwest-ma-advisor">
+        <a href="/results/midwest-ma-advisor/" class="block border-b border-line" aria-hidden="true" tabindex="-1"><img src="/case/midwest-thumb.webp" alt="" width="960" height="540" loading="lazy" decoding="async" class="w-full h-auto" /></a>
+        <div class="p-6 md:p-8 flex flex-col flex-1">
         <p class="mono">Sell-side · Midwest</p>
         <h3 class="mt-3 figure text-2xl">A $19M divestiture from cold email, for a 19-year M&A advisory firm</h3>
         <p class="mt-4 text-ink-2">A CVA-certified advisory firm targeting $5M to $25M owner-run companies in manufacturing, construction and trades across two Midwest states. No referrals, no ad spend.</p>
@@ -52,8 +55,12 @@ const buy = replies.filter((r) => r.side === 'buy');
           <li class="flex gap-3"><span class="mono w-20 shrink-0 tabular-nums">4+</span>in-person meetings with owner-operators of $3M to $20M companies</li>
           <li class="flex gap-3"><span class="mono w-20 shrink-0 tabular-nums">$19M+</span>manufacturer, segment divestiture moving toward engagement inside 90 days</li>
         </ul>
+        <p class="mt-auto pt-6"><a class="link" href="/results/midwest-ma-advisor/">Read the full case study</a></p>
+        </div>
       </article>
-      <article class="card p-6 md:p-8" id="new-york-ma-advisory">
+      <article class="card overflow-hidden flex flex-col" id="new-york-ma-advisory">
+        <a href="/results/new-york-ma-advisory/" class="block border-b border-line" aria-hidden="true" tabindex="-1"><img src="/case/new-york-thumb.webp" alt="" width="960" height="536" loading="lazy" decoding="async" class="w-full h-auto" /></a>
+        <div class="p-6 md:p-8 flex flex-col flex-1">
         <p class="mono">Sell-side · New York</p>
         <h3 class="mt-3 figure text-2xl">27 meetings, 5 LOIs, 3 closed, for a New York M&A advisory firm</h3>
         <p class="mt-4 text-ink-2">A 47-person boutique advisory working $5M to $25M revenue companies, previously over 80% referral-sourced. What the client reported from the first engagement. The figures are the client's; we carry them as reported.</p>
@@ -63,6 +70,8 @@ const buy = replies.filter((r) => r.side === 'buy');
           <li class="flex gap-3"><span class="mono w-20 shrink-0 tabular-nums">80%</span>of meetings fit the deal criteria</li>
           <li class="flex gap-3"><span class="mono w-20 shrink-0 tabular-nums">5 / 3</span>LOIs signed / deals closed</li>
         </ul>
+        <p class="mt-auto pt-6"><a class="link" href="/results/new-york-ma-advisory/">Read the full case study</a></p>
+        </div>
       </article>
     </div>
   </Section>

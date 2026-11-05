@@ -1,0 +1,222 @@
+---
+import Base from '../../layouts/Base.astro';
+import Cta from '../../components/Cta.astro';
+import CaseFigure from '../../components/CaseFigure.astro';
+import YouTubeFacade from '../../components/YouTubeFacade.astro';
+import { site } from '../../data/site';
+import { webPage, breadcrumb } from '../../lib/schema';
+// Copy reproduced 1:1 from the Gamma deck "How Konverrt Built Proprietary Deal Flow for a Midwest M&A Advisory Firm".
+// Only edits: em dashes to " - ", emoji removed, Gamma footer dropped, italics rendered upright (site rule).
+const path = '/results/midwest-ma-advisor/';
+const name = 'How Konverrt Built Proprietary Deal Flow for a Midwest M&A Advisory Firm';
+const title = 'Case study - proprietary deal flow for a Midwest M&A advisory firm';
+const description = '15+ qualified conversations from 8,500 prospects reached in 3 months, for a 19-year M&A advisory firm targeting $5-25M businesses in manufacturing, construction and trades.';
+const stats = [
+  { value: '8,500', label: 'prospects reached' },
+  { value: '3.3%', label: 'reply rate' },
+  { value: '15+', label: 'qualified conversations' },
+  { value: '4+', label: 'in-person meetings booked' },
+];
+const img = (f: string) => `/case/midwest/${f}.webp`;
+---
+<Base {title} {description} {path} schema={[webPage(name, path, description), breadcrumb([{ name: 'Home', path: '/' }, { name: 'Results', path: '/results/' }, { name: name, path }])]}>
+  <article class="case mx-auto max-w-6xl px-5 py-16 md:py-20">
+    <nav class="mono mb-8" aria-label="Breadcrumb"><a href="/" class="hover:text-ink">Home</a> / <a href="/results/" class="hover:text-ink">Results</a> / Midwest M&A advisory firm</nav>
+
+    <header class="max-w-3xl">
+      <p class="mono">Case study · Sell-side · Midwest</p>
+      <h1 class="mt-4">How Konverrt Built Proprietary Deal Flow for a Midwest M&A Advisory Firm</h1>
+      <p class="mt-6 text-xl text-ink figure">15+ Qualified Conversations. 8,500 Prospects Reached. One System.</p>
+      <p class="mt-5 text-lg text-ink-2 max-w-prose">A breakdown of the exact process - from infrastructure to inbox handling - that turned cold email into a repeatable pipeline for a 19-year M&A advisory firm targeting $5-25M businesses in manufacturing, construction, and trades.</p>
+    </header>
+
+    <dl class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-line border border-line rounded-md overflow-hidden max-w-4xl">
+      {stats.map((s) => (
+        <div class="bg-white p-5">
+          <dt class="sr-only">{s.label}</dt>
+          <dd class="figure text-2xl tabular-nums">{s.value}</dd>
+          <dd class="mt-1 text-sm text-muted">{s.label}</dd>
+        </div>
+      ))}
+    </dl>
+
+    <section class="mt-14 max-w-4xl">
+      <p class="text-ink-2 mb-4">Snippets From Our 90 Day Catch Up Call</p>
+      <YouTubeFacade id="r6zvOOOfZtw" title="Snippets From Our 90 Day Catch Up Call" />
+    </section>
+
+    <section class="case-sec">
+      <h2>Most Lead Gen Vendors Don't Understand M&A</h2>
+      <div class="case-text">
+        <p>M&A advisory firms don't operate like SaaS companies or marketing agencies. The sales cycle runs 6 to 18 months. The prospect is a 60-year-old business owner making the biggest financial decision of their life. And one poorly targeted email can leak confidential sale information or spook employees.</p>
+        <p>Before working with us, this firm had tried another outbound firm. The experience was frustrating - they were being billed for unqualified replies, the leads were the wrong size, and the targeting didn't match their ICP.</p>
+        <p>The firm was already running radio, TV, direct mail, and warm referrals. Cold email needed to complement those channels without creating overlap or damaging the brand.</p>
+        <p>And it had to reach the right people - owner-operators of $5-25M businesses in two Midwest states who aren't on LinkedIn, don't respond to generic outreach, and trust local relationships above everything else.</p>
+      </div>
+      <CaseFigure src={img('email-comparison')} width={1600} height={900} alt="Before and after email mockups: generic M&A outreach with a generic subject line, no personalization and long paragraphs, next to Konverrt's approach with a personalized subject line, under 75 words, industry-specific language, local positioning and a clear call to action." />
+    </section>
+
+    <section class="case-sec">
+      <h2>The Sending Infrastructure That Keeps You Out of Spam</h2>
+      <div class="case-text">
+        <p>Before a single email goes out, we build a dedicated sending environment from scratch for each client. This isn't a shared platform or a mass email tool - it's custom infrastructure designed to mirror natural human email behavior.</p>
+        <p>We purchase and configure multiple domains exclusively for outbound. Each one gets full DNS authentication - SPF, DKIM, and DMARC - before it touches a single prospect.</p>
+        <p>Sending volume is distributed across dozens of individual Gmail accounts, each capped at 15 emails per day. New domains go through a 2-3 week warm-up period to build sender reputation gradually.</p>
+        <p>Every email uses spintax - randomized variations of words, phrases, and sentence structures - so no two messages are identical. Campaigns only send Tuesday through Thursday and pause automatically on holidays and weekends.</p>
+        <p>The result: <strong>emails that land in primary inboxes, not spam folders</strong>.</p>
+      </div>
+      <CaseFigure src={img('infrastructure-stack')} width={1600} height={900} alt="Konverrt's email infrastructure stack in six layers: dedicated sending domains, DNS authentication with SPF, DKIM and DMARC, mailbox distribution capped at 15 per day, domain warming over three weeks, spintax anti-fingerprinting, and Tuesday to Thursday sending controls." />
+    </section>
+
+    <section class="case-sec">
+      <h2>We Study Your Market Before We Write a Single Email</h2>
+      <CaseFigure src={img('market-research-brief')} width={1600} height={900} alt="Mockup of a confidential market research brief prepared for the client before any outreach, with the client name redacted." />
+      <div class="case-text">
+        <p>We spend first few days days researching the client's market before any outreach begins. This isn't surface-level - we study the client's positioning, deal history, and competitive landscape, then analyze the prospect's industry from the prospect's perspective.</p>
+        <ol>
+          <li>What are they worried about?</li>
+          <li>What language do they use?</li>
+          <li>What's happening in their industry right now that makes this the right time to consider a sale?</li>
+        </ol>
+        <p>After we have answers to these questions, the scripts practically write themselves.</p>
+        <p>For this firm, our research uncovered that the commercial printing industry was actively consolidating. <strong>Owners were being approached by PE firms and strategic acquirers regularly - but most had no independent advisor telling them whether the offers were fair.</strong></p>
+        <p>That insight shaped our entire campaign angle: <span class="text-ink">the "Second Opinion" positioning</span>.</p>
+        <p>We identified sub-segments within the client's target market, prioritized them by estimated responsiveness, and mapped the buyer landscape. This research fed directly into script writing - our emails referenced real market dynamics, instead of generic pitches.</p>
+        <p>The difference shows up in the reply data.</p>
+      </div>
+    </section>
+
+    <section class="case-sec">
+      <h2>Finding the Right Owners When They're Not in Any Database</h2>
+      <div class="case-text">
+        <p>Our client needed to reach the owner-operators of the 40-year machine shop in Appleton, the family bakery in West Allis, the concrete contractor in Waukesha County - often don't exist in databases like Apollo, ZoomInfo or LinkedIn. They've been running their business for decades without ever creating a company page.</p>
+        <p>That's why we don't rely on a single data source. Our lists are built from a combination of business databases, Google Maps scraping for hyperlocal businesses, and public regulatory data where applicable.</p>
+        <p>For this campaign, our initial Google Maps scrape covered 86 geographic coordinates across two states using 6 industry keywords. That produced roughly 6,000 raw company records, which we refined down to about 4,000 verified decision-maker contacts with valid emails after deduplication, validation, and enrichment.</p>
+        <p>Every contact goes through multi-step verification:</p>
+        <ol>
+          <li>confirm the owner is the actual equity holder (not a superintendent or office manager)</li>
+          <li>estimate revenue and headcount</li>
+          <li>validate the business is still active and hasn't already been sold</li>
+          <li>and classify whether it's B2B or B2C.</li>
+        </ol>
+        <p><strong>AI-powered classification columns filter out companies that don't fit the ICP before any email is sent.</strong></p>
+        <p>As the campaign runs and we learn which industries respond best, we expand into new keywords and sub-industries. For this firm, real reply data led us to add CNC machining, food manufacturing, concrete contracting, and dairy processing - verticals the client specifically requested after seeing the initial results.</p>
+      </div>
+      <CaseFigure src={img('list-building-pipeline')} width={1600} height={900} alt="Konverrt's multi-source list building pipeline: data sources (Apollo, LinkedIn, Google Maps scraping, public regulatory data) flow through deduplication, validation and enrichment into qualified decision-maker contacts, continuously refreshed." />
+    </section>
+
+    <section class="case-sec">
+      <h2>8-12 Angles Tested Simultaneously. Under 75 Words Each.</h2>
+      <div class="case-text">
+        <p>We don't write one email and blast it.</p>
+        <p><strong>Every campaign deploys 8-12 distinct script frameworks tested in parallel</strong> - social proof, curiosity, pattern interrupt, contrarian positioning, and more.</p>
+        <p>Each one is a 2-step sequence: an initial outreach and a follow-up 3-5 days later. Both under 75 words. No filler, no jargon, no "just checking in."</p>
+        <p>The language is always the prospect's, never the client's. For M&A advisory, that means we never say "leads," "campaigns," "pipeline," or "cold email." We talk about "sitting down over coffee," "knowing the real number," and "having someone on your side of the table."</p>
+      </div>
+      <CaseFigure src={img('script-framework')} width={1600} height={900} alt="Two-step script framework: an initial outreach email and a follow-up 3 to 5 days later, each checked by a read-aloud test, an AI detection scrub and a spam trigger scan, with a spintax example." />
+      <div class="case-text">
+        <p>Every script goes through three scrubs before it ships: a read-aloud test to make sure it sounds like a human wrote it, an AI-detection pass to ensure it doesn't read like generated content, and a spam-trigger scan to catch words that will get flagged by email filters - everything confirmed by an actual human in the end.</p>
+        <p>For this firm, one line outperformed everything else across all campaigns: "I don't buy companies. I help owners understand what theirs is worth." It cut through the noise because every business owner in this market gets hammered by PE firms and search funds. Positioning the advisor as someone who's on their side of the table - not the buyer's - was the single biggest unlock.</p>
+        <p>Simple, personalized subject lines outperformed clever alternatives by 2x. The top performer: just the prospect's first name.</p>
+      </div>
+    </section>
+
+    <section class="case-sec">
+      <h2>Every Reply Gets Researched Before It Reaches the Client</h2>
+      <div class="case-text">
+        <p>This is where most firms like ours fall short. They forward every reply - positive, negative, garbage - and call it a "lead." We do the opposite.</p>
+        <p>When a prospect replies with interest, we don't just forward the email. We research the company from scratch:</p>
+        <ol>
+          <li>revenue</li>
+          <li>headcount</li>
+          <li>founding year</li>
+          <li>industry classification</li>
+          <li>ownership structure</li>
+          <li>geography</li>
+          <li>decision-maker verification.</li>
+        </ol>
+        <p>We pull from multiple sources and cross-reference everything. Then we make a qualification call - <strong>does this prospect actually fit the client's ICP?</strong></p>
+      </div>
+      <CaseFigure src={img('lead-notification')} width={1600} height={900} alt="Three lead notification cards: a qualified and researched lead marked as a strong ICP fit, a lead that needs qualifying, and a lead where client input is needed." />
+      <div class="case-text">
+        <p>If yes, we send a detailed notification with our research notes, a fit assessment, the full email thread and book them on our client's calendar.</p>
+        <p>If no, we decline the lead on the client's behalf with a polite, professional reply. For borderline cases, we flag it for the client's input with specific questions.</p>
+        <p>Over 3 months, we generated 20 interested replies from qualified prospects for this client. Of those, 15+ were forwarded as leads open to a conversation - each one researched and assessed before reaching the client.</p>
+        <p>We declined several that didn't fit - too small, wrong industry, wrong geography, or franchise operations. And we identified 6 active buyer contacts that we passed to the client at no charge.</p>
+      </div>
+    </section>
+
+    <section class="case-sec">
+      <h2>Every "No" Teaches Us Something</h2>
+      <div class="case-text">
+        <p>Negative replies aren't wasted - they're data. We categorize every decline and feed it back into targeting and scripting improvements.</p>
+        <p>The breakdown from this campaign tells a clear story. Out of 277 total replies across 8,500 prospects contacted, we mapped every human response into categories:</p>
+        <ol>
+          <li>hard declines</li>
+          <li>"not now but maybe later" with specific follow-up timelines</li>
+          <li>companies that had already been sold (a data quality signal)</li>
+          <li>family succession plans</li>
+          <li>owners who already had a broker</li>
+          <li>wrong geography contacts.</li>
+        </ol>
+        <p>Each category triggered a specific fix - ownership verification before sending, tighter address filtering, new objection-specific reply templates.</p>
+        <p>The "not now" replies are the hidden asset. Each one gets logged with the prospect's stated timeline - "circle back in 4 years," "selling within 2 years," "may change in a year or two."</p>
+        <p>By month 6, the client has dozens of warm contacts who told us exactly when to call back.</p>
+      </div>
+      <CaseFigure src={img('objection-breakdown')} width={1600} height={900} alt="Bar chart titled Why People Said No, breaking objections into categories such as not selling, not now, already sold, family succession, wrong geography and already have a broker, with a panel on what this tells us." />
+    </section>
+
+    <section class="case-sec">
+      <h2>Weekly Updates. Monthly Reports. Strategy Calls. No Surprises.</h2>
+      <div class="case-text">
+        <p>We send end-of-week email updates every Friday summarizing new leads forwarded, leads in progress, and any actions needed.</p>
+        <p>Monthly performance presentations break down reply rates by industry, interest rates by script angle, objection mapping, and data quality improvements - with strategic recommendations for the next month.</p>
+        <p>Lead notifications go out individually as they come in. The client never waits for a batch report to learn about a new prospect.</p>
+        <p>Strategy calls review the data together, discuss which industries to expand into, and align on targeting adjustments. Every campaign decision is collaborative - the client told us to prioritize CNC machining and food manufacturing, so we expanded our list into those verticals within days.</p>
+        <p>Results showed up within weeks.</p>
+      </div>
+    </section>
+
+    <section class="case-sec">
+      <h2>3 Months. 8,500 Prospects. 15+ Qualified Conversations. Pipeline Growing.</h2>
+      <CaseFigure src={img('campaign-results')} width={1600} height={893} alt="Campaign results dashboard: 16,000+ emails sent, 8,500 prospects contacted, 3.3% reply rate, 15+ qualified conversations, 6 active buyer contacts and 4+ in-person meetings booked." />
+      <div class="case-text">
+        <p>16,000+ emails sent to 8,500 prospects across manufacturing, construction, trades, printing, and food production.</p>
+        <p>3.3% reply rate - 277 total replies.</p>
+        <p>20 interested and qualified leads identified. 15+ forwarded as prospects open to a conversation - each one researched, verified, and assessed before reaching the client.</p>
+        <p>6 active buyer contacts identified and passed to the client at no charge.</p>
+        <p>4+ in-person meetings booked with owner-operators of companies ranging from $3M to $20M+ in revenue.</p>
+        <p>Industries that responded best: commercial printing (75% interest rate among responders), construction (37.5%), manufacturing, food production.</p>
+        <p>Within the first 3 months, one lead - a segment divestiture from a $19M+ manufacturer - was already moving toward engagement.</p>
+        <p><strong>The active pipeline includes a 97-year-old construction company, an 88-year-old food manufacturer, and a 30-year industrial safety products manufacturer with Fortune 500 clients.</strong></p>
+        <p>14 "not now" contacts logged with specific follow-up timelines - a compounding pipeline asset that grows every month.</p>
+      </div>
+    </section>
+
+    <section class="case-sec">
+      <h2>Why Standard Deal Sourcing Fails in M&A - And What We Do Instead</h2>
+      <div class="case-text">
+        <p>The sales cycle is 6-18 months. You can't measure ROI in the first 90 days the way you can for a SaaS company.</p>
+        <p>The prospect - a business owner considering selling their life's work - requires a fundamentally different approach than reaching a VP of Marketing about a software tool.</p>
+        <p>But the math works in your favor.</p>
+        <p>A single closed deal from a qualified lead generates $200K to $1M+ in advisory fees. The entire cost of a 6-month cold email campaign is a fraction of one commission check. The ROI is asymmetric - if the leads are right.</p>
+        <p><strong>Most vendors optimize for volume. We optimize for quality and compounding pipeline value. Every month, the list gets smarter, the scripts get tighter, and the "not now" pipeline grows.</strong></p>
+        <p>By month 6, you have a proprietary asset that no competitor can replicate - dozens of warm contacts who told us when to call back, in industries you've validated, with scripts that have been refined by thousands of data points.</p>
+        <p class="case-callout">That's not lead generation. That's proprietary deal flow sourcing system.</p>
+      </div>
+    </section>
+
+    <section class="case-sec">
+      <h2>Built for M&A Advisory Firms That Are Done with Unqualified Leads</h2>
+      <div class="case-text">
+        <p>If you run an M&A advisory firm and you're tired of firms who don't understand your sales cycle, your ICP, or your industry - let's talk.</p>
+        <p>In just a 30-minute conversation, I'll understand more about your target market, your deal range, and whether cold email outbound makes sense for your firm.</p>
+      </div>
+      <a href={site.calendly} rel="noopener" class="mt-6 card p-5 flex items-center justify-between gap-4 max-w-prose hover:border-ink">
+        <span><span class="mono block">Calendly</span><span class="block mt-1 text-ink">30-Minute Discovery Call - Gio Bezhanishvili</span><span class="block mt-1 text-sm text-muted">Let's chat and determine whether we can generate you 15-20 qualified conversations with ready-to-sell/buy prospects every 90 days with our Done-For-You outbound system.</span></span>
+        <span class="text-accent shrink-0" aria-hidden="true">→</span>
+      </a>
+    </section>
+  </article>
+  <Cta />
+</Base>

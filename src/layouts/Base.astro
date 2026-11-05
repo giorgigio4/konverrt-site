@@ -130,5 +130,27 @@ const current = (href: string) => path === href || (href !== '/' && path.startsW
         }, 1500);
       });
     </script>
+    <dialog id="viewer" class="viewer" aria-label="Owner reply">
+      <div class="viewer-bar">
+        <span class="mono"><span class="hidden md:inline">Redacted owner reply · names and companies removed</span><span class="md:hidden">Redacted reply · swipe to read</span></span>
+        <button type="button" class="viewer-close" data-close>Close <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <div class="viewer-body"><img alt="" /></div>
+    </dialog>
+    <script>
+      const dlg = document.getElementById('viewer') as HTMLDialogElement | null;
+      if (dlg && typeof dlg.showModal === 'function') {
+        const img = dlg.querySelector('img') as HTMLImageElement;
+        document.addEventListener('click', (e) => {
+          const a = (e.target as HTMLElement).closest<HTMLAnchorElement>('a[data-view]');
+          if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+          e.preventDefault();
+          img.src = a.dataset.view || a.href; img.alt = a.dataset.alt || 'Redacted owner reply';
+          dlg.showModal();
+        });
+        dlg.addEventListener('click', (e) => { if (e.target === dlg || (e.target as HTMLElement).closest('[data-close]')) dlg.close(); });
+        dlg.addEventListener('close', () => { img.removeAttribute('src'); });
+      }
+    </script>
   </body>
 </html>

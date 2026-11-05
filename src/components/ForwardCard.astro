@@ -1,6 +1,7 @@
 ---
 // The hero visual: one real redacted reply rendered as the email the client receives.
 import ReplyGlyph from './ReplyGlyph.astro';
+import ViewLink from './ViewLink.astro';
 interface Props { note: string; quote: string; who: string; img: string }
 const { note, quote, who, img } = Astro.props;
 ---
@@ -17,7 +18,7 @@ const { note, quote, who, img } = Astro.props;
     </div>
     <div class="mt-4 flex items-center justify-between gap-4 text-sm text-muted">
       <span>{who}</span>
-      <a href={img} class="mono hover:text-accent" target="_blank" rel="noopener">View the email</a>
+      <ViewLink img={img} alt={`Redacted reply: ${who}`} />
     </div>
   </div>
 </div>

@@ -1,0 +1,254 @@
+---
+import Base from '../../layouts/Base.astro';
+import Cta from '../../components/Cta.astro';
+import CaseFigure from '../../components/CaseFigure.astro';
+import { site } from '../../data/site';
+import { webPage, breadcrumb } from '../../lib/schema';
+// Copy reproduced 1:1 from the Gamma deck "How We Built a Proprietary Deal Flow for a Mid-Market M&A Advisory Firm".
+// Only edits: em dashes to " - ", Gamma footer dropped, italics rendered upright (site rule).
+const path = '/results/new-york-ma-advisory/';
+const name = 'How We Built a Proprietary Deal Flow for a Mid-Market M&A Advisory Firm';
+const title = 'Case study - 27 qualified seller meetings in 90 days for a New York M&A advisory firm';
+const description = 'How a boutique New York M&A advisory firm with 47 professionals got 27 qualified seller meetings in 90 days, 5 LOIs and 3 closed deals from cold outbound.';
+const stats = [
+  { value: '27', label: 'qualified seller meetings' },
+  { value: '80%', label: 'meetings within deal criteria' },
+  { value: '5', label: 'LOIs generated' },
+  { value: '3', label: 'deals closed' },
+];
+const results = [
+  ['Qualified Seller Meetings', '27'],
+  ['Total Emails Sent', '72,000'],
+  ['Reply Rate', '1.5%'],
+  ['Positive Reply Rate', '10%'],
+  ['Meetings Within Deal Criteria', '80%'],
+  ['Meetings Ready to Transact (0-6 months)', '10%'],
+  ['LOIs Generated', '5'],
+  ['Deals Closed', '3'],
+];
+const img = (f: string) => `/case/new-york/${f}.webp`;
+---
+<Base {title} {description} {path} schema={[webPage(name, path, description), breadcrumb([{ name: 'Home', path: '/' }, { name: 'Results', path: '/results/' }, { name: name, path }])]}>
+  <article class="case mx-auto max-w-6xl px-5 py-16 md:py-20">
+    <nav class="mono mb-8" aria-label="Breadcrumb"><a href="/" class="hover:text-ink">Home</a> / <a href="/results/" class="hover:text-ink">Results</a> / New York M&A advisory firm</nav>
+
+    <header class="max-w-3xl">
+      <p class="mono">Case study · Sell-side · New York</p>
+      <h1 class="mt-4">How We Built a Proprietary Deal Flow for a Mid-Market M&A Advisory Firm</h1>
+      <p class="mt-6 text-xl text-ink figure">27 Qualified Seller Meetings in 90 Days. Here's Exact Process - And Why Most Agencies Fail at This.</p>
+    </header>
+
+    <dl class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-line border border-line rounded-md overflow-hidden max-w-4xl">
+      {stats.map((s) => (
+        <div class="bg-white p-5">
+          <dt class="sr-only">{s.label}</dt>
+          <dd class="figure text-2xl tabular-nums">{s.value}</dd>
+          <dd class="mt-1 text-sm text-muted">{s.label}</dd>
+        </div>
+      ))}
+    </dl>
+
+    <section class="case-sec">
+      <h2>The Client</h2>
+      <div class="case-text">
+        <p>A boutique M&A advisory firm based in New York with 47 professionals serving the entire US. They focus on sell-side advisory for businesses with revenues between $5M-$25M across all industries (excluding trading and gambling).</p>
+        <p class="text-muted">Due to NDA, client name and identifying details are redacted.</p>
+      </div>
+      <CaseFigure src={img('client-profile')} width={1338} height={747} alt="Client profile illustration: a US map linked to the New York skyline, a handshake and an office, with captions 47 professionals and $5M-$25M mid-market focus." />
+    </section>
+
+    <section class="case-sec">
+      <h2>The Real Problem (Not What They Told Us)</h2>
+      <div class="case-text">
+        <p>When this client first reached out, they said they wanted "more qualified leads." But after our discovery calls, the real issue became clear:</p>
+        <p><strong>They were trapped in the referral machine.</strong></p>
+        <p>Over 80% of their deal flow came from referrals and their existing network. This created a predictable problem: feast-or-famine cycles that made forecasting impossible. Some months they'd have 10+ opportunities; other months, nothing. They couldn't commit to growth targets or hire with confidence.</p>
+        <p>They'd tried cold email before with another agency. It was a disaster. The leads were garbage - too small, wrong timing, wrong industry. One partner told us: "I don't have time to follow up on probably 25 leads that don't fit our criteria." They wasted weeks on unqualified calls.</p>
+        <p>The deeper issue? <strong>They didn't understand that M&A deal sourcing is fundamentally different from other verticals.</strong> You can't just buy a list from Apollo, blast 10,000 emails, and expect results. Business owners looking to sell aren't sitting in a database. They're not actively searching. They're hidden in plain sight.</p>
+        <p>Most agencies don't understand this. They treat M&A like SaaS or e-commerce. Wrong move.</p>
+      </div>
+      <CaseFigure src={img('referral-trap')} width={1338} height={747} alt="Cycle diagram titled The Referral Machine Trap: a feast phase of deals and referrals followed by a famine phase of uncertainty and low flow, around a referral dependency trap." />
+    </section>
+
+    <section class="case-sec">
+      <h2>Our Strategic Approach: The Four Pillars</h2>
+      <div class="case-text"><p class="text-ink-2">Here's how we thought about this engagement from day one.</p></div>
+
+      <h3 class="case-h3">Pillar 1: The List Is Everything (And Most Agencies Get It Wrong)</h3>
+      <div class="case-text">
+        <p>The difference between a qualified meeting and a waste of time is the list. Period.</p>
+        <p>Most agencies start with volume. They buy 50,000 contacts from Apollo, filter by revenue, and start blasting. This is backwards. In M&A, you need to start with precision.</p>
+        <p><strong>Our thinking:</strong></p>
+        <p>We knew that a business owner ready to sell has specific characteristics. They're not random. We looked for patterns:</p>
+        <ul>
+          <li><strong>Company age:</strong> Founders who've built for 15+ years are more likely thinking about exit.</li>
+          <li><strong>Owner age:</strong> If publicly available, owners 50+ are in the succession window.</li>
+          <li><strong>Revenue stability:</strong> Companies with consistent revenue (not volatile) are more attractive to buyers.</li>
+          <li><strong>Ownership structure:</strong> Family-owned or founder-led businesses have different motivations than PE-backed companies.</li>
+        </ul>
+        <p><strong>Industry consolidation trends:</strong> If their industry is consolidating, they're thinking about it.</p>
+      </div>
+      <CaseFigure src={img('prospect-list')} width={1600} height={391} alt="Screenshot of the prospect research table with columns for job title, location, industry, annual revenue, person's age, founding date and time in company." />
+      <div class="case-text">
+        <p><strong>What we did:</strong></p>
+        <p>We started with 36,000 companies, not 100,000. We used PitchBook, Grata, and LinkedIn Sales Navigator to layer in data that most agencies ignore. Then (and this is the secret sauce btw) we built a custom AI workflow that visited each company's website and extracted signals:</p>
+        <ul>
+          <li>Business model and revenue indicators</li>
+          <li>Ownership structure (founder-led, family office, etc.)</li>
+          <li>Recent leadership changes or founder mentions</li>
+          <li>Industry consolidation signals</li>
+        </ul>
+        <p>This AI layer eliminated 30% of the initial list before we ever sent an email. Because we'd rather send 25,000 emails to the right people than 72,000 emails to anyone.</p>
+        <p><strong>The result:</strong> 70% of our final list met the client's strict investment criteria. Most agencies would be lucky to hit 40%.</p>
+        <p><strong>Why this matters to you:</strong> If you're an M&A firm, you know that time is your most expensive asset. A partner's time is worth $500+/hour. Spending that time on unqualified calls is a death sentence. Our list quality meant the client's team spent time on real opportunities, not tire-kickers.</p>
+      </div>
+
+      <h3 class="case-h3">Pillar 2: Infrastructure That Protects Your Brand (And Scales)</h3>
+      <div class="case-text">
+        <p>Here's what keeps many M&A firm CFOs up at night: "If we send 1,000 cold emails a day, are we going to get blacklisted?"</p>
+        <p>The answer is: only if you're stupid about it.</p>
+        <p><strong>The problem most agencies create:</strong></p>
+        <p>They send from the client's main domain. This is insane. One spam complaint, one aggressive spam filter, and suddenly your firm's entire email reputation is damaged. Your clients can't send internal emails. Your CFO is furious. You're done.</p>
+        <p><strong>Our approach:</strong></p>
+        <p>We built a separate, robust infrastructure. 40 domains, 80 mailboxes, capacity for 1,200 emails/day. But here's the thing - infrastructure alone doesn't guarantee deliverability. You need to understand email authentication and warmup.</p>
+        <ul>
+          <li><strong>SPF, DKIM, DMARC:</strong> Properly configured so emails pass authentication checks. Most agencies skip this or do it halfway.</li>
+          <li><strong>Warmup period:</strong> We spent 2 weeks warming each mailbox with legitimate, low-volume sends before ramping to full volume. This signals to Gmail, Outlook, and other providers that these are real, trustworthy accounts.</li>
+          <li><strong>Plain text, no tracking:</strong> We disabled tracking pixels and images in initial emails. Why? Because tracking pixels hurt deliverability. They're a signal that you're mass-mailing. Business owners can tell the difference between a personal email and a mass email. We made ours look personal.</li>
+        </ul>
+        <p><strong>The result:</strong> 64-71% open rates. 1.5% reply rate. These are solid numbers for cold email, and they're only possible because we protected the infrastructure.</p>
+      </div>
+      <CaseFigure src={img('campaign-stats')} width={1600} height={130} alt="Sending platform summary for the completed campaign, name redacted: 72,439 sent, 1,086 replied including out-of-office (1.53%), 113 positive replies (10.43%)." />
+      <div class="case-text">
+        <p><strong>Why this matters to you:</strong> You need to know that your outreach isn't going to blow up your email reputation. You need to know that the emails are actually reaching inboxes. Most agencies can't guarantee this. We can.</p>
+      </div>
+
+      <h3 class="case-h3">Pillar 3: The Script (And Why Personalization at Scale Actually Works)</h3>
+      <div class="case-text">
+        <p>This is where most agencies completely miss the mark.</p>
+        <p>Business owners get bombarded with emails. "We have qualified buyers." "Are you thinking about selling?" "Let's talk about your exit options." It's all the same. They delete it.</p>
+        <p><strong>The problem with generic cold email:</strong></p>
+        <p>It screams "mass email." Business owners can smell it. They get 20 of these a week. They ignore them.</p>
+        <p><strong>Our thinking:</strong></p>
+        <p>We needed to sound like a peer, not a vendor. We needed to demonstrate that we understood their business, their market, their challenges. And we needed to do this at scale, which most agencies say is impossible.</p>
+        <p>Here's the secret: it's not impossible if you're smart about personalization.</p>
+        <p><strong>What we did:</strong></p>
+        <p>We built email templates with strategic personalization hooks:</p>
+        <ul>
+          <li><strong>Industry-specific angle:</strong> "I noticed a lot of [industry] owners we speak with are thinking about [trend]. Not sure if you've considered [strategic option], but wanted to reach out."</li>
+          <li><strong>Competitive landscape awareness:</strong> "Your company is one of the few [specific business model] players in [region]. That's rare."</li>
+          <li><strong>Market position acknowledgment:</strong> "You've built something most [industry] founders can't - consistent profitability and a real team."</li>
+        </ul>
+        <p>These aren't generic. They're informed by research. But they're also not so specific that they take 10 minutes to write per email. We used AI to pull company data and insert it into templates. The result felt personal, not templated.</p>
+        <p><strong>A/B testing:</strong> We tested multiple angles - succession planning, market consolidation, strategic options, and retirement planning. Different owners respond to different triggers. We let the data tell us what worked.</p>
+        <p><strong>Follow-up sequences:</strong> We didn't just send one email. We sent 2 touches over 2 weeks, each with a different angle. Most people ignore the first email. But the second one might land differently and get them to reply.</p>
+        <p><strong>The result:</strong> 10% positive reply rate from those who engaged. That's high. Most agencies get 3-5%.</p>
+        <p><strong>Why this matters to you:</strong> You're going to get replies from people who actually want to talk. Not spam complaints. Not "remove me" responses. Actual interest. That's what you're paying for.</p>
+      </div>
+      <CaseFigure src={img('personalization-comparison')} width={1376} height={768} alt="Comparison graphic: generic cold email, mass-sent and ignored at a 3-5% reply rate, next to strategic personalization at scale using industry, competitive landscape and market position angles at a 10% reply rate." />
+
+      <h3 class="case-h3">Pillar 4: Qualification That Protects Your Team's Time</h3>
+      <div class="case-text">
+        <p>Getting a reply is only 20% of the battle. The other 80% is figuring out if this person is actually a real opportunity.</p>
+        <p><strong>The problem:</strong></p>
+        <p>Most agencies hand off every reply to the client. "Here's a lead, good luck." This wastes everyone's time. The client's team spends hours on calls with people who aren't serious, aren't ready, or aren't a fit.</p>
+        <p><strong>Our approach:</strong></p>
+        <p>We qualified every single lead before it reached the client's calendar.</p>
+        <ul>
+          <li><strong>Speed to response:</strong> We replied to interested prospects within 15 minutes. Why? Because interest is warm. If you wait 24 hours, they've moved on.</li>
+          <li><strong>Qualification questions:</strong> We asked the right questions via email first: "When are you looking to transact?" "What's your approximate annual revenue?" "Are you the sole owner?" "What's driving your interest?" These questions filtered out 60% of replies immediately.</li>
+          <li><strong>Tiered system:</strong> We segmented leads into tiers:</li>
+          <li><strong>Hot (0-6 months):</strong> Ready to move. Immediate call with the partner.</li>
+          <li><strong>Warm (6-12 months):</strong> Thinking about it. Educational drip sequence. Quarterly check-ins.</li>
+          <li><strong>Cool (12+ months):</strong> Exploratory. Long-term nurture.</li>
+          <li><strong>Not qualified:</strong> Polite disqualification. Potential referral request.</li>
+        </ul>
+        <p>Only "Hot" leads got booked on the partner's calendar. "Warm" leads went into a nurture sequence that we managed. This meant the client's team only spent time on people who were serious.</p>
+        <p><strong>The result:</strong> 80% of meetings were with businesses that fit the client's deal criteria. 10% were ready to transact within 6 months. The client's close rate was 60% higher than with their previous agency.</p>
+        <p><strong>Why this matters to you:</strong> Your team's time is valuable. You don't want to spend 30 minutes on a call with someone who's "just exploring." You want to spend 30 minutes with someone who's ready to move. Our qualification system ensures that.</p>
+      </div>
+      <CaseFigure src={img('qualification-flow')} width={1338} height={747} alt="Qualification flow: incoming leads pass a 15-minute response and qualification questions that filter out 60%, then split into hot (0-6 months), warm (6-12 months) and cool (12+ months) tiers." />
+    </section>
+
+    <section class="case-sec">
+      <h2>The Results</h2>
+      <div class="case-text">
+        <p>In 90 days, we generated <strong>27 qualified seller meetings.</strong></p>
+        <div class="card overflow-hidden mt-6">
+          <table class="w-full text-left">
+            <thead><tr class="text-sm text-muted border-b border-line"><th scope="col" class="px-5 py-3 font-normal">Metric</th><th scope="col" class="px-5 py-3 font-normal text-right">Result</th></tr></thead>
+            <tbody>
+              {results.map(([m, r], i) => (
+                <tr class:list={['border-b border-line last:border-0', i % 2 === 0 && 'bg-paper-2']}>
+                  <th scope="row" class:list={['px-5 py-3 text-ink-2', i === 0 ? 'font-semibold text-ink' : 'font-normal']}>{m}</th>
+                  <td class:list={['px-5 py-3 text-right tabular-nums', i === 0 ? 'font-semibold text-ink' : 'text-ink-2']}>{r}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <CaseFigure src={img('results-funnel')} width={1376} height={768} alt="Results funnel: 72,000 emails sent, 1.5% reply rate with 10% positive replies, 27 qualified seller meetings with 80% within deal criteria, 5 LOIs generated, 3 deals closed." />
+      <div class="case-text">
+        <p><strong>What these numbers actually mean:</strong></p>
+        <p>A 1.5% reply rate is solid for cold email. A 10% positive reply rate is excellent. But the real metric is this: <strong>80% of meetings were qualified.</strong> Most agencies would be thrilled with 40%.</p>
+        <p>The client's team spent their time on real opportunities. Not tire-kickers. Not exploratory calls that went nowhere. Real, qualified sellers.</p>
+        <figure class="case-callout">
+          <blockquote>"The quality of the meetings was what stood out the most. We spent less time on unqualified calls and more time evaluating real opportunities. This system allowed us to build a predictable, proprietary deal flow channel that we couldn't have built in-house."</blockquote>
+          <figcaption class="mt-3 text-sm text-muted">- Managing Partner</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case-sec">
+      <h2>Why This Worked (And Why It Will Work for You)</h2>
+      <div class="case-text">
+        <p>This engagement succeeded because we understood the M&A market deeply. We didn't treat it like SaaS. We didn't use generic tactics. We built a system specifically designed for how M&A firms operate.</p>
+        <p><strong>The client's role was critical:</strong></p>
+        <p>They had a clear investment thesis. They knew what a good deal looked like. They responded quickly to interested sellers. They had a professional sales process. They provided feedback that allowed us to refine messaging and targeting in real-time.</p>
+        <p>But here's the truth: <strong>most M&A firms don't have these systems in place.</strong> They're reactive, not proactive. They rely on their network. They don't have a scalable process.</p>
+        <p>If you're reading this and thinking, "We could do this ourselves," you're right. You could. But you'd need to:</p>
+        <ul>
+          <li>Build email infrastructure from scratch</li>
+          <li>Source and qualify 36,000 companies</li>
+          <li>Write and test email sequences</li>
+          <li>Manage responses and qualification</li>
+          <li>Nurture warm leads over months</li>
+        </ul>
+        <p>That's 6-9 months of work before you see results. And you'd probably make mistakes that cost you thousands in wasted outreach.</p>
+        <p>Or you can partner with someone who's done this 20+ times and knows exactly what works.</p>
+      </div>
+      <CaseFigure src={img('diy-vs-partner')} width={1376} height={768} alt="Comparison graphic: a tangled 6-9 month DIY path (build infrastructure, source 36,000 companies, write sequences, manage responses, nurture leads) next to a streamlined expert partnership with 20+ engagements." />
+    </section>
+
+    <section class="case-sec">
+      <h2>The Timeline (Realistic Expectations)</h2>
+      <div class="case-text">
+        <ul>
+          <li><strong>Weeks 1-2:</strong> Infrastructure setup, ICP refinement, message development. Your involvement: ~3 hours.</li>
+          <li><strong>Weeks 3-4:</strong> Limited volume launch, A/B testing, initial feedback. Your involvement: ~2 hours/week.</li>
+          <li><strong>Weeks 5-8:</strong> Scale sending volume, refine qualification, first meetings booked. Your involvement: ~2 hours/week.</li>
+          <li><strong>Weeks 9-12:</strong> Consistent flow of qualified meetings, growing pipeline, LOIs generated. Your involvement: ~1 hour/week.</li>
+        </ul>
+        <p>By week 12, you have a predictable, systematic acquisition channel that didn't exist before.</p>
+      </div>
+      <CaseFigure src={img('timeline')} width={1376} height={768} alt="Twelve-week timeline in four phases: weeks 1-2 setup (3 hours), weeks 3-4 limited launch (2 hours a week), weeks 5-8 scale and first meetings (2 hours a week), weeks 9-12 consistent flow and LOIs (1 hour a week), with client involvement falling as results rise." />
+    </section>
+
+    <section class="case-sec">
+      <h2>What Happens Next</h2>
+      <div class="case-text">
+        <p>If this resonates with you, the next step is simple: a 30-minute strategy call.</p>
+        <p>We'll discuss your specific deal criteria, your current pipeline, and whether cold outbound is the right move for your firm. We'll be honest about what's possible and what's not. And if it's a fit, we'll send you a custom proposal.</p>
+        <p>No pressure. No BS. Just a conversation between people who understand the M&A market.</p>
+        <p><strong>Ready to build your proprietary deal flow?</strong></p>
+        <p>Schedule your strategy call below:</p>
+      </div>
+      <a href={site.calendly} rel="noopener" class="mt-6 card p-5 flex items-center justify-between gap-4 max-w-prose hover:border-ink">
+        <span><span class="mono block">Calendly</span><span class="block mt-1 text-ink">30-Minute Discovery Call - Gio Bezhanishvili</span><span class="block mt-1 text-sm text-muted">Let's chat and determine whether we can generate you 15-20 qualified conversations with ready-to-sell/buy prospects every 90 days with our Done-For-You outbound system.</span></span>
+        <span class="text-accent shrink-0" aria-hidden="true">→</span>
+      </a>
+    </section>
+  </article>
+  <Cta />
+</Base>

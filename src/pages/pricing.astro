@@ -11,40 +11,54 @@ const rows = Array.from({ length: 10 }, (_, i) => i + 1);
 ---
 <Base {title} {description} path="/pricing/" schema={[webPage(title, '/pricing/', description), service(), breadcrumb([{ name: 'Home', path: '/' }, { name: 'Pricing', path: '/pricing/' }])]}>
   <Section>
-    <div class="grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-start">
-      <div class="max-w-prose">
-        <h1>Batches of ten, <Mark>refund for each we miss</Mark></h1>
-        <p class="mt-6 text-lg text-ink-2">You prepay a batch of ten. We size the market, run the outreach, qualify every reply and forward the owners who fit. If the batch closes short, each missing lead is refunded or credited to the next batch, your choice. No retainer, no setup fee, no contract; it runs month to month and you can stop after any batch.</p>
-      </div>
+    <div class="max-w-3xl">
+      <h1>${site.price.min} to ${site.price.max} per qualified owner, <Mark>ten at a time</Mark></h1>
+      <p class="mt-6 text-lg text-ink-2">You prepay a batch of ten. Any lead we miss is refunded or credited to the next batch. No retainer, no setup fee, no contract.</p>
+    </div>
+    <div class="price-tiles mt-10">
+      <div class="price-tile"><div class="mono">Per lead</div><div class="figure mt-2 tabular-nums">${site.price.min}-${site.price.max}</div><p class="mt-2 text-sm text-ink-2">Quoted after we size your market. The quote is the price.</p></div>
+      <div class="price-tile"><div class="mono">Per batch</div><div class="figure mt-2 tabular-nums">10 owners</div><p class="mt-2 text-sm text-ink-2">Each one replied in writing that they are open to a call.</p></div>
+      <div class="price-tile"><div class="mono">If we miss</div><div class="figure mt-2">Refund</div><p class="mt-2 text-sm text-ink-2">Or credit to the next batch, your choice. Stop after any batch.</p></div>
+    </div>
+  </Section>
+
+  <Section title="How a batch is billed" tight band>
+    <div class="grid gap-12 md:grid-cols-[1fr_1.05fr] md:items-start">
+      <ol class="space-y-6">
+        <li class="flex gap-4"><span class="mono w-8 shrink-0 pt-1">01</span><div><h3>We size your market</h3><p class="mt-1 text-ink-2">We count the owner-run companies that fit and quote a price per lead.</p></div></li>
+        <li class="flex gap-4"><span class="mono w-8 shrink-0 pt-1">02</span><div><h3>You prepay ten</h3><p class="mt-1 text-ink-2">Ten times the quoted price. Nothing else is added later.</p></div></li>
+        <li class="flex gap-4"><span class="mono w-8 shrink-0 pt-1">03</span><div><h3>We deliver, you count</h3><p class="mt-1 text-ink-2">Each owner reply is forwarded with a fit note. You see the running count.</p></div></li>
+        <li class="flex gap-4"><span class="mono w-8 shrink-0 pt-1">04</span><div><h3>Short batch, money back</h3><p class="mt-1 text-ink-2">Eight delivered means two refunded or credited. Then you decide on the next ten.</p></div></li>
+      </ol>
       <div class="card shadow-letter overflow-hidden" aria-label="Batch ledger, example"><div class="airmail" aria-hidden="true"></div><div class="p-5 md:p-6">
         <div class="flex items-center justify-between mono mb-3"><span>Batch ledger · example</span><span>10 prepaid</span></div>
         <ol class="border-t border-line">
           {rows.map((n) => (
-            <li class="flex items-center justify-between py-2.5 border-b border-line text-sm">
+            <li class="grid grid-cols-[32px_1fr_auto] items-center gap-3 py-2.5 border-b border-line text-sm">
               <span class="mono tabular-nums">{String(n).padStart(2, '0')}</span>
               {n <= 8 ? <span class="text-ink-2">Owner reply forwarded</span> : <span class="text-muted line-through">Not delivered</span>}
-              {n <= 8 ? <span class="text-ok text-xs">counted</span> : <span class="text-mark text-xs">refunded</span>}
+              {n <= 8 ? <span class="text-ok text-xs">counted</span> : <span class="text-accent text-xs">refunded</span>}
             </li>
           ))}
         </ol>
-        <p class="mt-4 text-sm text-muted">Eight delivered, two refunded or credited. The lead definition is written down before launch, so there is no argument about what counts.</p>
+        <p class="mt-4 text-sm text-muted">Eight delivered, two refunded or credited.</p>
       </div></div>
     </div>
   </Section>
 
   <Section tight>
-    <div class="grid gap-10 md:grid-cols-2">
-      <div class="max-w-prose">
-        <h2>What a lead costs</h2>
-        <p class="mt-3 text-ink-2">Between ${site.price.min} and ${site.price.max} per lead. The price depends on the type of search (sell-side owner outreach, buy-side thesis search, add-on search) and how large the reachable market is. We quote after sizing, and the quote is the price; nothing is added later.</p>
+    <div class="grid gap-10 md:grid-cols-3">
+      <div>
+        <h3>What changes the price</h3>
+        <p class="mt-2 text-ink-2">The type of search (sell-side, buy-side thesis, add-on) and how many owners fit. Smaller markets cost more per lead.</p>
       </div>
-      <div class="max-w-prose">
-        <h2>What is not a lead</h2>
-        <p class="mt-3 text-ink-2">An out-of-office, a "remove me", a broker, a company outside the written criteria, or a reply we cannot verify as the owner. Those are never counted and never charged.</p>
+      <div>
+        <h3>What never counts</h3>
+        <p class="mt-2 text-ink-2">An out-of-office, a "remove me", a broker, a company outside your criteria, or a reply we cannot verify as the owner.</p>
       </div>
-      <div class="max-w-prose md:col-span-2">
-        <h2>Why per lead and not a success fee</h2>
-        <p class="mt-3 text-ink-2">We are not a licensed broker-dealer and do not take a share of your fee or a percentage of the transaction. Finder's fees tied to a deal closing are regulated activity in the US; charging a flat price per qualified conversation keeps you and us on the right side of that line and keeps our incentive on quality, not on pushing a deal.</p>
+      <div>
+        <h3>Why not a success fee</h3>
+        <p class="mt-2 text-ink-2">We are not a licensed broker-dealer. Finder's fees tied to a deal closing are regulated activity in the US, so we charge a flat price per qualified conversation.</p>
       </div>
     </div>
   </Section>

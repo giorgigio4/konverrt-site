@@ -1,0 +1,9 @@
+---
+// One deck visual on a case-study page. Images live in public/case/<case>/.
+interface Props { src: string; alt: string; width: number; height: number; caption?: string }
+const { src, alt, width, height, caption } = Astro.props;
+---
+<figure class="my-10">
+  <img {src} {alt} {width} {height} loading="lazy" decoding="async" class="w-full h-auto rounded-md border border-line bg-white" />
+  {caption && <figcaption class="mt-3 text-sm text-muted">{caption}</figcaption>}
+</figure>

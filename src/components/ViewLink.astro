@@ -1,0 +1,6 @@
+---
+// Opens a redacted reply in the same-tab viewer (Base.astro). Plain link fallback without JS.
+interface Props { img: string; alt?: string; class?: string }
+const { img, alt = 'Redacted owner reply', class: cls = 'mono whitespace-nowrap hover:text-accent' } = Astro.props;
+---
+<a href={img} data-view={img} data-alt={alt} class={cls}>View the email</a>
