@@ -257,3 +257,9 @@ html:not([data-mode="light"]) .vsl-play { background: var(--color-ink); color: #
 .mode-btn:hover { border-color: var(--color-ink); }
 .mode-btn .i-sun { display: none; } .mode-btn .i-moon { display: block; }
 html:not([data-mode="light"]) .mode-btn .i-sun { display: block; } html:not([data-mode="light"]) .mode-btn .i-moon { display: none; }
+
+/* FAQ topic chips and group headings */
+.faq-chip { display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--color-line-2); font-size: 14px; color: var(--color-ink); }
+.faq-chip:hover { border-color: var(--color-ink); }
+.faq-group-h { font-size: 26px; line-height: 32px; }
+@media (min-width: 768px) { .faq-group-h { font-size: 30px; line-height: 36px; } }

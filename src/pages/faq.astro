@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import Section from '../components/Section.astro';
 import FaqList from '../components/FaqList.astro';
 import Cta from '../components/Cta.astro';
-import { faqs } from '../data/faq';
+import { faqs, faqGroups } from '../data/faq';
 import { faqPage, webPage, breadcrumb } from '../lib/schema';
 const title = 'FAQ - questions M&A advisors and PE firms ask us';
 const description = 'Price, refund, what counts as a lead, who sends, handoff, compliance, exclusivity, data ownership.';
@@ -12,9 +12,21 @@ const description = 'Price, refund, what counts as a lead, who sends, handoff, c
   <Section>
     <div class="max-w-prose">
       <h1>Questions M&A advisors and PE firms ask us</h1>
-      <p class="mt-6 text-lg text-ink-2">The {faqs.length} questions we hear most on first calls and over email, answered the way we answer them there.</p>
+      <p class="mt-6 text-lg text-ink-2">The {faqs.length} questions we hear most on first calls and over email, answered the way we answer them there. Click a question to see the answer.</p>
     </div>
-    <div class="mt-12 max-w-3xl"><FaqList items={faqs} open /></div>
+    <nav class="mt-8 flex flex-wrap gap-2" aria-label="FAQ topics">
+      {faqGroups.map((g) => (
+        <a href={`#${g.id}`} class="faq-chip">{g.label} <span class="text-muted tabular-nums">{faqs.filter((f) => f.g === g.id).length}</span></a>
+      ))}
+    </nav>
+    <div class="mt-12 max-w-3xl space-y-14">
+      {faqGroups.map((g) => (
+        <section id={g.id} class="scroll-mt-24" aria-labelledby={`${g.id}-h`}>
+          <h2 id={`${g.id}-h`} class="faq-group-h">{g.label}</h2>
+          <div class="mt-4"><FaqList items={faqs.filter((f) => f.g === g.id)} /></div>
+        </section>
+      ))}
+    </div>
   </Section>
   <Cta />
 </Base>
