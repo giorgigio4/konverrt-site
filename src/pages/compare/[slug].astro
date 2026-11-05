@@ -6,7 +6,7 @@ import { compares } from '../../data/compare';
 import { webPage, breadcrumb } from '../../lib/schema';
 export function getStaticPaths() { return compares.map((c) => ({ params: { slug: c.slug }, props: { c } })); }
 const { c } = Astro.props;
-const title = `Konverrt vs ${c.name}`;
+const title = `Konverrt vs ${c.name}: deal sourcing compared, with real prices`;
 const path = `/compare/${c.slug}/`;
 ---
 <Base {title} description={c.description} {path} schema={[webPage(title, path, c.description), breadcrumb([{ name: 'Home', path: '/' }, { name: 'Compare', path: '/compare/' }, { name: c.name, path }])]}>

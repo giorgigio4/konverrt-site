@@ -4,7 +4,7 @@ import Section from '../components/Section.astro';
 import Cta from '../components/Cta.astro';
 import { site } from '../data/site';
 import { webPage, breadcrumb } from '../lib/schema';
-const title = 'About Konverrt';
+const title = 'About Konverrt: owner outreach for M&A advisors and PE firms';
 const description = 'Who runs it, what we send, what we refuse to do.';
 ---
 <Base {title} {description} path="/about/" schema={[webPage(title, '/about/', description), breadcrumb([{ name: 'Home', path: '/' }, { name: 'About', path: '/about/' }])]}>
