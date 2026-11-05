@@ -10,7 +10,7 @@ const rules = [
   [/animate-(pulse|ping|spin|bounce)|animation-iteration-count:\s*infinite/, 'infinite animation'],
   [/transition-all|transition:\s*all\b/, 'transition-all'],
   [/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u, 'emoji'],
-  [/bg-clip-text|text-transparent|linear-gradient|radial-gradient/, 'gradient'],
+  [/bg-clip-text|text-transparent|radial-gradient|(?<!mask-image:\s)(?<!-webkit-mask-image:\s)linear-gradient/, 'gradient'],
   [/\u2014/, 'em dash'],
   [/font-style:\s*italic|\bitalic\b/, 'italic'],
   [/rounded-full/, 'rounded-full'],
