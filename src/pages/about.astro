@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import Cta from '../components/Cta.astro';
+import { site } from '../data/site';
+import { webPage, breadcrumb } from '../lib/schema';
+const title = 'About Konverrt';
+const description = 'Who runs it, what we send, what we refuse to do.';
+---
+<Base {title} {description} path="/about/" schema={[webPage(title, '/about/', description), breadcrumb([{ name: 'Home', path: '/' }, { name: 'About', path: '/about/' }])]}>
+  <Section>
+    <div class="max-w-prose prose">
+      <h1>Who sends the emails</h1>
+      <p class="mt-6 text-lg text-ink-2">Konverrt is run by {site.founderShort}. A small team researches the market, writes the copy, and reads every reply. The same people you talk to on the first call.</p>
+      <h2 class="mt-12">What we send</h2>
+      <p class="mt-3 text-ink-2">Short, plain emails to business owners about their specific company, from our own aged domains, at human volumes. Every word approved by the client before it goes out.</p>
+      <h2 class="mt-10">What we refuse to do</h2>
+      <ul class="mt-3 space-y-2 text-ink-2 list-disc pl-5">
+        <li>Count a "remove me", a broker or an out-of-office as a lead</li>
+        <li>Send the same owner to two clients</li>
+        <li>Take a success fee or a share of a transaction</li>
+        <li>Send from a client's own domain unless they ask for a dedicated estate</li>
+        <li>Make valuation claims in outreach copy</li>
+      </ul>
+      <h2 class="mt-10">Elsewhere</h2>
+      <p class="mt-3 text-ink-2">Gio writes and records about cold email for M&A on <a class="link" href={site.youtube} rel="me noopener">YouTube</a>.</p>
+      <p class="mt-10 mono">{site.name} · Registration number {site.regNumber} · {site.address.street}, {site.address.city}, {site.address.country} · <a href={`mailto:${site.email}`}>{site.email}</a></p>
+    </div>
+  </Section>
+  <Cta />
+</Base>

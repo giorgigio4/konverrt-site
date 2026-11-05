@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import FaqList from '../components/FaqList.astro';
+import Cta from '../components/Cta.astro';
+import { faqs } from '../data/faq';
+import { faqPage, webPage, breadcrumb } from '../lib/schema';
+const title = 'FAQ - questions M&A advisors and PE firms ask us';
+const description = 'Price, refund, what counts as a lead, who sends, handoff, compliance, exclusivity, data ownership.';
+---
+<Base {title} {description} path="/faq/" schema={[webPage(title, '/faq/', description), faqPage(faqs), breadcrumb([{ name: 'Home', path: '/' }, { name: 'FAQ', path: '/faq/' }])]}>
+  <Section>
+    <div class="max-w-prose">
+      <h1>Questions M&A advisors and PE firms ask us</h1>
+      <p class="mt-6 text-lg text-ink-2">The {faqs.length} questions we hear most on first calls and over email, answered the way we answer them there.</p>
+    </div>
+    <div class="mt-12 max-w-3xl"><FaqList items={faqs} open /></div>
+  </Section>
+  <Cta />
+</Base>

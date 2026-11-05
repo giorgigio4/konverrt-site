@@ -1,0 +1,23 @@
+---
+// The hero visual: one real redacted reply rendered as the email the client receives.
+import ReplyGlyph from './ReplyGlyph.astro';
+interface Props { note: string; quote: string; who: string; img: string }
+const { note, quote, who, img } = Astro.props;
+---
+<div class="card shadow-ink overflow-hidden">
+  <div class="px-5 py-3 border-b border-line flex items-center justify-between gap-4">
+    <div class="mono">Fwd: owner reply · fits the mandate</div>
+    <div class="mono">to: you</div>
+  </div>
+  <div class="px-5 py-4 border-b border-line text-sm text-ink-2">{note}</div>
+  <div class="px-5 py-5 bg-paper-2/60">
+    <div class="flex gap-3">
+      <span class="mt-1"><ReplyGlyph /></span>
+      <p class="text-base">{quote}</p>
+    </div>
+    <div class="mt-4 flex items-center justify-between gap-4 text-sm text-muted">
+      <span>{who}</span>
+      <a href={img} class="mono hover:text-accent" target="_blank" rel="noopener">View the email</a>
+    </div>
+  </div>
+</div>

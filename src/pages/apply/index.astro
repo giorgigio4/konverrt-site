@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import Section from '../../components/Section.astro';
+import { webPage, breadcrumb } from '../../lib/schema';
+const title = 'Apply for a pilot batch';
+const description = 'Four questions, two minutes. We size your market before we quote.';
+---
+<Base {title} {description} path="/apply/" schema={[webPage(title, '/apply/', description), breadcrumb([{ name: 'Home', path: '/' }, { name: 'Apply', path: '/apply/' }])]}>
+  <Section>
+    <div class="grid gap-12 md:grid-cols-[1fr_1.1fr]">
+      <div class="max-w-prose">
+        <h1>Apply for a pilot batch</h1>
+        <p class="mt-6 text-lg text-ink-2">Four questions, two minutes. We reply within one business day with a market size and a quote.</p>
+        <ol class="mt-8 space-y-3 text-sm text-ink-2 border-t border-line">
+          <li class="pt-3 flex gap-3"><span class="mono">01</span>We size your market (one to two days)</li>
+          <li class="pt-3 flex gap-3"><span class="mono">02</span>You get a number and a quote by email</li>
+          <li class="pt-3 flex gap-3"><span class="mono">03</span>If it fits, we go through the mandate together on a call</li>
+        </ol>
+      </div>
+      <form method="post" action="/api/apply" class="card p-6 md:p-8 space-y-5" id="apply-form">
+        <input type="text" name="website_url" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+        <div>
+          <label for="firm" class="block text-sm font-medium">Firm and website</label>
+          <input id="firm" name="firm" required class="mt-1.5 w-full h-11 px-3 rounded-sm border border-line-2 bg-white focus:border-ink focus:outline-none" placeholder="Firm name, firm.com" />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium">Work email</label>
+          <input id="email" name="email" type="email" required class="mt-1.5 w-full h-11 px-3 rounded-sm border border-line-2 bg-white focus:border-ink focus:outline-none" placeholder="you@firm.com" />
+        </div>
+        <div>
+          <label for="type" class="block text-sm font-medium">What you are looking for</label>
+          <select id="type" name="type" required class="mt-1.5 w-full h-11 px-3 rounded-sm border border-line-2 bg-white focus:border-ink focus:outline-none">
+            <option value="">Choose one</option>
+            <option>Sell-side: owners open to a transition</option>
+            <option>Buy-side: PE platform or add-on search</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="mandate" class="block text-sm font-medium">Your mandate in one paragraph</label>
+          <textarea id="mandate" name="mandate" required rows="4" class="mt-1.5 w-full px-3 py-2.5 rounded-sm border border-line-2 bg-white focus:border-ink focus:outline-none" placeholder="Industry, size band, geography, ownership"></textarea>
+        </div>
+        <div>
+          <label for="source" class="block text-sm font-medium">How did you find us</label>
+          <select id="source" name="source" required class="mt-1.5 w-full h-11 px-3 rounded-sm border border-line-2 bg-white focus:border-ink focus:outline-none">
+            <option value="">Choose one</option>
+            <option>An AI assistant (ChatGPT, Perplexity, Claude, Gemini)</option>
+            <option>Google or Bing</option>
+            <option>Referral</option>
+            <option>LinkedIn</option>
+            <option>YouTube</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary w-full justify-center">Send the application</button>
+        <p class="text-xs text-muted">We reply from hello@konverrt.com. No newsletter, no sequence.</p>
+      </form>
+    </div>
+  </Section>
+</Base>

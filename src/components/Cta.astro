@@ -1,0 +1,11 @@
+---
+import { cta } from '../data/site';
+interface Props { title?: string; body?: string }
+const { title = 'Apply for a pilot batch', body = 'Four questions, two minutes. We size your market before we quote, so the first reply you get from us is a number, not a pitch.' } = Astro.props;
+---
+<section class="mx-auto max-w-6xl px-5 py-16">
+  <div class="rule pt-10 grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+    <div class="max-w-prose"><h2>{title}</h2><p class="mt-3 text-muted">{body}</p></div>
+    <a href={cta.href} class="btn btn-primary">{cta.label}</a>
+  </div>
+</section>

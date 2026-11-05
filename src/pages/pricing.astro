@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import Cta from '../components/Cta.astro';
+import { site } from '../data/site';
+import { service, webPage, breadcrumb } from '../lib/schema';
+const title = 'Pricing - batches of 10, refund for each we miss';
+const description = 'Buy interested owner conversations in batches of 10. $350 to $700 per lead by search. No retainer, no contract.';
+const rows = Array.from({ length: 10 }, (_, i) => i + 1);
+---
+<Base {title} {description} path="/pricing/" schema={[webPage(title, '/pricing/', description), service(), breadcrumb([{ name: 'Home', path: '/' }, { name: 'Pricing', path: '/pricing/' }])]}>
+  <Section>
+    <div class="grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-start">
+      <div class="max-w-prose">
+        <h1>Batches of ten, refund for each we miss</h1>
+        <p class="mt-6 text-lg text-ink-2">You prepay a batch of ten. We size the market, run the outreach, qualify every reply and forward the owners who fit. If the batch closes short, each missing lead is refunded or credited to the next batch, your choice. No retainer, no setup fee, no contract; it runs month to month and you can stop after any batch.</p>
+      </div>
+      <div class="card shadow-ink p-5 md:p-6" aria-label="Batch ledger, example">
+        <div class="flex items-center justify-between mono mb-3"><span>Batch ledger · example</span><span>10 prepaid</span></div>
+        <ol class="border-t border-line">
+          {rows.map((n) => (
+            <li class="flex items-center justify-between py-2.5 border-b border-line text-sm">
+              <span class="mono tabular-nums">{String(n).padStart(2, '0')}</span>
+              {n <= 8 ? <span class="text-ink-2">Owner reply forwarded</span> : <span class="text-muted">Not delivered</span>}
+              {n <= 8 ? <span class="text-ok text-xs">counted</span> : <span class="text-accent text-xs">refunded</span>}
+            </li>
+          ))}
+        </ol>
+        <p class="mt-4 text-sm text-muted">Eight delivered, two refunded or credited. The lead definition is written down before launch, so there is no argument about what counts.</p>
+      </div>
+    </div>
+  </Section>
+
+  <Section tight>
+    <div class="grid gap-10 md:grid-cols-2">
+      <div class="max-w-prose">
+        <h2>What a lead costs</h2>
+        <p class="mt-3 text-ink-2">Between ${site.price.min} and ${site.price.max} per lead. The price depends on the type of search (sell-side owner outreach, buy-side thesis search, add-on search) and how large the reachable market is. We quote after sizing, and the quote is the price; nothing is added later.</p>
+      </div>
+      <div class="max-w-prose">
+        <h2>What is not a lead</h2>
+        <p class="mt-3 text-ink-2">An out-of-office, a "remove me", a broker, a company outside the written criteria, or a reply we cannot verify as the owner. Those are never counted and never charged.</p>
+      </div>
+      <div class="max-w-prose md:col-span-2">
+        <h2>Why per lead and not a success fee</h2>
+        <p class="mt-3 text-ink-2">We are not a licensed broker-dealer and do not take a share of your fee or a percentage of the transaction. Finder's fees tied to a deal closing are regulated activity in the US; charging a flat price per qualified conversation keeps you and us on the right side of that line and keeps our incentive on quality, not on pushing a deal.</p>
+      </div>
+    </div>
+  </Section>
+
+  <Section title="How it compares" tight>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm border-t border-line">
+        <thead><tr class="text-left text-muted"><th class="py-3 pr-4 font-medium"></th><th class="py-3 pr-4 font-medium">Konverrt</th><th class="py-3 font-medium">Typical retainer vendor</th></tr></thead>
+        <tbody class="divide-y divide-line border-y border-line">
+          <tr><td class="py-3 pr-4 text-muted">You pay for</td><td class="py-3 pr-4">Owner conversations, ten at a time</td><td class="py-3">A month of activity</td></tr>
+          <tr><td class="py-3 pr-4 text-muted">If nothing comes</td><td class="py-3 pr-4">Refund or credit per lead</td><td class="py-3">The month is spent</td></tr>
+          <tr><td class="py-3 pr-4 text-muted">Minimum term</td><td class="py-3 pr-4">One batch</td><td class="py-3">90 days or more</td></tr>
+          <tr><td class="py-3 pr-4 text-muted">Price published</td><td class="py-3 pr-4">Yes, by range</td><td class="py-3">Sometimes</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-6"><a href="/compare/" class="link text-sm">Named comparisons: DealSource Systems, CAPTARGET, Axial</a></p>
+  </Section>
+  <Cta />
+</Base>

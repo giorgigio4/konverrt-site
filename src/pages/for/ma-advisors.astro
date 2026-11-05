@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import Section from '../../components/Section.astro';
+import ReplyQuote from '../../components/ReplyQuote.astro';
+import Cta from '../../components/Cta.astro';
+import { replies } from '../../data/replies';
+import { webPage, breadcrumb, service } from '../../lib/schema';
+const title = 'Deal origination for sell-side M&A advisors';
+const description = 'Owners of $2M to $50M companies who replied that they are open to a conversation about selling. Batches of 10, per-lead refund, no retainer.';
+const strip = [4, 5, 1].map((n) => replies.find((r) => r.n === n)!);
+---
+<Base {title} {description} path="/for/ma-advisors/" schema={[webPage(title, '/for/ma-advisors/', description), service(), breadcrumb([{ name: 'Home', path: '/' }, { name: 'For M&A advisors', path: '/for/ma-advisors/' }])]}>
+  <Section>
+    <div class="max-w-prose">
+      <h1>Deal origination for sell-side M&A advisors</h1>
+      <p class="mt-6 text-lg text-ink-2">Owners of $2M to $50M companies, in your geography and industries, who replied that they are open to a conversation about a transition. You get the thread and a fit note; you run the meeting.</p>
+    </div>
+    <div class="mt-12 grid gap-10 md:grid-cols-2">
+      <div class="max-w-prose">
+        <h2>Why advisors buy batches</h2>
+        <p class="mt-3 text-ink-2">Referrals are lumpy. A good quarter is followed by a quiet one, and the quiet one is when the pipeline should have been built. A batch of ten is a known quantity: prepaid, defined in writing, refunded where it falls short, and repeatable whenever the pipeline needs it. No retainer sits on the books in a quiet month.</p>
+      </div>
+      <div class="max-w-prose">
+        <h2>The line owners answer</h2>
+        <p class="mt-3 text-ink-2">The emails that produce the most interested replies do not pitch a sale. They open by saying what the advisor is not: not a buyer, not a broker with a listing. They talk about a transition in the owner's own words, and they ask one plain question. Owners of $2M to $50M companies answer that; they do not answer "we have buyers for your business".</p>
+      </div>
+      <div class="max-w-prose">
+        <h2>What you get in your inbox</h2>
+        <p class="mt-3 text-ink-2">The owner's reply, the thread that produced it, and one line on why the company fits: who owns it, what it does, roughly how big it is, what they said. Misses are declined on your behalf. "Not now" replies are logged with a date and are yours to follow up.</p>
+      </div>
+      <div class="max-w-prose">
+        <h2>If you are a FINRA or state-registered firm</h2>
+        <p class="mt-3 text-ink-2">No valuation claims, no promises of outcome, no numbers in the copy. Every email is approved by your compliance reviewer before it sends, and nothing changes after approval without you seeing it. We have run outreach for registered firms under exactly this rule.</p>
+      </div>
+    </div>
+  </Section>
+  <Section title="What owners wrote back to sell-side outreach" tight>
+    <div class="grid gap-4 md:grid-cols-3">{strip.map((r) => <ReplyQuote quote={r.quote} who={r.who} img={r.img} />)}</div>
+    <p class="mt-6"><a href="/results/" class="link text-sm">All replies and two sell-side case studies</a></p>
+  </Section>
+  <Cta />
+</Base>

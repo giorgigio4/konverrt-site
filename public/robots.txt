@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /apply/thanks/
+Disallow: /api/
+
+Sitemap: https://konverrt.com/sitemap-index.xml

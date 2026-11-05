@@ -1,0 +1,56 @@
+export type Compare = { slug: string; name: string; checked: string; summary: string; description: string; intro: string; rows: [string, string, string][]; pickThem: string; pickUs: string };
+
+export const compares: Compare[] = [
+  {
+    slug: 'konverrt-vs-dealsource-systems', name: 'DealSource Systems', checked: '5 November 2026',
+    summary: 'Per-lead batches with refund vs a flat $4,000 a month retainer. Same market, different risk.',
+    description: 'Per-lead batches with refund vs a $4,000 a month flat retainer. Same market, different risk.',
+    intro: 'Both run cold outreach to business owners for M&A advisors and PE firms, buy side and sell side. The difference is what you pay for: DealSource sells months of a running system; we sell owner conversations, ten at a time, and refund the ones we miss.',
+    rows: [
+      ['You pay for', 'Owner conversations, in prepaid batches of ten', '"a flat $4,000 a month for a single defined thesis, run end to end"'],
+      ['Price', '$350 to $700 per lead, quoted after sizing', '"Flat $4,000 a month · 90-day minimum · no success fee"; multi-thesis "$8,000 per month and above"'],
+      ['Minimum', 'One batch', '"90 days, which is roughly $12,000"'],
+      ['If it falls short', 'Each missing lead refunded or credited', '"We charge from the start of the mandate, and if the first month produces nothing you have still paid for it."'],
+      ['Success fee', 'None', '"no success fee"'],
+      ['Exclusivity', 'Priced per search on request; never the same owner to two clients', '"We make no exclusivity promise and have no such lock."'],
+      ['Sending domains', 'Ours, aged and warm; yours only as a dedicated estate', 'Included in the monthly fee'],
+      ['Buy and sell side', 'Both', 'Both'],
+    ],
+    pickThem: 'You want a monthly programme with a published method and a published median, and you are comfortable spending about $12,000 before judging it. They publish their own numbers, including the unflattering ones, and that is worth something.',
+    pickUs: 'You want to pay for conversations, not months. You would rather have ten owner replies with a refund on each miss than a running system with a 90-day minimum, and you want the price range before the first call.',
+  },
+  {
+    slug: 'konverrt-vs-captarget', name: 'CAPTARGET', checked: '5 November 2026',
+    summary: 'Per-lead batches with refund vs a monthly subscription under your own brand.',
+    description: 'Per-lead batches with refund vs a flat monthly subscription. Both without success fees.',
+    intro: 'CAPTARGET (now part of SourceCo) sells outsourced deal origination to institutional buyers on monthly packages, run under the client\'s own brand. We sell owner conversations in batches of ten from our own domains. Both of us refuse success fees.',
+    rows: [
+      ['Who it is for', 'M&A advisors and lower-middle-market PE, buy and sell side', '"institutional buyers of all sizes and types": PE, corporate development, family offices, independent sponsors, search funds'],
+      ['You pay for', 'Owner conversations, in prepaid batches of ten', '"Flat monthly subscriptions packages (on-market, off-market, or both)"'],
+      ['Price', '$350 to $700 per lead, published', 'Not published; the enquiry form offers "$2,500+ $5,000+ $10000+ Custom"'],
+      ['If it falls short', 'Each missing lead refunded or credited', '"Do you guarantee leads or closed deals? No. We publish ranges, not promises"'],
+      ['Success fee', 'None', '"No success fees, ever."'],
+      ['Exclusivity', 'Priced per search on request; never the same owner to two clients', '"No success fees. No exclusivity."'],
+      ['Sending domains', 'Ours, aged and warm; yours only as a dedicated estate', '"New email address using your domain", "IT support or DNS access required for setup"'],
+      ['Term', 'One batch, month to month', '"Both month-to-month and annual packages are available"'],
+    ],
+    pickThem: 'You are a buy-side institution that wants outreach, calling and banker coverage under your own brand, on a subscription, and you have the DNS access and the budget for it.',
+    pickUs: 'You want a published per-lead price with a refund on each miss, you do not want cold outreach running from your own domain, or you are a sell-side advisor, which is not who they serve.',
+  },
+  {
+    slug: 'konverrt-vs-axial', name: 'Axial', checked: '5 November 2026',
+    summary: 'Owner-direct outreach vs a deal marketplace. Not substitutes; here is when each fits.',
+    description: 'Owner-direct outreach vs a deal marketplace. They are not substitutes; here is when each fits.',
+    intro: 'Axial is a private deal network: advisors list deals, investors receive them. We reach owners who have not listed anything and have not spoken to an advisor. Many firms use both; they do different jobs.',
+    rows: [
+      ['What it is', 'Cold outreach to business owners on your behalf', '"a private deal network for business owners, M&A advisors, and investors in the North American lower middle market"'],
+      ['Where deals come from', 'Owners who reply to an email about their specific company', '"12,000+ opportunities brought to market each year" from member advisors'],
+      ['Competition for the deal', 'One owner, one introduction', 'Listed deals go to "5,000+ active acquirers and investors"'],
+      ['You pay for', 'Owner conversations, in prepaid batches of ten', 'Membership; pricing not published'],
+      ['Size band', '$2M to $50M revenue, set per mandate', '"$5M–$250M in revenue and $500K–$25M in EBITDA"'],
+      ['Success fee', 'None', 'Not published'],
+    ],
+    pickThem: 'You are an advisor with a mandate to market and want it in front of thousands of buyers, or an investor who wants to see on-market deal flow as it is listed.',
+    pickUs: 'You want conversations with owners before they are on the market, with no other buyer in the room, and you want to pay per conversation.',
+  },
+];

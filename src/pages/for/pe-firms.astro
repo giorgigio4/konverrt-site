@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import Section from '../../components/Section.astro';
+import ReplyQuote from '../../components/ReplyQuote.astro';
+import Cta from '../../components/Cta.astro';
+import { replies } from '../../data/replies';
+import { webPage, breadcrumb, service } from '../../lib/schema';
+const title = 'Proprietary deal sourcing for lower-middle-market PE';
+const description = 'Owner-run companies that fit your thesis and said yes to a call. Platform and add-on searches. Batches of 10, per-lead refund, no retainer.';
+const strip = [11, 9, 14].map((n) => replies.find((r) => r.n === n)!);
+---
+<Base {title} {description} path="/for/pe-firms/" schema={[webPage(title, '/for/pe-firms/', description), service(), breadcrumb([{ name: 'Home', path: '/' }, { name: 'For PE firms', path: '/for/pe-firms/' }])]}>
+  <Section>
+    <div class="max-w-prose">
+      <h1>Proprietary deal sourcing for lower-middle-market PE</h1>
+      <p class="mt-6 text-lg text-ink-2">Owner-run companies that fit your thesis, platform or add-on, whose owner said yes to a call. We name your fund or keep it blind, your choice. Owners reply to a specific, named interest in their company, not to a generic "we buy businesses" email.</p>
+    </div>
+    <div class="mt-12 grid gap-10 md:grid-cols-2">
+      <div class="max-w-prose">
+        <h2>Who we reach</h2>
+        <p class="mt-3 text-ink-2">Private equity firms, independent sponsors, search funds and family offices with a written thesis. We build the universe from the thesis, not from a database we already own, and tell you how many owner-run companies fit before you buy a batch.</p>
+      </div>
+      <div class="max-w-prose">
+        <h2>Platform and add-on</h2>
+        <p class="mt-3 text-ink-2">A platform search runs across one thesis and one size band. An add-on search runs from a portfolio company's own map: geographies to fill, capabilities to add, competitors to fold in. Both are priced per lead after sizing.</p>
+      </div>
+      <div class="max-w-prose">
+        <h2>Named or blind</h2>
+        <p class="mt-3 text-ink-2">Some funds want their name on the first email because it opens doors. Some want the search blind until the owner has agreed to a conversation. Either way the sending domains are ours, so nothing touches your firm's reputation.</p>
+      </div>
+      <div class="max-w-prose">
+        <h2>What a lead looks like</h2>
+        <p class="mt-3 text-ink-2">The owner's reply, the thread, and a fit note with ownership, what the company does, estimated size and what the owner said. An owner who writes "not for sale, but I would entertain a reasonable offer" counts; an owner who writes "remove me" never does.</p>
+      </div>
+    </div>
+  </Section>
+  <Section title="What owners wrote back to buy-side searches" tight>
+    <div class="grid gap-4 md:grid-cols-3">{strip.map((r) => <ReplyQuote quote={r.quote} who={r.who} img={r.img} />)}</div>
+    <p class="mt-6"><a href="/results/#buy-side" class="link text-sm">All buy-side replies</a></p>
+  </Section>
+  <Cta />
+</Base>

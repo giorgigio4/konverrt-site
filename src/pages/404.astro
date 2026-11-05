@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+---
+<Base title="Page not found" description="That page does not exist." path="/404/" noindex>
+  <Section>
+    <div class="max-w-prose">
+      <h1>That page is not here</h1>
+      <p class="mt-6 text-lg text-ink-2">Try <a href="/" class="link">the home page</a>, <a href="/results/" class="link">the replies</a> or <a href="/pricing/" class="link">pricing</a>.</p>
+    </div>
+  </Section>
+</Base>

@@ -1,0 +1,72 @@
+---
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import ReplyQuote from '../components/ReplyQuote.astro';
+import ReplyGlyph from '../components/ReplyGlyph.astro';
+import Cta from '../components/Cta.astro';
+import { replies, testimonials } from '../data/replies';
+import { webPage, breadcrumb } from '../lib/schema';
+const title = 'Results - real owner replies and two case studies';
+const description = 'Redacted replies from business owners, campaign figures and two sell-side case studies.';
+const sell = replies.filter((r) => r.side === 'sell');
+const buy = replies.filter((r) => r.side === 'buy');
+---
+<Base {title} {description} path="/results/" schema={[webPage(title, '/results/', description), breadcrumb([{ name: 'Home', path: '/' }, { name: 'Results', path: '/results/' }])]}>
+  <Section>
+    <div class="max-w-prose">
+      <h1>What owners wrote back</h1>
+      <p class="mt-6 text-lg text-ink-2">Every quote below is an unedited reply from a business owner to an email we sent for a client. Names, companies and anything that identifies them are removed; the words are theirs. Each one links to the redacted email.</p>
+    </div>
+  </Section>
+
+  <Section title="Sell-side outreach" intro="Owners of $2M to $50M companies, contacted for an M&A advisory firm. Industry and state shown where known." tight id="sell-side">
+    <div class="grid gap-4 md:grid-cols-2">
+      {sell.map((r) => <ReplyQuote quote={r.quote} who={r.who} img={r.img} />)}
+    </div>
+  </Section>
+
+  <Section title="Buy-side search" intro="Owner-run companies that fit a buyer's thesis. Industry and size shown; location withheld to protect the search." tight id="buy-side">
+    <div class="grid gap-4 md:grid-cols-2">
+      {buy.map((r) => <ReplyQuote quote={r.quote} who={r.who} img={r.img} />)}
+    </div>
+  </Section>
+
+  <Section title="Two case studies" id="case-studies">
+    <div class="grid gap-6 md:grid-cols-2">
+      <article class="card p-6 md:p-8" id="midwest-ma-advisor">
+        <p class="mono">Sell-side · Midwest</p>
+        <h3 class="mt-3 font-display text-xl font-medium">A $19M divestiture from cold email, for a 19-year M&A advisory firm</h3>
+        <p class="mt-4 text-ink-2">A CVA-certified advisory firm targeting $5M to $25M owner-run companies in manufacturing, construction and trades across two Midwest states. No referrals, no ad spend.</p>
+        <ul class="mt-5 space-y-2 text-ink-2">
+          <li class="flex gap-3"><span class="mono w-20 shrink-0 tabular-nums">8,500</span>companies researched, 16,000+ owners reached</li>
+          <li class="flex gap-3"><span class="mono w-20 shrink-0 tabular-nums">3.3%</span>reply rate from owners</li>
+          <li class="flex gap-3"><span class="mono w-20 shrink-0 tabular-nums">4+</span>in-person meetings with owner-operators of $3M to $20M companies</li>
+          <li class="flex gap-3"><span class="mono w-20 shrink-0 tabular-nums">$19M+</span>manufacturer, segment divestiture moving toward engagement inside 90 days</li>
+        </ul>
+      </article>
+      <article class="card p-6 md:p-8" id="new-york-ma-advisory">
+        <p class="mono">Sell-side · New York</p>
+        <h3 class="mt-3 font-display text-xl font-medium">27 meetings, 5 LOIs, 3 closed, for a New York M&A advisory firm</h3>
+        <p class="mt-4 text-ink-2">A 47-person boutique advisory working $5M to $25M revenue companies, previously over 80% referral-sourced. What the client reported from the first engagement. The figures are the client's; we carry them as reported.</p>
+        <ul class="mt-5 space-y-2 text-ink-2">
+          <li class="flex gap-3"><span class="mono w-20 shrink-0 tabular-nums">36,000</span>companies sourced and qualified before a single email</li>
+          <li class="flex gap-3"><span class="mono w-20 shrink-0 tabular-nums">27</span>qualified seller meetings in 90 days</li>
+          <li class="flex gap-3"><span class="mono w-20 shrink-0 tabular-nums">80%</span>of meetings fit the deal criteria</li>
+          <li class="flex gap-3"><span class="mono w-20 shrink-0 tabular-nums">5 / 3</span>LOIs signed / deals closed</li>
+        </ul>
+      </article>
+    </div>
+  </Section>
+
+  <Section title="What clients said" tight>
+    <div class="grid gap-4 md:grid-cols-3">
+      {testimonials.map((t) => (
+        <figure class="card p-5 flex flex-col gap-4">
+          <blockquote class="text-ink">{t.quote}</blockquote>
+          <figcaption class="mt-auto text-sm text-muted">{t.who} · {t.role}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </Section>
+  <Cta />
+</Base>

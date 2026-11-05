@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import Section from '../../components/Section.astro';
+import Cta from '../../components/Cta.astro';
+import { compares } from '../../data/compare';
+import { webPage, breadcrumb } from '../../lib/schema';
+const title = 'Compare Konverrt with other deal origination vendors';
+const description = 'Konverrt vs DealSource Systems, CAPTARGET and Axial: what each sells, how each charges, when each fits.';
+---
+<Base {title} {description} path="/compare/" schema={[webPage(title, '/compare/', description), breadcrumb([{ name: 'Home', path: '/' }, { name: 'Compare', path: '/compare/' }])]}>
+  <Section>
+    <div class="max-w-prose">
+      <h1>How Konverrt compares</h1>
+      <p class="mt-6 text-lg text-ink-2">Their words are quoted from their own sites with the date we read them. Ours are stated. Where they fit better, we say so.</p>
+    </div>
+    <div class="mt-12 grid gap-4 md:grid-cols-3">
+      {compares.map((c) => (
+        <a href={`/compare/${c.slug}/`} class="card p-6 hover:border-ink block">
+          <h2 class="text-lg">Konverrt vs {c.name}</h2>
+          <p class="mt-2 text-ink-2 text-sm">{c.summary}</p>
+        </a>
+      ))}
+    </div>
+  </Section>
+  <Cta />
+</Base>

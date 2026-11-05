@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import Cta from '../components/Cta.astro';
+import { webPage, breadcrumb } from '../lib/schema';
+const title = 'How Konverrt finds owners who want to talk';
+const description = 'The five steps from your mandate to a forwarded owner reply: list, infrastructure, copy, qualification, handoff.';
+const steps = [
+  { t: 'Mandate, in writing', d: 'Industry, revenue band, geography, ownership profile, and the signal that makes a reply count. We write it down and both sides sign it before anything sends. If something slips through that does not meet the bar, it does not count and is not charged.' },
+  { t: 'Market sizing before the quote', d: 'We count the owner-run companies that fit, find owner emails for them, and tell you how many we can reach. Some markets support ten batches; some support one. You see the number before you pay for anything.' },
+  { t: 'Outreach that reads like a person wrote it', d: "Four to six short emails over three weeks, in the owner's language, sent from our own estate of aged domains and warmed mailboxes, so nothing exposes your firm and nothing waits on warm-up. Human volumes. You approve every word; if you are regulated, your compliance reviewer does too." },
+  { t: 'Qualification on every reply', d: 'Every reply is researched against the mandate: who owns it, what it does, how big it is, what the owner actually said. Fits are forwarded with a fit note and the evidence. Misses are declined politely on your behalf. "Not now" replies are kept with a follow-up date; they are yours.' },
+  { t: 'Handoff, your way', d: 'Forwarded thread, CC, shared sheet, or your CRM - whatever your firm already uses, over email. If you want us to book the call on your calendar, we do that too.' },
+];
+---
+<Base {title} {description} path="/how-it-works/" schema={[webPage(title, '/how-it-works/', description), breadcrumb([{ name: 'Home', path: '/' }, { name: 'How it works', path: '/how-it-works/' }])]}>
+  <Section>
+    <div class="max-w-prose">
+      <h1>From your mandate to a forwarded owner reply</h1>
+      <p class="mt-6 text-lg text-ink-2">Most origination vendors sell a list or a meeting count. We sell the step in between: an owner who replied, checked against your criteria, in your inbox with a note on why it fits. Here is each step and what you see at each one.</p>
+    </div>
+    <ol class="mt-12 border-t border-line">
+      {steps.map((s, i) => (
+        <li class="grid gap-3 md:grid-cols-[48px_280px_1fr] md:gap-8 py-8 border-b border-line">
+          <span class="mono">{String(i + 1).padStart(2, '0')}</span>
+          <h2 class="text-lg md:text-xl">{s.t}</h2>
+          <p class="text-ink-2 max-w-prose">{s.d}</p>
+        </li>
+      ))}
+    </ol>
+    <div class="mt-12 max-w-prose">
+      <h2>What we need from you</h2>
+      <p class="mt-3 text-ink-2">About two hours in the first week (mandate, a call to go through the list sample, copy approval) and fifteen minutes a week after that. Fewer if your mandate is clear.</p>
+    </div>
+  </Section>
+  <Cta />
+</Base>

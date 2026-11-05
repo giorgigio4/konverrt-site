@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import Section from '../../components/Section.astro';
+import { site } from '../../data/site';
+const title = 'Received. Here is what happens next';
+const description = 'Your application is in. We size your market, send a quote, and you pick a time.';
+const cal = `${site.calendly}?hide_gdpr_banner=1&hide_event_type_details=1&hide_landing_page_details=1&background_color=fbfaf7&text_color=0d1b2a&primary_color=1e5fd1`;
+---
+<Base {title} {description} path="/apply/thanks/" noindex>
+  <Section>
+    <div class="max-w-prose">
+      <h1>Received. Here is what happens next</h1>
+      <ol class="mt-8 space-y-3 text-ink-2 border-t border-line">
+        <li class="pt-3 flex gap-3"><span class="mono">01</span>We size your market (one to two days)</li>
+        <li class="pt-3 flex gap-3"><span class="mono">02</span>You get a number and a quote by email</li>
+        <li class="pt-3 flex gap-3"><span class="mono">03</span>If it fits, pick a time below and we go through the mandate together</li>
+      </ol>
+    </div>
+    <div class="mt-10 card overflow-hidden" style="min-height: 700px">
+      <iframe src={cal} title="Pick a time" width="100%" height="700" frameborder="0" loading="lazy"></iframe>
+    </div>
+  </Section>
+  <script is:inline>
+    window.addEventListener('message', (e) => {
+      if (!e.data || typeof e.data.event !== 'string' || !e.data.event.startsWith('calendly.')) return;
+      const map = { 'calendly.event_scheduled': 'Schedule', 'calendly.date_and_time_selected': 'CalendlyDateSelected', 'calendly.event_type_viewed': 'CalendlyViewed' };
+      const ev = map[e.data.event]; if (!ev || !window.fbq) return;
+      ev === 'Schedule' ? fbq('track', 'Schedule', { content_name: 'Discovery Call Booked' }) : fbq('trackCustom', ev);
+    });
+    if (window.gtag) gtag('event', 'apply_submitted');
+    if (window.fbq) fbq('track', 'Lead');
+  </script>
+</Base>
