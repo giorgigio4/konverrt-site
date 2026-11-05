@@ -42,7 +42,7 @@ const img = (f: string) => `/case/midwest/${f}.webp`;
 
     <section class="mt-14 max-w-4xl">
       <p class="text-ink-2 mb-4">Snippets From Our 90 Day Catch Up Call</p>
-      <YouTubeFacade id="r6zvOOOfZtw" title="Snippets From Our 90 Day Catch Up Call" />
+      <YouTubeFacade id="r6zvOOOfZtw" title="Snippets From Our 90 Day Catch Up Call" poster="/case/midwest/video-poster.webp" />
     </section>
 
     <section class="case-sec">
@@ -72,7 +72,7 @@ const img = (f: string) => `/case/midwest/${f}.webp`;
       <h2>We Study Your Market Before We Write a Single Email</h2>
       <CaseFigure src={img('market-research-brief')} width={1600} height={900} alt="Mockup of a confidential market research brief prepared for the client before any outreach, with the client name redacted." />
       <div class="case-text">
-        <p>We spend first few days days researching the client's market before any outreach begins. This isn't surface-level - we study the client's positioning, deal history, and competitive landscape, then analyze the prospect's industry from the prospect's perspective.</p>
+        <p>We spend the first few days researching the client's market before any outreach begins. This isn't surface-level - we study the client's positioning, deal history, and competitive landscape, then analyze the prospect's industry from the prospect's perspective.</p>
         <ol>
           <li>What are they worried about?</li>
           <li>What language do they use?</li>
@@ -89,7 +89,7 @@ const img = (f: string) => `/case/midwest/${f}.webp`;
     <section class="case-sec">
       <h2>Finding the Right Owners When They're Not in Any Database</h2>
       <div class="case-text">
-        <p>Our client needed to reach the owner-operators of the 40-year machine shop in Appleton, the family bakery in West Allis, the concrete contractor in Waukesha County - often don't exist in databases like Apollo, ZoomInfo or LinkedIn. They've been running their business for decades without ever creating a company page.</p>
+        <p>Our client needed to reach owner-operators like the 40-year machine shop in Appleton, the family bakery in West Allis and the concrete contractor in Waukesha County. Businesses like these often don't exist in databases like Apollo, ZoomInfo or LinkedIn. They've been running their business for decades without ever creating a company page.</p>
         <p>That's why we don't rely on a single data source. Our lists are built from a combination of business databases, Google Maps scraping for hyperlocal businesses, and public regulatory data where applicable.</p>
         <p>For this campaign, our initial Google Maps scrape covered 86 geographic coordinates across two states using 6 industry keywords. That produced roughly 6,000 raw company records, which we refined down to about 4,000 verified decision-maker contacts with valid emails after deduplication, validation, and enrichment.</p>
         <p>Every contact goes through multi-step verification:</p>
@@ -150,7 +150,7 @@ const img = (f: string) => `/case/midwest/${f}.webp`;
       <h2>Every "No" Teaches Us Something</h2>
       <div class="case-text">
         <p>Negative replies aren't wasted - they're data. We categorize every decline and feed it back into targeting and scripting improvements.</p>
-        <p>The breakdown from this campaign tells a clear story. Out of 277 total replies across 8,500 prospects contacted, we mapped every human response into categories:</p>
+        <p>The breakdown from this campaign tells a clear story. Out of 277 total replies across 8,500 prospects contacted, we mapped every human decline into categories:</p>
         <ol>
           <li>hard declines</li>
           <li>"not now but maybe later" with specific follow-up timelines</li>
@@ -163,7 +163,23 @@ const img = (f: string) => `/case/midwest/${f}.webp`;
         <p>The "not now" replies are the hidden asset. Each one gets logged with the prospect's stated timeline - "circle back in 4 years," "selling within 2 years," "may change in a year or two."</p>
         <p>By month 6, the client has dozens of warm contacts who told us exactly when to call back.</p>
       </div>
-      <CaseFigure src={img('objection-breakdown')} width={1600} height={900} alt="Bar chart titled Why People Said No, breaking objections into categories such as not selling, not now, already sold, family succession, wrong geography and already have a broker, with a panel on what this tells us." />
+      <figure class="my-10 card p-6 md:p-8" aria-label="Why owners said no: 94 declines by category">
+        <div class="flex flex-wrap items-baseline justify-between gap-2"><h3 class="case-h3 !mt-0">Why people said no</h3><span class="mono">94 human declines, by category</span></div>
+        <ol class="mt-5 space-y-2.5">
+            <li class="obj-row"><span class="text-ink-2">Not selling, hard no</span><span class="obj-bar"><span style="width:100%"></span></span><span class="tabular-nums text-ink text-right">25</span></li>
+            <li class="obj-row"><span class="text-ink-2">Not now, maybe later</span><span class="obj-bar"><span style="width:56%"></span></span><span class="tabular-nums text-ink text-right">14</span></li>
+            <li class="obj-row"><span class="text-ink-2">Unsubscribe, remove me</span><span class="obj-bar"><span style="width:48%"></span></span><span class="tabular-nums text-ink text-right">12</span></li>
+            <li class="obj-row"><span class="text-ink-2">Hostile or annoyed</span><span class="obj-bar"><span style="width:32%"></span></span><span class="tabular-nums text-ink text-right">8</span></li>
+            <li class="obj-row"><span class="text-ink-2">Soft no, door left open</span><span class="obj-bar"><span style="width:32%"></span></span><span class="tabular-nums text-ink text-right">8</span></li>
+            <li class="obj-row"><span class="text-ink-2">Already sold the business</span><span class="obj-bar"><span style="width:24%"></span></span><span class="tabular-nums text-ink text-right">6</span></li>
+            <li class="obj-row"><span class="text-ink-2">Want to buy, not sell</span><span class="obj-bar"><span style="width:20%"></span></span><span class="tabular-nums text-ink text-right">5</span></li>
+            <li class="obj-row"><span class="text-ink-2">Wrong person or company</span><span class="obj-bar"><span style="width:20%"></span></span><span class="tabular-nums text-ink text-right">5</span></li>
+            <li class="obj-row"><span class="text-ink-2">Family succession planned</span><span class="obj-bar"><span style="width:16%"></span></span><span class="tabular-nums text-ink text-right">4</span></li>
+            <li class="obj-row"><span class="text-ink-2">Wrong geography</span><span class="obj-bar"><span style="width:16%"></span></span><span class="tabular-nums text-ink text-right">4</span></li>
+            <li class="obj-row"><span class="text-ink-2">Already have a broker</span><span class="obj-bar"><span style="width:12%"></span></span><span class="tabular-nums text-ink text-right">3</span></li>
+        </ol>
+        <figcaption class="mt-5 text-sm text-muted">From the reply review we ran for the client: each declining owner counted once, in their main category. Out-of-office and system replies excluded.</figcaption>
+      </figure>
     </section>
 
     <section class="case-sec">
@@ -202,7 +218,7 @@ const img = (f: string) => `/case/midwest/${f}.webp`;
         <p>A single closed deal from a qualified lead generates $200K to $1M+ in advisory fees. The entire cost of a 6-month cold email campaign is a fraction of one commission check. The ROI is asymmetric - if the leads are right.</p>
         <p><strong>Most vendors optimize for volume. We optimize for quality and compounding pipeline value. Every month, the list gets smarter, the scripts get tighter, and the "not now" pipeline grows.</strong></p>
         <p>By month 6, you have a proprietary asset that no competitor can replicate - dozens of warm contacts who told us when to call back, in industries you've validated, with scripts that have been refined by thousands of data points.</p>
-        <p class="case-callout">That's not lead generation. That's proprietary deal flow sourcing system.</p>
+        <p class="case-callout">That's not lead generation. That's a proprietary deal flow sourcing system.</p>
       </div>
     </section>
 

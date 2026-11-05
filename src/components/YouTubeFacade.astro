@@ -1,11 +1,11 @@
 ---
 // Lightweight YouTube embed: thumbnail + play button, swapped for the nocookie iframe on click.
-interface Props { id: string; title: string }
-const { id, title } = Astro.props;
+interface Props { id: string; title: string; poster?: string }
+const { id, title, poster } = Astro.props;
 ---
 <div class="yt-facade relative w-full overflow-hidden rounded-md border border-line bg-ink" style="aspect-ratio: 16 / 9" data-yt={id} data-title={title}>
   <button type="button" class="absolute inset-0 w-full h-full cursor-pointer group" aria-label={`Play video: ${title}`}>
-    <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt={`Video thumbnail: ${title}`} width="480" height="360" loading="lazy" decoding="async" class="w-full h-full object-cover" />
+    <img src={poster ?? `https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt={`Video thumbnail: ${title}`} width="480" height="360" loading="lazy" decoding="async" class="w-full h-full object-cover" />
     <span class="absolute inset-0 grid place-items-center">
       <span class="grid place-items-center h-14 w-20 rounded-md bg-ink text-paper shadow-letter group-hover:bg-mark">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
