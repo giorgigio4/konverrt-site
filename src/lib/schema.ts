@@ -7,7 +7,7 @@ const org = () => ({
   url: site.url,
   logo: `${site.url}/logo.png`,
   email: site.email,
-  founder: { '@type': 'Person', name: site.founder },
+  founder: { '@type': 'Person', name: site.founder, sameAs: site.founderLinkedin },
   address: { '@type': 'PostalAddress', streetAddress: site.address.street, addressLocality: site.address.city, addressCountry: site.address.countryCode },
   sameAs: [site.youtube, site.linkedin],
   contactPoint: { '@type': 'ContactPoint', email: site.email, contactType: 'sales' },
