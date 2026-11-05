@@ -21,6 +21,7 @@
   --color-accent-ink: #164aa6;
   --color-ok: #1f7a4d;
   --color-ok-bg: #edf7f1;
+  --color-card: #ffffff;
 
   /* Second brand colour: the owner's side of the letter. Blue stays Konverrt's side. */
   --color-mark: #b23a27;
@@ -66,6 +67,34 @@
   --display-tracking: -0.01em;
 }
 
+
+/* 4. Noir: black and white, elegant. Ivory type on near-black, blue kept only for links and the underline. */
+[data-theme="noir"] {
+  --color-paper: #0b0b0c;
+  --color-paper-2: #141416;
+  --color-card: #161618;
+  --color-ink: #f4f1ea;
+  --color-ink-2: #c9c5bc;
+  --color-muted: #8d8a84;
+  --color-line: #26262a;
+  --color-line-2: #3a3a3f;
+  --color-accent: #8fb3ff;
+  --color-accent-ink: #b7ceff;
+  --color-ok: #7fd1a4;
+  --color-ok-bg: #12251b;
+  --color-mark: #8fb3ff;
+  --font-display: "Libre Caslon Display", Georgia, serif;
+  --display-tracking: -0.005em;
+  --shadow-ink: 0 1px 0 rgb(255 255 255 / .03);
+  --shadow-letter: 0 1px 0 rgb(255 255 255 / .04), 0 18px 40px -18px rgb(0 0 0 / .8);
+  color-scheme: dark;
+}
+[data-theme="noir"] .btn-primary { background: var(--color-ink); color: #0b0b0c; }
+[data-theme="noir"] .btn-primary:hover { background: #ffffff; }
+[data-theme="noir"] .hero-photo { filter: grayscale(1) contrast(1.1); opacity: .28 !important; }
+[data-theme="noir"] .sys-node.is-out .sys-ico { color: #0b0b0c; }
+[data-theme="noir"] .viewer-body img, [data-theme="noir"] figure img { background: #fff; }
+
 html { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
 body { font-size: var(--text-base); line-height: var(--text-base--line-height); }
 
@@ -94,7 +123,7 @@ a { color: inherit; text-decoration: none; transition: color 150ms ease, border-
 .prose p:last-child { margin: 0; }
 .rule { border-top: 1px solid var(--color-line); }
 .mono { font-family: var(--font-mono); font-size: var(--text-xs); line-height: var(--text-xs--line-height); color: var(--color-muted); }
-.card { background: #fff; border: 1px solid var(--color-line); border-radius: var(--radius-md); }
+.card { background: var(--color-card); border: 1px solid var(--color-line); border-radius: var(--radius-md); }
 
 input, textarea, select { font: inherit; }
 
@@ -167,7 +196,7 @@ input, textarea, select { font: inherit; }
 .viewer { position: fixed; inset: 0; margin: auto; height: fit-content; width: min(860px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); padding: 0; overflow: hidden; border: 1px solid var(--color-line); border-radius: var(--radius-md); background: var(--color-paper); color: var(--color-ink); box-shadow: 0 24px 64px rgb(13 27 42 / .35); }
 .viewer::backdrop { background: rgb(13 27 42 / .62); }
 .viewer-bar { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px 10px 20px; background: var(--color-paper); border-bottom: 1px solid var(--color-line); }
-.viewer-close { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border-radius: 8px; border: 1px solid var(--color-line); background: #fff; font-size: 14px; color: var(--color-ink); cursor: pointer; }
+.viewer-close { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border-radius: 8px; border: 1px solid var(--color-line); background: var(--color-card); font-size: 14px; color: var(--color-ink); cursor: pointer; }
 .viewer-close:hover { border-color: var(--color-ink); }
 .viewer-body { padding: 16px; overflow: auto; max-height: calc(100dvh - 90px); }
 .viewer-body img { display: block; width: 100%; height: auto; min-height: 120px; border-radius: 8px; border: 1px solid var(--color-line); background: #fff; }
@@ -175,8 +204,8 @@ input, textarea, select { font: inherit; }
 
 /* System diagram: the loop that surfaces owners on repeat */
 .sys { display: grid; gap: 16px; grid-template-columns: repeat(5, minmax(0, 1fr)); position: relative; }
-.sys-node { position: relative; background: #fff; border: 1px solid var(--color-line); border-radius: var(--radius-md); padding: 18px 16px 16px; box-shadow: var(--shadow-letter); }
-.sys-ico { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; background: color-mix(in srgb, var(--color-accent) 10%, #fff); color: var(--color-accent); }
+.sys-node { position: relative; background: var(--color-card); border: 1px solid var(--color-line); border-radius: var(--radius-md); padding: 18px 16px 16px; box-shadow: var(--shadow-letter); }
+.sys-ico { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; background: color-mix(in srgb, var(--color-accent) 10%, var(--color-card)); color: var(--color-accent); }
 .sys-ico svg { width: 20px; height: 20px; stroke-width: 1.6; }
 .sys-node.is-out .sys-ico { background: var(--color-accent); color: #fff; }
 .sys-n { position: absolute; top: 14px; right: 14px; }
@@ -184,7 +213,7 @@ input, textarea, select { font: inherit; }
 .sys-node p { margin-top: 6px; font-size: 14px; line-height: 21px; color: var(--color-ink-2); }
 .sys-arrow { position: absolute; top: 38px; right: -14px; width: 12px; height: 12px; color: var(--color-accent); z-index: 1; }
 .sys-funnel { margin-top: 22px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; align-items: end; }
-.sys-bar { height: 8px; border-radius: 4px; background: color-mix(in srgb, var(--color-accent) 18%, #fff); }
+.sys-bar { height: 8px; border-radius: 4px; background: color-mix(in srgb, var(--color-accent) 18%, var(--color-card)); }
 .sys-bar.is-out { background: var(--color-accent); }
 .sys-loop { margin-top: 18px; display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px dashed color-mix(in srgb, var(--color-accent) 45%, transparent); border-radius: var(--radius-md); color: var(--color-ink-2); font-size: 14px; line-height: 21px; }
 .sys-loop svg { width: 18px; height: 18px; color: var(--color-accent); flex: none; }
@@ -196,7 +225,7 @@ input, textarea, select { font: inherit; }
 
 /* Pricing: three-number summary */
 .price-tiles { display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.price-tile { background: #fff; border: 1px solid var(--color-line); border-radius: var(--radius-md); padding: 20px; }
+.price-tile { background: var(--color-card); border: 1px solid var(--color-line); border-radius: var(--radius-md); padding: 20px; }
 .price-tile .figure { font-size: 34px; line-height: 40px; }
 @media (max-width: 767px) { .price-tiles { grid-template-columns: 1fr; } }
 
@@ -215,7 +244,7 @@ input, textarea, select { font: inherit; }
 .case-text ul { list-style: disc; }
 .case-text li + li { margin-top: 8px; }
 .case-text li::marker { color: var(--color-muted); }
-.case-callout { border-left: 3px solid var(--color-accent); background: #fff; padding: 16px 20px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; color: var(--color-ink); }
+.case-callout { border-left: 3px solid var(--color-accent); background: var(--color-card); padding: 16px 20px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; color: var(--color-ink); }
 
 /* Phones: the reply viewer goes full screen and shows the email at reading size (scrolls sideways) */
 @media (max-width: 767px) {
@@ -232,3 +261,5 @@ input, textarea, select { font: inherit; }
 .obj-bar { height: 10px; border-radius: 999px; background: var(--color-line); overflow: hidden; }
 .obj-bar > span { display: block; height: 100%; border-radius: 999px; background: var(--color-accent); }
 @media (max-width: 767px) { .obj-row { grid-template-columns: 1fr 28px; row-gap: 5px; padding-bottom: 10px; } .obj-row .obj-bar { grid-column: 1 / -1; grid-row: 2; } }
+[data-theme="noir"] .vsl-play { background: var(--color-ink); color: #0b0b0c; }
+[data-theme="noir"] { --color-line: #2c2c31; }
