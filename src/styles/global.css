@@ -1,9 +1,12 @@
 @import "tailwindcss";
-@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/fraunces/full.css";
 @import "@fontsource/inter/400.css";
 @import "@fontsource/inter/500.css";
 @import "@fontsource/inter/600.css";
 @import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/instrument-serif/400.css";
+@import "@fontsource-variable/instrument-sans";
+@import "@fontsource/libre-caslon-display/400.css";
 
 /* Tokens. Paper and ink. One type scale, 4px grid. Build gate in scripts/check-site.mjs. */
 @theme {
@@ -19,32 +22,63 @@
   --color-ok: #1f7a4d;
   --color-ok-bg: #edf7f1;
 
-  --font-display: "Fraunces Variable", Georgia, serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  /* Second brand colour: the owner's side of the letter. Blue stays Konverrt's side. */
+  --color-mark: #b23a27;
+
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body: "Instrument Sans Variable", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
   --text-xs: 12px;  --text-xs--line-height: 18px;
   --text-sm: 14px;  --text-sm--line-height: 22px;
-  --text-base: 15px; --text-base--line-height: 25px;
+  --text-base: 16px; --text-base--line-height: 26px;
   --text-lg: 18px;  --text-lg--line-height: 28px;
   --text-xl: 28px;  --text-xl--line-height: 36px;
-  --text-2xl: 36px; --text-2xl--line-height: 44px;
-  --text-3xl: 56px; --text-3xl--line-height: 62px;
+  --text-2xl: 40px; --text-2xl--line-height: 46px;
+  --text-3xl: 60px; --text-3xl--line-height: 64px;
+  --text-4xl: 76px; --text-4xl--line-height: 78px;
 
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --shadow-ink: 0 1px 2px rgb(13 27 42 / 0.06), 0 4px 12px rgb(13 27 42 / 0.05);
+  --shadow-letter: 0 1px 1px rgb(13 27 42 / 0.05), 0 8px 24px -8px rgb(13 27 42 / 0.18);
+}
+
+/* ---------- Themes. Default (no attribute) = 1. Postmark. ?theme=tile / ?theme=ledger preview the others. ---------- */
+:root { --display-weight: 400; --display-tracking: -0.015em; --display-settings: normal; }
+
+[data-theme="tile"] {
+  --color-paper: #f7f4ee;
+  --color-paper-2: #efe9df;
+  --color-accent: #1f4fb4;
+  --color-accent-ink: #183f91;
+  --color-mark: #b4532a;
+  --font-display: "Fraunces Variable", Georgia, serif;
+  --display-weight: 420;
+  --display-tracking: -0.02em;
+  --display-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+}
+[data-theme="ledger"] {
+  --color-mark: #2f5d50;
+  --font-display: "Libre Caslon Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --display-tracking: -0.01em;
 }
 
 html { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
 body { font-size: var(--text-base); line-height: var(--text-base--line-height); }
 
-h1, h2, h3 { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.01em; text-wrap: balance; font-variation-settings: "opsz" 72, "SOFT" 30; }
-h1 { font-size: var(--text-2xl); line-height: var(--text-2xl--line-height); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: var(--display-weight); letter-spacing: var(--display-tracking); text-wrap: balance; font-variation-settings: var(--display-settings); }
+h1 { font-size: 42px; line-height: 46px; }
 @media (min-width: 768px) { h1 { font-size: var(--text-3xl); line-height: var(--text-3xl--line-height); } }
-h2 { font-size: var(--text-xl); line-height: var(--text-xl--line-height); }
-h3 { font-size: var(--text-lg); line-height: var(--text-lg--line-height); font-family: var(--font-body); font-weight: 500; }
+h1.h-hero { font-size: 46px; line-height: 50px; }
+@media (min-width: 768px) { h1.h-hero { font-size: var(--text-4xl); line-height: var(--text-4xl--line-height); } }
+h2 { font-size: 32px; line-height: 38px; }
+@media (min-width: 768px) { h2 { font-size: var(--text-2xl); line-height: var(--text-2xl--line-height); } }
+h3 { font-size: var(--text-lg); line-height: var(--text-lg--line-height); font-family: var(--font-body); font-weight: 500; letter-spacing: -0.005em; font-variation-settings: normal; }
+.wordmark { font-family: var(--font-display); font-weight: var(--display-weight); font-variation-settings: var(--display-settings); font-size: 26px; line-height: 1; letter-spacing: -0.02em; }
+.figure { font-family: var(--font-display); font-weight: var(--display-weight); font-variation-settings: var(--display-settings); letter-spacing: -0.02em; }
 
 a { color: inherit; text-decoration: none; transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease; }
 .link { color: var(--color-accent); border-bottom: 1px solid color-mix(in srgb, var(--color-accent) 35%, transparent); }
@@ -63,3 +97,56 @@ a { color: inherit; text-decoration: none; transition: color 150ms ease, border-
 .card { background: #fff; border: 1px solid var(--color-line); border-radius: var(--radius-md); }
 
 input, textarea, select { font: inherit; }
+
+/* ---------- Personality ---------- */
+
+/* Hand-drawn underline in the second colour. One per heading, max (gate). */
+.mark-u { position: relative; white-space: nowrap; }
+.mark-u::after {
+  content: ""; position: absolute; left: -1%; right: -2%; bottom: -0.1em; height: 0.28em; background: var(--color-mark); pointer-events: none;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M3 8.5 C 38 4, 82 10.5, 122 6.5 S 178 3.5, 197 6' fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M3 8.5 C 38 4, 82 10.5, 122 6.5 S 178 3.5, 197 6' fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+/* Phones: phrases wrap, so swap the drawn stroke for a plain thick underline that follows every line. */
+@media (max-width: 767px) {
+  .mark-u { white-space: normal; text-decoration: underline; text-decoration-color: var(--color-mark); text-decoration-thickness: 3px; text-underline-offset: 0.16em; text-decoration-skip-ink: none; }
+  .mark-u::after { display: none; }
+}
+
+/* Airmail edge: hard-stop stripe on the forwarded-email card. Red = owner, blue = us. */
+.airmail { height: 6px; background: repeating-linear-gradient(-45deg, var(--color-mark) 0 10px, transparent 10px 16px, var(--color-accent) 16px 26px, transparent 26px 32px); }
+
+/* Postmark date stamp overlapping the hero card */
+.stamp {
+  position: absolute; z-index: 2; top: -26px; right: -18px; width: 108px; height: 108px; border-radius: 50%;
+  border: 1.5px solid var(--color-mark); color: var(--color-mark); transform: rotate(-9deg);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+  font-family: var(--font-mono); font-size: 11px; line-height: 13px; text-align: center;
+  background: color-mix(in srgb, var(--color-paper) 88%, transparent);
+  box-shadow: inset 0 0 0 4px color-mix(in srgb, var(--color-paper) 88%, transparent), inset 0 0 0 5px color-mix(in srgb, var(--color-mark) 55%, transparent);
+}
+.stamp-rule { width: 58px; border-top: 1px solid currentColor; }
+@media (max-width: 767px) { .stamp { width: 84px; height: 84px; top: -62px; right: 8px; font-size: 10px; line-height: 12px; } }
+
+/* Owner words as the loudest thing on the page */
+.quote-lg { font-family: var(--font-display); font-weight: var(--display-weight); font-variation-settings: var(--display-settings); font-size: 28px; line-height: 36px; letter-spacing: -0.01em; text-wrap: pretty; }
+@media (min-width: 768px) { .quote-lg { font-size: 38px; line-height: 46px; } }
+
+/* Desk: letters laid down, not a grid. DOM order unchanged. */
+.desk { display: grid; gap: 28px 24px; grid-template-columns: repeat(6, minmax(0, 1fr)); align-items: start; }
+.desk > * { grid-column: span 3; transform: rotate(var(--tilt, 0deg)); transition: transform 200ms cubic-bezier(.2,.7,.2,1); box-shadow: var(--shadow-letter); }
+.desk > *:nth-child(4n+1) { grid-column: span 4; --tilt: -0.7deg; }
+.desk > *:nth-child(4n+2) { grid-column: span 2; --tilt: 1.1deg; margin-top: 36px; }
+.desk > *:nth-child(4n+3) { grid-column: span 2; --tilt: 0.6deg; margin-top: -8px; }
+.desk > *:nth-child(4n)   { grid-column: span 4; --tilt: -0.9deg; margin-top: 20px; }
+.desk > *:hover { transform: rotate(0deg) translateY(-2px); }
+.desk-3 > *:nth-child(n) { grid-column: span 2; }
+.desk-3 > *:nth-child(2) { margin-top: 36px; }
+@media (max-width: 767px) {
+  .desk { grid-template-columns: 1fr; }
+  .desk > *, .desk-3 > *:nth-child(n) { grid-column: auto; margin-top: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .desk > * { transform: none; transition: none; } }
+
+/* Chapter band behind alternating sections */
+.band { background: var(--color-paper-2); border-block: 1px solid var(--color-line); }

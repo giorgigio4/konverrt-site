@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Section from '../components/Section.astro';
 import Cta from '../components/Cta.astro';
+import Mark from '../components/Mark.astro';
 import { site } from '../data/site';
 import { service, webPage, breadcrumb } from '../lib/schema';
 const title = 'Pricing - batches of 10, refund for each we miss';
@@ -12,22 +13,22 @@ const rows = Array.from({ length: 10 }, (_, i) => i + 1);
   <Section>
     <div class="grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-start">
       <div class="max-w-prose">
-        <h1>Batches of ten, refund for each we miss</h1>
+        <h1>Batches of ten, <Mark>refund for each we miss</Mark></h1>
         <p class="mt-6 text-lg text-ink-2">You prepay a batch of ten. We size the market, run the outreach, qualify every reply and forward the owners who fit. If the batch closes short, each missing lead is refunded or credited to the next batch, your choice. No retainer, no setup fee, no contract; it runs month to month and you can stop after any batch.</p>
       </div>
-      <div class="card shadow-ink p-5 md:p-6" aria-label="Batch ledger, example">
+      <div class="card shadow-letter overflow-hidden" aria-label="Batch ledger, example"><div class="airmail" aria-hidden="true"></div><div class="p-5 md:p-6">
         <div class="flex items-center justify-between mono mb-3"><span>Batch ledger · example</span><span>10 prepaid</span></div>
         <ol class="border-t border-line">
           {rows.map((n) => (
             <li class="flex items-center justify-between py-2.5 border-b border-line text-sm">
               <span class="mono tabular-nums">{String(n).padStart(2, '0')}</span>
-              {n <= 8 ? <span class="text-ink-2">Owner reply forwarded</span> : <span class="text-muted">Not delivered</span>}
-              {n <= 8 ? <span class="text-ok text-xs">counted</span> : <span class="text-accent text-xs">refunded</span>}
+              {n <= 8 ? <span class="text-ink-2">Owner reply forwarded</span> : <span class="text-muted line-through">Not delivered</span>}
+              {n <= 8 ? <span class="text-ok text-xs">counted</span> : <span class="text-mark text-xs">refunded</span>}
             </li>
           ))}
         </ol>
         <p class="mt-4 text-sm text-muted">Eight delivered, two refunded or credited. The lead definition is written down before launch, so there is no argument about what counts.</p>
-      </div>
+      </div></div>
     </div>
   </Section>
 
@@ -48,7 +49,7 @@ const rows = Array.from({ length: 10 }, (_, i) => i + 1);
     </div>
   </Section>
 
-  <Section title="How it compares" tight>
+  <Section title="How it compares" tight band>
     <div class="overflow-x-auto">
       <table class="w-full text-sm border-t border-line">
         <thead><tr class="text-left text-muted"><th class="py-3 pr-4 font-medium"></th><th class="py-3 pr-4 font-medium">Konverrt</th><th class="py-3 font-medium">Typical retainer vendor</th></tr></thead>

@@ -1,0 +1,6 @@
+---
+// Postmark date stamp. Decorative: the same facts are in the card text.
+interface Props { top: string; bottom: string }
+const { top, bottom } = Astro.props;
+---
+<div class="stamp" aria-hidden="true"><span>{top}</span><span class="stamp-rule"></span><span>{bottom}</span></div>

@@ -4,16 +4,16 @@ import ReplyGlyph from './ReplyGlyph.astro';
 interface Props { note: string; quote: string; who: string; img: string }
 const { note, quote, who, img } = Astro.props;
 ---
-<div class="card shadow-ink overflow-hidden">
-  <div class="px-5 py-3 border-b border-line flex items-center justify-between gap-4">
-    <div class="mono">Fwd: owner reply · fits the mandate</div>
-    <div class="mono">to: you</div>
+<div class="card shadow-letter overflow-hidden">
+  <div class="airmail" aria-hidden="true"></div>
+  <div class="pl-5 pr-28 md:pr-32 py-3 border-b border-line flex items-center gap-x-2">
+    <div class="mono">Fwd: owner reply<span class="hidden sm:inline"> · fits the mandate · to: you</span></div>
   </div>
   <div class="px-5 py-4 border-b border-line text-sm text-ink-2">{note}</div>
   <div class="px-5 py-5 bg-paper-2/60">
     <div class="flex gap-3">
       <span class="mt-1"><ReplyGlyph /></span>
-      <p class="text-base">{quote}</p>
+      <p class="text-lg text-ink">{quote}</p>
     </div>
     <div class="mt-4 flex items-center justify-between gap-4 text-sm text-muted">
       <span>{who}</span>

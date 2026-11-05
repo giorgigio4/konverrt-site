@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Mark from '../../components/Mark.astro';
 import Section from '../../components/Section.astro';
 import ReplyQuote from '../../components/ReplyQuote.astro';
 import Cta from '../../components/Cta.astro';
@@ -12,7 +13,7 @@ const strip = [4, 5, 1].map((n) => replies.find((r) => r.n === n)!);
 <Base {title} {description} path="/for/ma-advisors/" schema={[webPage(title, '/for/ma-advisors/', description), service(), breadcrumb([{ name: 'Home', path: '/' }, { name: 'For M&A advisors', path: '/for/ma-advisors/' }])]}>
   <Section>
     <div class="max-w-prose">
-      <h1>Deal origination for sell-side M&A advisors</h1>
+      <h1>Deal origination for <Mark>sell-side</Mark> M&A advisors</h1>
       <p class="mt-6 text-lg text-ink-2">Owners of $2M to $50M companies, in your geography and industries, who replied that they are open to a conversation about a transition. You get the thread and a fit note; you run the meeting.</p>
     </div>
     <div class="mt-12 grid gap-10 md:grid-cols-2">

@@ -6,6 +6,9 @@ import ReplyQuote from '../components/ReplyQuote.astro';
 import FaqList from '../components/FaqList.astro';
 import Steps from '../components/Steps.astro';
 import Cta from '../components/Cta.astro';
+import Mark from '../components/Mark.astro';
+import Stamp from '../components/Stamp.astro';
+import ReplyGlyph from '../components/ReplyGlyph.astro';
 import { site, stats, cta } from '../data/site';
 import { replies } from '../data/replies';
 import { faqs } from '../data/faq';
@@ -15,6 +18,7 @@ const title = 'Konverrt - Deal origination for M&A advisors and PE firms';
 const description = 'Business owners who want to talk about a transition, delivered in batches of 10. Per-lead refund, no retainer, month to month. M&A and PE owner outreach, done for you.';
 const hero = replies.find((r) => r.n === 8)!;
 const strip = [2, 3, 7].map((n) => replies.find((r) => r.n === n)!);
+const lead = replies.find((r) => r.n === 4)!;
 const homeFaqs = faqs.filter((f) => f.home);
 const steps = [
   { t: 'Mandate', d: 'You tell us the owner you want: industry, size band, geography, ownership.' },
@@ -27,15 +31,17 @@ const steps = [
 <Base {title} {description} path="/" schema={[webPage(title, '/', description), service(), faqPage(homeFaqs)]}>
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 -z-10 bg-cover bg-center opacity-35" style="background-image:url('/hero-lisbon.jpg'); mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,0)); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,0));" aria-hidden="true"></div>
-    <div class="mx-auto max-w-6xl px-5 pt-14 pb-10 md:pt-20 md:pb-16 grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-center">
+    <div class="mx-auto max-w-6xl px-5 pt-14 pb-10 md:pt-20 md:pb-16 grid gap-12 md:grid-cols-[1.35fr_1fr] md:items-center">
     <div>
-      <h1>Owners who said yes to a conversation about selling, delivered hot to your inbox</h1>
+      <h1 class="h-hero">Owners who said yes to a conversation about selling, delivered <Mark>hot to your inbox</Mark></h1>
       <p class="mt-6 text-lg text-ink-2 max-w-prose">In batches of 10. No retainers. Month to month. Deal origination for M&A advisors and lower-middle-market PE firms: every lead is a business owner who replied in their own words, and any we miss is refunded.</p>
       <div class="mt-8 flex flex-wrap items-center gap-5">
         <a href={cta.href} class="btn btn-primary">{cta.label}</a>
         <a href="/results/" class="link text-sm">See the replies</a>
       </div>
     </div>
+    <div class="relative mt-14 md:mt-6">
+    <Stamp top="Replied" bottom={`step 2 · ${hero.date.slice(5)}/${hero.date.slice(2, 4)}`} />
     <ForwardCard
       note="Owner-operator, privately held manufacturer, Wisconsin. Replied to step 2. Open to a call next week - calendar link sent."
       quote={hero.quote}
@@ -43,13 +49,14 @@ const steps = [
       img={hero.img}
     />
     </div>
+    </div>
   </section>
 
   <section class="border-y border-line bg-paper-2/50">
     <dl class="mx-auto max-w-6xl px-5 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
       {stats.map((s) => (
         <div>
-          <dt class="font-display text-xl md:text-2xl font-semibold tabular-nums">{s.value}</dt>
+          <dt class="figure text-2xl md:text-3xl tabular-nums">{s.value}</dt>
           <dd class="mt-1 text-sm text-muted">{s.label}</dd>
         </div>
       ))}
@@ -82,14 +89,18 @@ const steps = [
     <p class="mt-6"><a href="/how-it-works/" class="link text-sm">What you see at each step</a></p>
   </Section>
 
-  <Section title="What owners wrote back" intro="Unedited replies to emails we sent for clients. Names and companies removed; the words are theirs.">
-    <div class="grid gap-4 md:grid-cols-3">
+  <Section title="What owners wrote back" mark="wrote back" intro="Unedited replies to emails we sent for clients. Names and companies removed; the words are theirs." loud band>
+    <figure class="max-w-4xl mb-14">
+      <blockquote class="quote-lg flex gap-4"><span class="mt-2 md:mt-3 shrink-0"><ReplyGlyph /></span><span>{lead.quote}</span></blockquote>
+      <figcaption class="mt-4 ml-9 text-sm text-muted">{lead.who} · <a class="link" href={lead.img} target="_blank" rel="noopener">View the email</a></figcaption>
+    </figure>
+    <div class="desk desk-3">
       {strip.map((r) => <ReplyQuote quote={r.quote} who={r.who} img={r.img} />)}
     </div>
     <p class="mt-6"><a href="/results/" class="link text-sm">All replies and two case studies</a></p>
   </Section>
 
-  <Section title="Who this is for" tight>
+  <Section title="Who this is for" tight band>
     <div class="grid gap-4 md:grid-cols-2">
       <a href="/for/ma-advisors/" class="card p-6 hover:border-ink block">
         <h3>Sell-side M&A advisors</h3>

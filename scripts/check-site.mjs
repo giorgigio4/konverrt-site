@@ -10,7 +10,7 @@ const rules = [
   [/animate-(pulse|ping|spin|bounce)|animation-iteration-count:\s*infinite/, 'infinite animation'],
   [/transition-all|transition:\s*all\b/, 'transition-all'],
   [/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u, 'emoji'],
-  [/bg-clip-text|text-transparent|radial-gradient|(?<!mask-image:\s)(?<!-webkit-mask-image:\s)linear-gradient/, 'gradient'],
+  [/bg-clip-text|text-transparent|radial-gradient|(?<!mask-image:\s)(?<!-webkit-mask-image:\s)(?<!repeating-)linear-gradient/, 'gradient'],
   [/\u2014/, 'em dash'],
   [/font-style:\s*italic|\bitalic\b/, 'italic'],
   [/rounded-full/, 'rounded-full'],
@@ -24,6 +24,15 @@ for (const f of files) {
   for (const [re, name] of rules) {
     const hay = name === 'em dash' || name === 'emoji' ? text : body;
     if (re.test(hay)) { console.log(`${f}: ${name}`); bad++; }
+  }
+}
+// Brand personality rules: the second colour stays rare, one hand-drawn underline per heading.
+for (const f of files) {
+  const body = readFileSync(f, 'utf8').replace(/<script[\s\S]*?<\/script>/g, '');
+  const marks = (body.match(/\b(mark-u|stamp|text-mark|decoration-mark|airmail)\b/g) || []).length;
+  if (marks > 6) { console.log(`${f}: second brand colour used ${marks}x (max 6)`); bad++; }
+  for (const h of body.match(/<h[1-3][\s\S]*?<\/h[1-3]>/g) || []) {
+    if ((h.match(/mark-u/g) || []).length > 1) { console.log(`${f}: heading with more than one underline`); bad++; }
   }
 }
 // every public number must exist in the claims whitelist

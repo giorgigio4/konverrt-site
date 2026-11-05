@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Mark from '../../components/Mark.astro';
 import Section from '../../components/Section.astro';
 import ReplyQuote from '../../components/ReplyQuote.astro';
 import Cta from '../../components/Cta.astro';
@@ -12,7 +13,7 @@ const strip = [11, 9, 14].map((n) => replies.find((r) => r.n === n)!);
 <Base {title} {description} path="/for/pe-firms/" schema={[webPage(title, '/for/pe-firms/', description), service(), breadcrumb([{ name: 'Home', path: '/' }, { name: 'For PE firms', path: '/for/pe-firms/' }])]}>
   <Section>
     <div class="max-w-prose">
-      <h1>Proprietary deal sourcing for lower-middle-market PE</h1>
+      <h1><Mark>Proprietary</Mark> deal sourcing for lower-middle-market PE</h1>
       <p class="mt-6 text-lg text-ink-2">Owner-run companies that fit your thesis, platform or add-on, whose owner said yes to a call. We name your fund or keep it blind, your choice. Owners reply to a specific, named interest in their company, not to a generic "we buy businesses" email.</p>
     </div>
     <div class="mt-12 grid gap-10 md:grid-cols-2">
