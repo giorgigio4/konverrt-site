@@ -27,6 +27,7 @@ export const nav = [
   { href: '/how-it-works/', label: 'How it works' },
   { href: '/results/', label: 'Results' },
   { href: '/pricing/', label: 'Pricing' },
+  { href: '/blog/', label: 'Blog' },
   { href: '/faq/', label: 'FAQ' },
 ];
 

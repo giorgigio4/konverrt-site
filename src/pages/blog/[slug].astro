@@ -1,0 +1,60 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import FaqList from '../../components/FaqList.astro';
+import Cta from '../../components/Cta.astro';
+import { site } from '../../data/site';
+import { webPage, breadcrumb, faqPage } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => import.meta.env.DEV || !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+const d = post.data;
+const path = `/blog/${post.id}/`;
+const words = (post.body ?? '').split(/\s+/).length;
+const minutes = Math.max(1, Math.round(words / 230));
+const fmt = (dt: Date) => dt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const article = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: d.title,
+  description: d.description,
+  image: `${site.url}${d.cover}`,
+  datePublished: d.pubDate.toISOString(),
+  dateModified: (d.updated ?? d.pubDate).toISOString(),
+  author: { '@type': 'Person', name: site.founder, url: `${site.url}/about/`, sameAs: site.founderLinkedin },
+  publisher: { '@id': `${site.url}/#org` },
+  mainEntityOfPage: `${site.url}${path}`,
+};
+const schema: object[] = [webPage(d.title, path, d.description), article, breadcrumb([{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog/' }, { name: d.title, path }])];
+if (d.faq.length) schema.push(faqPage(d.faq));
+const toc = headings.filter((h) => h.depth === 2);
+---
+<Base title={`${d.title} | Konverrt`} description={d.description} {path} {schema} noindex={d.draft}>
+  <article class="mx-auto max-w-3xl px-5 py-14">
+    <p class="mono"><a href="/blog/" class="hover:text-accent">Blog</a> · {d.kind === 'guide' ? 'Guide' : 'Post'}</p>
+    <h1 class="mt-4">{d.title}</h1>
+    <div class="mt-6 flex items-center gap-3 text-sm text-muted">
+      <img src="/gio.jpg" alt="" width="36" height="36" class="rounded-sm" />
+      <span>By <a href="/about/" class="link">{site.founderShort}</a> · {fmt(d.pubDate)} · {minutes} min read</span>
+    </div>
+    <aside class="tldr mt-8" aria-label="Short answer"><p class="mono">The short answer</p><p class="mt-2">{d.tldr}</p></aside>
+    <figure class="mt-10"><img src={d.cover} alt={d.coverAlt} width="1600" height="900" class="post-cover" /></figure>
+    {toc.length > 2 && (
+      <nav class="post-toc mt-10" aria-label="In this guide"><p class="mono">In this guide</p>
+        <ol class="mt-3">{toc.map((h) => <li><a href={`#${h.slug}`} class="hover:text-accent">{h.text}</a></li>)}</ol>
+      </nav>
+    )}
+    <div class="post mt-10"><Content /></div>
+    {d.faq.length > 0 && (<section class="mt-16"><h2>Questions people ask</h2><div class="mt-6"><FaqList items={d.faq.map((f) => ({ ...f, g: 'process' as const }))} /></div></section>)}
+    {d.sources.length > 0 && (
+      <section class="mt-12"><p class="mono">Sources</p><ul class="mt-3 text-sm text-muted space-y-1">
+        {d.sources.map((s) => <li>{s.url ? <a href={s.url} class="link" target="_blank" rel="noopener">{s.label}</a> : s.label}</li>)}
+      </ul></section>
+    )}
+  </article>
+  <Cta />
+</Base>

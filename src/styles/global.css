@@ -258,3 +258,30 @@ html:not([data-mode="light"]) .mode-btn .i-sun { display: block; } html:not([dat
 .trust { display: flex; align-items: baseline; gap: 8px; font-size: 14px; line-height: 20px; color: var(--color-muted); }
 .trust li { display: inline-flex; align-items: baseline; gap: 6px; }
 .trust .figure { font-size: 20px; line-height: 20px; color: var(--color-ink); }
+
+/* blog */
+.post { color: var(--color-ink-2); font-size: 18px; line-height: 30px; max-width: 68ch; }
+.post > * + * { margin-top: 20px; }
+.post h2 { margin-top: 56px; color: var(--color-ink); }
+.post h3 { margin-top: 36px; color: var(--color-ink); }
+.post strong { font-weight: 600; color: var(--color-ink); }
+.post em { font-style: normal; }
+.post a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; }
+.post ul { list-style: disc; padding-left: 22px; } .post ol { list-style: decimal; padding-left: 22px; }
+.post li + li { margin-top: 8px; }
+.post blockquote { border-left: 2px solid var(--color-accent); padding: 4px 0 4px 18px; color: var(--color-ink); }
+.post table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 22px; }
+.post th, .post td { border-bottom: 1px solid var(--color-line); padding: 10px 8px; text-align: left; vertical-align: top; }
+.post th { color: var(--color-ink); font-weight: 600; }
+.post figure img, .post-cover { width: 100%; height: auto; border: 1px solid var(--color-line); border-radius: 6px; }
+.post figcaption { margin-top: 8px; font-size: 14px; color: var(--color-muted); }
+.post .channel-cards { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .post .channel-cards { grid-template-columns: 1fr 1fr; } }
+.post .channel-card { background: var(--color-card); border: 1px solid var(--color-line); border-radius: 6px; padding: 18px 20px; font-size: 15px; line-height: 22px; }
+.post .channel-card h3 { margin: 0 0 10px; font-size: 20px; }
+.post .channel-card dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; margin: 0; }
+.post .channel-card dt { color: var(--color-muted); }
+.post .channel-card dd { margin: 0; color: var(--color-ink); }
+.tldr { background: var(--color-card); border: 1px solid var(--color-line); border-left: 3px solid var(--color-accent); border-radius: 6px; padding: 18px 20px; font-size: 17px; line-height: 28px; color: var(--color-ink); }
+.post-toc ol { list-style: decimal; padding-left: 22px; color: var(--color-ink-2); }
+.post-toc li + li { margin-top: 6px; }

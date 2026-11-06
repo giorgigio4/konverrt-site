@@ -18,6 +18,7 @@ Founded and run by Giorgi (Gio) Bezhanishvili. Registered in Tbilisi, Georgia (r
 - [Compare](https://konverrt.com/compare/): Konverrt vs DealSource Systems, CAPTARGET, Axial
 - [About](https://konverrt.com/about/)
 - [Apply for a pilot batch](https://konverrt.com/apply/)
+- Blog (guides from our own campaign data): https://konverrt.com/blog/
 
 ## Facts
 

@@ -39,5 +39,12 @@ for (const f of files) {
 const claims = ['50+', '350+', '1,000+', '$700M+', '$350', '$700'];
 const home = readFileSync('dist/index.html', 'utf8');
 for (const c of claims) if (!home.includes(c) && !readFileSync('dist/pricing/index.html', 'utf8').includes(c)) { console.log(`claim missing from home/pricing: ${c}`); bad++; }
+// blog posts: one h1, BlogPosting schema, no unfilled placeholders
+for (const f of files.filter((p) => /dist\/blog\/[^/]+\/index\.html$/.test(p))) {
+  const body = readFileSync(f, 'utf8');
+  if ((body.match(/<h1[\s>]/g) || []).length !== 1) { console.log(`${f}: blog post needs exactly one h1`); bad++; }
+  if (!body.includes('"@type":"BlogPosting"')) { console.log(`${f}: missing BlogPosting schema`); bad++; }
+  if (/\[NEEDS|\{\{|\bTODO\b/.test(body.replace(/<script[\s\S]*?<\/script>/g, ''))) { console.log(`${f}: unfilled placeholder`); bad++; }
+}
 console.log(bad ? `FAILED: ${bad} hit(s) across ${files.length} files` : `ok: ${files.length} files clean`);
 process.exit(bad ? 1 : 0);
