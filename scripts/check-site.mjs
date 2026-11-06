@@ -36,7 +36,7 @@ for (const f of files) {
   }
 }
 // every public number must exist in the claims whitelist
-const claims = ['2.5M+', '1,000+', '$700M+', '50+', '$350', '$700'];
+const claims = ['50+', '350+', '1,000+', '$700M+', '$350', '$700'];
 const home = readFileSync('dist/index.html', 'utf8');
 for (const c of claims) if (!home.includes(c) && !readFileSync('dist/pricing/index.html', 'utf8').includes(c)) { console.log(`claim missing from home/pricing: ${c}`); bad++; }
 console.log(bad ? `FAILED: ${bad} hit(s) across ${files.length} files` : `ok: ${files.length} files clean`);
