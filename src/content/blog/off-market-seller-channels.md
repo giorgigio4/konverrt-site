@@ -86,27 +86,13 @@ Prices come from published pages, checked in November 2026. Where a vendor does 
 <tr><th scope="row">Content and inbound</th><td>Articles, newsletters, podcasts, LinkedIn posts, directory profiles, AI search.</td><td>Mostly your time.</td><td>Slow and unpredictable. Owners find you when they are ready, not when you need them.</td><td>Owners who arrive already trusting you.</td><td>Advisors with a clear niche and a point of view who can publish for a year or more.</td><td>It compounds slowly, so it cannot fix this quarter's pipeline.</td></tr>
 </tbody></table></div>
 
-## What each one costs, published
+## Reach owners before they are ready
 
 It's really crazy, but you might think most owners are going to be ready to sell right now, even when they say "okay, I'm open to having a conversation". Most are not ready today. To catch an owner who is ready right now, you have to be super lucky to get in touch with them at that exact moment, which is a very, very low probability. Hoping for that is like going to the casino and putting everything on green.
 
-That is how rare the right moment is. Across our sell-side campaigns, roughly 1 in every 475 owners we email says they are open to a conversation.
+To put a number on it: across our sell-side campaigns, roughly 1 in every 475 owners we email says they are open to a conversation. And as I said, even most of those are not selling this month.
 
 So if you realistically want to fill the pipeline, you build a reliable network of owners who can sell in a few months, in a year, in the next 2 years. If you fill that pipeline properly, you never have to worry about it running dry. They might be thinking about selling. They might be planning it. You want to be the first one to start building the relationship, so by the time they decide to sell, you are the advisor they come to.
-
-| Channel | Published cost | What that buys you |
-|---|---|---|
-| Referrals | Relationship time | Conversations you cannot schedule |
-| Co-brokering | A share of the fee | Someone else's listings or buyers |
-| Axial | Free for qualified firms, fee share on referred owners | Mostly buyers |
-| Data platforms | Not public | A list, no conversations |
-| BD hire | About $63,947 a year plus tools | One person's capacity, after ramp-up |
-| Cold calling | Caller time, dialer from $119 a team a month | Live conversations, low connect rates |
-| LinkedIn | $119.99 a month per seat | Capped volume, owners who are on LinkedIn |
-| Direct mail | $0.82 a letter in postage alone | Slow, hard-to-track replies |
-| Cold email in-house | From about $96 a month in tools for one mailbox, plus a person | Thousands of owners a month, if done right |
-| Events | $2,500 to $4,050 a ticket, plus travel | Buyers and peers |
-| Content | Your time | Owners who find you when they are ready |
 
 ## How to pick your first two channels
 
