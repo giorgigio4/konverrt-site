@@ -62,6 +62,8 @@ So one or two months you might be doing great, and then, boom, you have no pipel
 
 Because of that, a lot of advisors start posting on LinkedIn and going to events. That is good. It builds your reputation, your personal brand, your visibility. But if you need deals today, if you need a pipeline today, you cannot rely on a channel that brings you owners tomorrow. And that is what all inbound channels are.
 
+Early this year I got on a first call with a sell-side advisor in the Midwest. On paper he was doing everything right. He advertised, he sent direct mail and postcards, and the phone rang a good amount. The problem was who was calling. He told me he turned down about 80% of those calls because the businesses were too small - an owner with a toolbox and zero employees. He had also tried an outbound agency the year before, and some of the "leads" they delivered were owners replying "stop emailing me". His words: "That's not a lead." What he wanted was to get in front of the right owners early, because, as he put it, it's "such a relationship type business". <a href="/results/midwest-ma-advisor/">Here is how that search went.</a>
+
 So below are the main channels advisors use to find off-market sellers, side by side, with published costs and where each one breaks.
 
 ## Every channel, side by side

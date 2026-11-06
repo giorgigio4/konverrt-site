@@ -275,13 +275,21 @@ html:not([data-mode="light"]) .mode-btn .i-sun { display: block; } html:not([dat
 .post th { color: var(--color-ink); font-weight: 600; }
 .post figure img, .post-cover { width: 100%; height: auto; border: 1px solid var(--color-line); border-radius: 6px; }
 .post figcaption { margin-top: 8px; font-size: 14px; color: var(--color-muted); }
-.post .channel-cards { display: grid; gap: 16px; grid-template-columns: 1fr; }
-@media (min-width: 768px) { .post .channel-cards { grid-template-columns: 1fr 1fr; } }
-.post .channel-card { background: var(--color-card); border: 1px solid var(--color-line); border-radius: 6px; padding: 18px 20px; font-size: 15px; line-height: 22px; }
-.post .channel-card h3 { margin: 0 0 10px; font-size: 20px; }
-.post .channel-card dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; margin: 0; }
-.post .channel-card dt { color: var(--color-muted); }
-.post .channel-card dd { margin: 0; color: var(--color-ink); }
+/* channel cards: break out of the 68ch text column so 3 cards fit side by side */
+.post .channel-cards, .post table { width: min(1120px, calc(100vw - 40px)); max-width: none; margin-left: calc(50% - min(560px, calc(50vw - 20px))); }
+.post .channel-cards { display: grid; gap: 16px; grid-template-columns: 1fr; margin-top: 28px; }
+@media (min-width: 720px) { .post .channel-cards { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1040px) { .post .channel-cards { grid-template-columns: 1fr 1fr 1fr; } }
+.post .channel-card { background: var(--color-card); border: 1px solid var(--color-line); border-top: 3px solid var(--color-accent); border-radius: 6px; padding: 18px 20px 20px; font-size: 15px; line-height: 22px; }
+.post .channel-card h3 { margin: 0 0 14px; font-size: 21px; line-height: 26px; }
+.post .channel-card dl { display: block; margin: 0; }
+.post .channel-card dt { font-size: 11.5px; line-height: 16px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-muted); margin-top: 12px; }
+.post .channel-card dt:first-child { margin-top: 0; }
+.post .channel-card dd { margin: 3px 0 0; color: var(--color-ink); }
+.post .channel-card dt:nth-of-type(2) + dd, .post .channel-card dt:nth-of-type(3) + dd { font-weight: 500; }
+.post table { font-size: 15px; line-height: 22px; }
+.post table td:first-child { color: var(--color-ink); font-weight: 500; white-space: nowrap; }
+@media (max-width: 719px) { .post table td:first-child { white-space: normal; } }
 .tldr { background: var(--color-card); border: 1px solid var(--color-line); border-left: 3px solid var(--color-accent); border-radius: 6px; padding: 18px 20px; font-size: 17px; line-height: 28px; color: var(--color-ink); }
 .post-toc ol { list-style: decimal; padding-left: 22px; color: var(--color-ink-2); }
 .post-toc li + li { margin-top: 6px; }
