@@ -70,96 +70,21 @@ So below are the main channels advisors use to find off-market sellers, side by 
 
 Prices come from published pages, checked in November 2026. Where a vendor does not publish a price, it says so.
 
-<div class="channel-cards">
-<div class="channel-card"><h3>Referrals</h3><dl>
-<dt>What it is</dt><dd>Introductions from CPAs, attorneys, wealth managers, bankers and past clients.</dd>
-<dt>What it costs</dt><dd>Relationship time, plus a referral fee if you pay one. Check fee arrangements with your compliance counsel.</dd>
-<dt>Time to first conversation</dt><dd>Whenever the referrer's client is ready. You do not control it.</dd>
-<dt>What you get</dt><dd>The highest-trust conversation there is. The owner arrives already sold on you.</dd>
-<dt>Best for</dt><dd>Every advisor, as the base layer.</dd>
-<dt>Where it breaks</dt><dd>Volume and timing. When a referrer retires, the stream goes with them.</dd>
-</dl></div>
-<div class="channel-card"><h3>Deal marketplaces (Axial)</h3><dl>
-<dt>What it is</dt><dd>A private deal network. Advisors list mandates to buyers; Advisor Finder refers some owners to advisors.</dd>
-<dt>What it costs</dt><dd>Free for qualified advisory firms. Owner referrals cost "a small fee share once you've been engaged" - the share is not public.</dd>
-<dt>Time to first conversation</dt><dd>Not stated. Axial's own partner example: 7 owner introductions over 4 years to one investment bank, which led to 2 engagements and 1 close.</dd>
-<dt>What you get</dt><dd>Buyer reach first, owner leads second.</dd>
-<dt>Best for</dt><dd>Firms with an active origination team and mandates already in hand.</dd>
-<dt>Where it breaks</dt><dd>Owner referrals go to "top-performing advisors" ranked by activity, so a small firm with few listings gets few.</dd>
-</dl></div>
-<div class="channel-card"><h3>Co-brokering</h3><dl>
-<dt>What it is</dt><dd>Sharing a deal with another intermediary.</dd>
-<dt>What it costs</dt><dd>A share of the fee. One broker's page cites a 50/50 split.</dd>
-<dt>Time to first conversation</dt><dd>No public data.</dd>
-<dt>What you get</dt><dd>Someone else's listings or buyers.</dd>
-<dt>Best for</dt><dd>Advisors with buyers but no inventory, or inventory outside their region.</dd>
-<dt>Where it breaks</dt><dd>You split the fee and inherit the other side's habits. And a brokered deal does not stay off-market for long.</dd>
-</dl></div>
-<div class="channel-card"><h3>Data platforms (Grata, SourceScrub, Inven)</h3><dl>
-<dt>What it is</dt><dd>Private-company databases for building target lists by industry, size and signals.</dd>
-<dt>What it costs</dt><dd>Not public; quoted on request for all three. Lighter contact databases like Apollo start at $49 per seat per month, billed annually.</dd>
-<dt>Time to first conversation</dt><dd>None on its own. A database gives you a list, not a conversation.</dd>
-<dt>What you get</dt><dd>A countable universe of target companies and some contacts.</dd>
-<dt>Best for</dt><dd>Firms that already run outreach and need a better list.</dd>
-<dt>Where it breaks</dt><dd>Small owner-run firms are thin in the data, and someone still has to do the outreach.</dd>
-</dl></div>
-<div class="channel-card"><h3>In-house BD hire</h3><dl>
-<dt>What it is</dt><dd>A salaried junior person who builds lists, prospects and books owner meetings.</dd>
-<dt>What it costs</dt><dd>US average $63,947 a year for a Business Development Associate I (Salary.com), plus tools like Sales Navigator at $119.99 a month.</dd>
-<dt>Time to first conversation</dt><dd>A few weeks if they arrive with experience and a list. Several months if you have to train them.</dd>
-<dt>What you get</dt><dd>Dedicated capacity you control.</dd>
-<dt>Best for</dt><dd>Firms that already know what works and have a process to hand over.</dd>
-<dt>Where it breaks</dt><dd>Onboarding, training and managing. Without experience, the firms they bring may not be the quality you need.</dd>
-</dl></div>
-<div class="channel-card"><h3>Cold calling</h3><dl>
-<dt>What it is</dt><dd>Phoning owners directly from a list.</dd>
-<dt>What it costs</dt><dd>Caller time, plus a dialer and data. Apollo's dialer add-on is $119 per team per month, billed annually.</dd>
-<dt>Time to first conversation</dt><dd>No public data. It depends on how often owners pick up.</dd>
-<dt>What you get</dt><dd>Live conversations and objections you hear in real time.</dd>
-<dt>Best for</dt><dd>Local, owner-operated businesses where the owner answers the phone.</dd>
-<dt>Where it breaks</dt><dd>Gatekeepers, low connect rates and caller burnout.</dd>
-</dl></div>
-<div class="channel-card"><h3>Direct mail</h3><dl>
-<dt>What it is</dt><dd>Letters or postcards to the owner, often signed by a partner.</dd>
-<dt>What it costs</dt><dd>$0.82 per First-Class letter stamp before printing. Print-and-mail services like Lob start at $0.828 per letter.</dd>
-<dt>Time to first conversation</dt><dd>Delivery in a few days; replies are slow and hard to track.</dd>
-<dt>What you get</dt><dd>A physical, discreet touch that reaches owners who ignore email.</dd>
-<dt>Best for</dt><dd>Older owners and high-value targets, paired with email.</dd>
-<dt>Where it breaks</dt><dd>Every piece costs postage, and the address has to reach the owner, not the front desk.</dd>
-</dl></div>
-<div class="channel-card"><h3>LinkedIn outreach</h3><dl>
-<dt>What it is</dt><dd>Connection requests and messages to owners, usually through Sales Navigator.</dd>
-<dt>What it costs</dt><dd>Sales Navigator Core is $119.99 a month per license, with 50 InMails a month.</dd>
-<dt>Time to first conversation</dt><dd>No public data.</dd>
-<dt>What you get</dt><dd>Context: you see the owner, mutual connections and recent activity first.</dd>
-<dt>Best for</dt><dd>Professional services and tech owners, and warming up a target before email or a call.</dd>
-<dt>Where it breaks</dt><dd>Many owner-operators are barely on LinkedIn, and volume is capped per seat.</dd>
-</dl></div>
-<div class="channel-card"><h3>Cold email</h3><dl>
-<dt>What it is</dt><dd>Short, plain emails to owners on a researched list.</dd>
-<dt>What it costs</dt><dd>In-house: Smartlead from $39 or Instantly from $47 a month, $8.40 per mailbox, Apollo data from $49 a month billed annually, plus the person running it. Agency terms vary, so ask.</dd>
-<dt>Time to first conversation</dt><dd>No public data. New domains have to be warmed up before you send from them.</dd>
-<dt>What you get</dt><dd>The only owner-direct channel here that reaches thousands of owners a month at a low cost per touch.</dd>
-<dt>Best for</dt><dd>Advisors with a clear mandate and a market of thousands of owners.</dd>
-<dt>Where it breaks</dt><dd>Done badly, it hurts deliverability and reputation. Very small niches run out of owners.</dd>
-</dl></div>
-<div class="channel-card"><h3>Conferences and events</h3><dl>
-<dt>What it is</dt><dd>Dealmaker and industry events.</dd>
-<dt>What it costs</dt><dd>ACG DealMAX listed $2,500 to $4,050 per ticket in its last published table, before travel. Some conferences only show the price inside registration.</dd>
-<dt>Time to first conversation</dt><dd>On the day, but mostly with buyers and peers.</dd>
-<dt>What you get</dt><dd>Buyer relationships, referral partners and credibility.</dd>
-<dt>Best for</dt><dd>Building the buyer side. For owners, go to their industry's trade show, not an M&A event.</dd>
-<dt>Where it breaks</dt><dd>M&A conferences are full of buyers and intermediaries, not sellers.</dd>
-</dl></div>
-<div class="channel-card"><h3>Content and inbound</h3><dl>
-<dt>What it is</dt><dd>Articles, newsletters, podcasts, LinkedIn posts, directory profiles, AI search.</dd>
-<dt>What it costs</dt><dd>Mostly your time.</dd>
-<dt>Time to first conversation</dt><dd>Slow and unpredictable. Owners find you when they are ready, not when you need them.</dd>
-<dt>What you get</dt><dd>Owners who arrive already trusting you.</dd>
-<dt>Best for</dt><dd>Advisors with a clear niche and a point of view who can publish for a year or more.</dd>
-<dt>Where it breaks</dt><dd>It compounds slowly, so it cannot fix this quarter's pipeline.</dd>
-</dl></div>
-</div>
+<div class="matrix-wrap"><table class="matrix">
+<thead><tr><th scope="col">Channel</th><th scope="col">What it is</th><th scope="col">What it costs</th><th scope="col">Time to first conversation</th><th scope="col">What you get</th><th scope="col">Best for</th><th scope="col">Where it breaks</th></tr></thead>
+<tbody>
+<tr><th scope="row">Referrals</th><td>Introductions from CPAs, attorneys, wealth managers, bankers and past clients.</td><td>Relationship time, plus a referral fee if you pay one. Check fee arrangements with your compliance counsel.</td><td>Whenever the referrer's client is ready. You do not control it.</td><td>The highest-trust conversation there is. The owner arrives already sold on you.</td><td>Every advisor, as the base layer.</td><td>Volume and timing. When a referrer retires, the stream goes with them.</td></tr>
+<tr><th scope="row">Deal marketplaces (Axial)</th><td>A private deal network. Advisors list mandates to buyers; Advisor Finder refers some owners to advisors.</td><td>Free for qualified advisory firms. Owner referrals cost "a small fee share once you've been engaged" - the share is not public.</td><td>Not stated. Axial's own partner example: 7 owner introductions over 4 years to one investment bank, which led to 2 engagements and 1 close.</td><td>Buyer reach first, owner leads second.</td><td>Firms with an active origination team and mandates already in hand.</td><td>Owner referrals go to "top-performing advisors" ranked by activity, so a small firm with few listings gets few.</td></tr>
+<tr><th scope="row">Co-brokering</th><td>Sharing a deal with another intermediary.</td><td>A share of the fee. One broker's page cites a 50/50 split.</td><td>No public data.</td><td>Someone else's listings or buyers.</td><td>Advisors with buyers but no inventory, or inventory outside their region.</td><td>You split the fee and inherit the other side's habits. And a brokered deal does not stay off-market for long.</td></tr>
+<tr><th scope="row">Data platforms (Grata, SourceScrub, Inven)</th><td>Private-company databases for building target lists by industry, size and signals.</td><td>Not public; quoted on request for all three. Lighter contact databases like Apollo start at $49 per seat per month, billed annually.</td><td>None on its own. A database gives you a list, not a conversation.</td><td>A countable universe of target companies and some contacts.</td><td>Firms that already run outreach and need a better list.</td><td>Small owner-run firms are thin in the data, and someone still has to do the outreach.</td></tr>
+<tr><th scope="row">In-house BD hire</th><td>A salaried junior person who builds lists, prospects and books owner meetings.</td><td>US average $63,947 a year for a Business Development Associate I (Salary.com), plus tools like Sales Navigator at $119.99 a month.</td><td>A few weeks if they arrive with experience and a list. Several months if you have to train them.</td><td>Dedicated capacity you control.</td><td>Firms that already know what works and have a process to hand over.</td><td>Onboarding, training and managing. Without experience, the firms they bring may not be the quality you need.</td></tr>
+<tr><th scope="row">Cold calling</th><td>Phoning owners directly from a list.</td><td>Caller time, plus a dialer and data. Apollo's dialer add-on is $119 per team per month, billed annually.</td><td>No public data. It depends on how often owners pick up.</td><td>Live conversations and objections you hear in real time.</td><td>Local, owner-operated businesses where the owner answers the phone.</td><td>Gatekeepers, low connect rates and caller burnout.</td></tr>
+<tr><th scope="row">Direct mail</th><td>Letters or postcards to the owner, often signed by a partner.</td><td>$0.82 per First-Class letter stamp before printing. Print-and-mail services like Lob start at $0.828 per letter.</td><td>Delivery in a few days; replies are slow and hard to track.</td><td>A physical, discreet touch that reaches owners who ignore email.</td><td>Older owners and high-value targets, paired with email.</td><td>Every piece costs postage, and the address has to reach the owner, not the front desk.</td></tr>
+<tr><th scope="row">LinkedIn outreach</th><td>Connection requests and messages to owners, usually through Sales Navigator.</td><td>Sales Navigator Core is $119.99 a month per license, with 50 InMails a month.</td><td>No public data.</td><td>Context: you see the owner, mutual connections and recent activity first.</td><td>Professional services and tech owners, and warming up a target before email or a call.</td><td>Many owner-operators are barely on LinkedIn, and volume is capped per seat.</td></tr>
+<tr><th scope="row">Cold email</th><td>Short, plain emails to owners on a researched list.</td><td>In-house: Smartlead from $39 or Instantly from $47 a month, $8.40 per mailbox, Apollo data from $49 a month billed annually, plus the person running it. Agency terms vary, so ask.</td><td>No public data. New domains have to be warmed up before you send from them.</td><td>The only owner-direct channel here that reaches thousands of owners a month at a low cost per touch.</td><td>Advisors with a clear mandate and a market of thousands of owners.</td><td>Done badly, it hurts deliverability and reputation. Very small niches run out of owners.</td></tr>
+<tr><th scope="row">Conferences and events</th><td>Dealmaker and industry events.</td><td>ACG DealMAX listed $2,500 to $4,050 per ticket in its last published table, before travel. Some conferences only show the price inside registration.</td><td>On the day, but mostly with buyers and peers.</td><td>Buyer relationships, referral partners and credibility.</td><td>Building the buyer side. For owners, go to their industry's trade show, not an M&A event.</td><td>M&A conferences are full of buyers and intermediaries, not sellers.</td></tr>
+<tr><th scope="row">Content and inbound</th><td>Articles, newsletters, podcasts, LinkedIn posts, directory profiles, AI search.</td><td>Mostly your time.</td><td>Slow and unpredictable. Owners find you when they are ready, not when you need them.</td><td>Owners who arrive already trusting you.</td><td>Advisors with a clear niche and a point of view who can publish for a year or more.</td><td>It compounds slowly, so it cannot fix this quarter's pipeline.</td></tr>
+</tbody></table></div>
 
 ## What each one costs, published
 
