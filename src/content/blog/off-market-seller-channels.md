@@ -5,7 +5,7 @@ kind: guide
 pubDate: 2026-11-07
 tldr: Referrals work, but you cannot time them or predict them. To find off-market sellers on purpose, you need at least one channel that reaches owners directly and on your timeline. For most small advisory firms that means a researched list plus short, plain outreach by email, LinkedIn and phone. Content and events build your name, but they bring owners tomorrow, and you need a pipeline today.
 cover: /blog/off-market-seller-channels/cover.webp
-coverAlt: Ink illustration of eleven envelopes laid out on a long desk, one picked out in blue
+coverAlt: Ink illustration of envelopes curving across a dark desk around a brass postmark stamp, one envelope in blue
 faq:
   - q: What is the fastest way for an M&A advisor to find off-market sellers?
     a: Direct outreach to a researched list of owners who fit your mandate, by email, LinkedIn and phone together.
