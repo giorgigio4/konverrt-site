@@ -1,9 +1,5 @@
 @import "tailwindcss";
 @import "@fontsource-variable/fraunces/full.css";
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/500.css";
-@import "@fontsource/inter/600.css";
-@import "@fontsource/ibm-plex-mono/400.css";
 @import "@fontsource/instrument-serif/400.css";
 @import "@fontsource-variable/instrument-sans";
 @import "@fontsource/libre-caslon-display/400.css";
@@ -27,8 +23,8 @@
   --color-mark: #1e5fd1;
 
   --font-display: "Libre Caslon Display", Georgia, serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-body: "Instrument Sans Variable", system-ui, sans-serif;
+  --font-mono: "Instrument Sans Variable", system-ui, sans-serif;
 
   --text-xs: 12px;  --text-xs--line-height: 18px;
   --text-sm: 14px;  --text-sm--line-height: 22px;
@@ -111,7 +107,9 @@ a { color: inherit; text-decoration: none; transition: color 150ms ease, border-
 .prose p { margin: 0 0 16px; }
 .prose p:last-child { margin: 0; }
 .rule { border-top: 1px solid var(--color-line); }
-.mono { font-family: var(--font-mono); font-size: var(--text-xs); line-height: var(--text-xs--line-height); color: var(--color-muted); }
+.mono { font-family: var(--font-mono); font-size: 11.5px; line-height: 16px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-muted); font-variant-numeric: tabular-nums; }
+/* long sentences in label styling stay sentence case - all-caps paragraphs are hard to read */
+.mono.note { font-size: var(--text-xs); line-height: var(--text-xs--line-height); font-weight: 400; text-transform: none; letter-spacing: 0; }
 .card { background: var(--color-card); border: 1px solid var(--color-line); border-radius: var(--radius-md); }
 
 input, textarea, select { font: inherit; }
