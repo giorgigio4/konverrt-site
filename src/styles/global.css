@@ -255,6 +255,6 @@ html:not([data-mode="light"]) .mode-btn .i-sun { display: block; } html:not([dat
 @media (min-width: 768px) { .faq-group-h { font-size: 30px; line-height: 36px; } }
 
 /* hero trust line under the CTA */
-.trust { display: grid; grid-template-columns: repeat(2, max-content); gap: 10px 32px; font-size: 14px; line-height: 20px; color: var(--color-muted); }
+.trust { display: flex; align-items: baseline; gap: 8px; font-size: 14px; line-height: 20px; color: var(--color-muted); }
 .trust li { display: inline-flex; align-items: baseline; gap: 6px; }
 .trust .figure { font-size: 20px; line-height: 20px; color: var(--color-ink); }

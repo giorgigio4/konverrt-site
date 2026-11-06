@@ -18,10 +18,9 @@ export const site = {
 };
 
 export const stats = [
-  { value: '50+', label: 'firms served' },
-  { value: '350+', label: 'campaigns run' },
-  { value: '1,000+', label: 'owners forwarded' },
-  { value: '$700M+', label: 'in combined revenue' },
+  { value: '1,000+', label: 'engaged owners forwarded to clients' },
+  { value: '$700M+', label: 'combined revenue of the owner-run companies we forwarded' },
+  { value: '50+', label: 'firms we have run outreach for' },
 ];
 
 export const nav = [

@@ -37,9 +37,7 @@ const homeFaqs = faqs.filter((f) => f.home);
         <a href={cta.href} class="btn btn-primary">{cta.label}</a>
         <a href="/results/" class="link text-sm">See the replies</a>
       </div>
-      <ul class="trust mt-8" aria-label="Track record">
-        {stats.map((s) => <li><span class="figure tabular-nums">{s.value}</span> {s.label}</li>)}
-      </ul>
+      <p class="trust mt-6"><span class="figure tabular-nums">350+</span> campaigns run</p>
     </div>
     <div class="md:mt-2">
       <Vsl id="6a53843e56f44a4693cc54b7dd84d637" title="How the deal sourcing system works, walked through by Gio" minutes={7} poster="/vsl-poster.jpg" />
@@ -47,6 +45,17 @@ const homeFaqs = faqs.filter((f) => f.home);
     </div>
   </section>
 
+
+  <section class="border-y border-line bg-paper-2/50">
+    <dl class="mx-auto max-w-6xl px-5 py-8 grid grid-cols-3 gap-4 md:gap-6">
+      {stats.map((s) => (
+        <div>
+          <dt class="figure text-2xl md:text-4xl tabular-nums">{s.value}</dt>
+          <dd class="mt-1 text-xs md:text-sm text-muted">{s.label}</dd>
+        </div>
+      ))}
+    </dl>
+  </section>
 
   <Section title="What lands in your inbox" intro="Each lead is a business owner who replied and said, in their own words, that they are open to talking. We check the company against your criteria, add one line on why it fits, and forward the thread.">
     <div class="grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-center">
