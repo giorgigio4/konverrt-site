@@ -2,7 +2,7 @@
 title: How M&A advisors find off-market sellers beyond referrals
 description: Every way an M&A advisor can find off-market sellers beyond referrals, compared side by side on cost, speed and where each one breaks.
 kind: guide
-pubDate: 2026-11-07
+pubDate: 2026-11-06
 tldr: Referrals work, but you cannot time them or predict them. To find off-market sellers on purpose, you need at least one channel that reaches owners directly and on your timeline. For most small advisory firms that means a researched list plus short, plain outreach by email, LinkedIn and phone. Content and events build your name, but they bring owners tomorrow, and you need a pipeline today.
 cover: /blog/off-market-seller-channels/cover.webp
 coverAlt: Ink illustration of envelopes curving across a dark desk around a brass postmark stamp, one envelope in blue
