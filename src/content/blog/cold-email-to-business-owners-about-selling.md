@@ -37,7 +37,7 @@ That is fine, and it is good to know. It is a fact you can mention on a call or 
 
 That is the thing with cold outreach. People react differently to things a warm audience would react well to.
 
-## Open with a question they already ask themselves
+## Open with a question instead
 
 Then we switched to a question opener. Instead of making a statement or leading with straight credentials, we asked a question. A question makes someone think of the answer in their mind and keep reading the rest of the email, because it opens a curiosity loop instead of dropping a statement.
 
@@ -47,7 +47,7 @@ Once we started asking questions instead, we got to about one interested owner f
 
 My explanation, after dozens of campaigns and tens of thousands of owners reached: you ask them a question they are already asking themselves, or have thought about. That is relevant. You show them you understand what is going on in their mind and what kind of questions they might be asking. That makes them keep reading, and it makes them more likely to respond, because you piqued their curiosity.
 
-## Give them a specific reason you are writing
+## Give them a reason you are writing
 
 Another very important one came from a different set of campaigns.
 
@@ -63,7 +63,7 @@ Then it hit me. When you can mention a buyer, that means intent. What made the d
 
 The replies were warmer too. Of the owners who wrote back to a buyer, 37% were interested. Of the owners who wrote back to an advisor, 19% were.
 
-## On the sell-side, talk about the buyers you can bring
+## On the sell-side, name your buyers
 
 We took that and implemented it on the sell-side as well. Obviously there was no specific buyer, because it is a sell-side mandate. But we started mentioning the buyer network the advisor had. For example: I work with a network of, say, 3,000 buyers. So instead of speaking with just one private equity firm or one buyer with one offer, we can help you get multiple offers.
 
@@ -73,7 +73,7 @@ That started getting way better replies. We got to about 1 interested owner for 
 
 One business owner wrote back in October 2026: "If you have an interested buyer and some offers ready to share send them over. Otherwise, I am not interested at the moment."
 
-## Skip the "20 years building this" opener
+## Skip the flattery opener
 
 Openers like "you have spent 20 years building this business" are the same problem as the other statements. Yes, it is personalization. But personalization does not matter as much as you think here, because it adds nothing to the conversation. It is flattery. The owner already knows they have been in business for 20 years.
 

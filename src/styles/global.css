@@ -263,7 +263,6 @@ html:not([data-mode="light"]) .mode-btn .i-sun { display: block; } html:not([dat
 .post { color: var(--color-ink-2); font-size: 18px; line-height: 30px; max-width: 68ch; }
 .post > * + * { margin-top: 20px; }
 .post h2 { margin-top: 56px; color: var(--color-ink); text-wrap: pretty; }
-@media (min-width: 768px) { .post h2 { font-size: var(--text-xl); line-height: var(--text-xl--line-height); } } /* post H2s fit one line in the 68ch column */
 .post h3 { margin-top: 36px; color: var(--color-ink); }
 .post strong { font-weight: 600; color: var(--color-ink); }
 .post em { font-style: normal; }
