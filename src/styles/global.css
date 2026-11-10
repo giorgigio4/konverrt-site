@@ -296,6 +296,7 @@ html:not([data-mode="light"]) .mode-btn .i-sun { display: block; } html:not([dat
 /* channel matrix: 11 rows x 6 fields, wide breakout, scrolls sideways on small screens with the channel column pinned */
 .post .matrix-wrap { width: min(1280px, calc(100vw - 32px)); margin-left: calc(50% - min(640px, calc(50vw - 16px))); margin-top: 28px; overflow-x: auto; border: 1px solid var(--color-line); border-radius: 6px; background: var(--color-card); }
 .post table.matrix { width: 100%; min-width: 1080px; margin: 0; border-collapse: separate; border-spacing: 0; font-size: 14px; line-height: 20px; }
+.post table.matrix.compact { min-width: 0; } /* short tables (<=4 columns) fit the column, no side-scroll */
 .post table.matrix th, .post table.matrix td { padding: 12px 14px; border-bottom: 1px solid var(--color-line); vertical-align: top; text-align: left; }
 .post table.matrix thead th { font-size: 11.5px; line-height: 16px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-muted); background: var(--color-paper-2); white-space: normal; }
 .post table.matrix tbody th { width: 150px; min-width: 150px; font-weight: 600; color: var(--color-ink); background: var(--color-card); position: sticky; left: 0; z-index: 1; border-right: 1px solid var(--color-line); }
