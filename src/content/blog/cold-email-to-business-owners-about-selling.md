@@ -1,6 +1,6 @@
 ---
 title: What to say in a cold email to a business owner about selling
-description: What to say in a cold email to a business owner about selling: open with a question, name the buyers behind you, skip credentials. Data from 41,353 owners.
+description: "What to say in a cold email to a business owner about selling: open with a question, name the buyers behind you, skip credentials. Data from 41,353 owners."
 kind: guide
 pubDate: 2026-11-12
 tldr: Do not open with your credentials. In our campaigns a credentials opener got 1 interested owner per 970 emailed, while telling owners that buyers were already asking for businesses like theirs got 1 per 155. Open with a question, introduce yourself and your buyer network, add one proof point, and ask for a quick 15 minute call.
