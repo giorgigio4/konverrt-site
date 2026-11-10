@@ -1,9 +1,9 @@
 ---
 title: What to say in a cold email to a business owner about selling
-description: What to say in a cold email to a business owner about selling. Which openers got owners to reply in our campaigns, which failed, and why.
+description: What to say in a cold email to a business owner about selling: open with a question, name the buyers behind you, skip credentials. Data from 41,353 owners.
 kind: guide
 pubDate: 2026-11-12
-tldr: Do not open with your credentials. In our campaigns that opener got the fewest owners to reply of any we ran. Open with a question the owner is already asking themselves, give them a specific reason you are writing (a buyer, or buyers already asking for companies like theirs), and ask for a quick 15 minute call.
+tldr: Do not open with your credentials. In our campaigns a credentials opener got 1 interested owner per 970 emailed, while telling owners that buyers were already asking for businesses like theirs got 1 per 155. Open with a question, introduce yourself and your buyer network, add one proof point, and ask for a quick 15 minute call.
 cover: /blog/cold-email-to-business-owners-about-selling/cover.webp
 coverAlt: Ink illustration of a pile of identical sealed envelopes on a dark desk, with one opened envelope set apart in blue beside a brass letter opener
 faq:
@@ -37,7 +37,7 @@ That is fine, and it is good to know. It is a fact you can mention on a call or 
 
 That is the thing with cold outreach. People react differently to things a warm audience would react well to.
 
-## Open with a question they are already asking themselves
+## Open with a question they already ask themselves
 
 Then we switched to a question opener. Instead of making a statement or leading with straight credentials, we asked a question. A question makes someone think of the answer in their mind and keep reading the rest of the email, because it opens a curiosity loop instead of dropping a statement.
 
@@ -73,7 +73,7 @@ That started getting way better replies. We got to about 1 interested owner for 
 
 One business owner wrote back in October 2026: "If you have an interested buyer and some offers ready to share send them over. Otherwise, I am not interested at the moment."
 
-## Skip the "you have spent 20 years building this" opener
+## Skip the "20 years building this" opener
 
 Openers like "you have spent 20 years building this business" are the same problem as the other statements. Yes, it is personalization. But personalization does not matter as much as you think here, because it adds nothing to the conversation. It is flattery. The owner already knows they have been in business for 20 years.
 
@@ -83,12 +83,12 @@ That is something you can use in your content or your follow-ups. For a cold ope
 
 Out of the first emails we sent to 41,353 owners, these are five of the opener types and what each one got. The lists, clients and months differ between rows, and rows with under 20 interested owners are small samples, so read them as direction, not a lab test.
 
-<div class="matrix-wrap">
-<table class="matrix compact">
-<thead><tr><th>How it opened</th><th>Emailed</th><th>Interested</th><th>1 per</th></tr></thead>
+<div class="stat-wrap">
+<table class="stat">
+<thead><tr><th>How the first email opened</th><th>Emailed</th><th>Interested</th><th>1 interested per</th></tr></thead>
 <tbody>
+<tr><th>“You have spent 20 years building this”</th><td>1,061</td><td>0</td><td>none</td></tr>
 <tr><th>Credentials or a proof number</th><td>3,881</td><td>4</td><td>970</td></tr>
-<tr><th>"You have spent 20 years building this"</th><td>1,061</td><td>0</td><td>none</td></tr>
 <tr><th>A plain question</th><td>5,012</td><td>15</td><td>334</td></tr>
 <tr><th>Buyers already asking for businesses like yours</th><td>2,487</td><td>16</td><td>155</td></tr>
 <tr><th>One specific buyer (buy-side search)</th><td>9,250</td><td>95</td><td>97</td></tr>
@@ -109,5 +109,7 @@ Then comes a proof point. If you can state one clear win, mention it here, after
 Then the call to action: does it make sense for us to chat, or meet face-to-face?
 
 If you are on the buy-side and you have a buyer, do pretty much what I described here, but be even more specific about the buyer.
+
+If you are still working out where sellers come from in the first place, start with [how M&A advisors find off-market sellers beyond referrals](/blog/off-market-seller-channels/). And if you would rather not run this yourself, here is [how we run owner outreach for M&A advisors](/for/ma-advisors/).
 
 And keep that call to action small: a quick 15 minute introductory chat, nothing too crazy, or a face-to-face meeting if you are doing local outreach.

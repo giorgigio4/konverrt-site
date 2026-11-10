@@ -20,6 +20,11 @@ Founded and run by Giorgi (Gio) Bezhanishvili. Registered in Tbilisi, Georgia (r
 - [Apply for a pilot batch](https://konverrt.com/apply/)
 - Blog (guides from our own campaign data): https://konverrt.com/blog/
 
+## Guides (from Konverrt's own campaign data)
+
+- [How M&A advisors find off-market sellers beyond referrals](https://konverrt.com/blog/off-market-seller-channels/): every seller channel compared on cost, speed and where it breaks; roughly 1 in every 475 owners emailed on sell-side says they are open to a conversation.
+- [What to say in a cold email to a business owner about selling](https://konverrt.com/blog/cold-email-to-business-owners-about-selling/): first emails to 41,353 owners compared by opener. Credentials openers got 1 interested owner per 970 emailed; "buyers are asking for businesses like yours" got 1 per 155; a search for one specific buyer got 1 per 97. Recommended order: question opener, introduction with buyer network, one proof point, a 15 minute call.
+
 ## Facts
 
 - Lead definition: a business owner (or the person who controls the sale) who replied and said they are open to a conversation, whose company fits the signed criteria, verified before forwarding. Out-of-office, brokers, "remove me" and off-criteria companies never count.

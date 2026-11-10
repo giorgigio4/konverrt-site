@@ -262,7 +262,8 @@ html:not([data-mode="light"]) .mode-btn .i-sun { display: block; } html:not([dat
 /* blog */
 .post { color: var(--color-ink-2); font-size: 18px; line-height: 30px; max-width: 68ch; }
 .post > * + * { margin-top: 20px; }
-.post h2 { margin-top: 56px; color: var(--color-ink); }
+.post h2 { margin-top: 56px; color: var(--color-ink); text-wrap: pretty; }
+@media (min-width: 768px) { .post h2 { font-size: var(--text-xl); line-height: var(--text-xl--line-height); } } /* post H2s fit one line in the 68ch column */
 .post h3 { margin-top: 36px; color: var(--color-ink); }
 .post strong { font-weight: 600; color: var(--color-ink); }
 .post em { font-style: normal; }
@@ -296,7 +297,6 @@ html:not([data-mode="light"]) .mode-btn .i-sun { display: block; } html:not([dat
 /* channel matrix: 11 rows x 6 fields, wide breakout, scrolls sideways on small screens with the channel column pinned */
 .post .matrix-wrap { width: min(1280px, calc(100vw - 32px)); margin-left: calc(50% - min(640px, calc(50vw - 16px))); margin-top: 28px; overflow-x: auto; border: 1px solid var(--color-line); border-radius: 6px; background: var(--color-card); }
 .post table.matrix { width: 100%; min-width: 1080px; margin: 0; border-collapse: separate; border-spacing: 0; font-size: 14px; line-height: 20px; }
-.post table.matrix.compact { min-width: 0; } /* short tables (<=4 columns) fit the column, no side-scroll */
 .post table.matrix th, .post table.matrix td { padding: 12px 14px; border-bottom: 1px solid var(--color-line); vertical-align: top; text-align: left; }
 .post table.matrix thead th { font-size: 11.5px; line-height: 16px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-muted); background: var(--color-paper-2); white-space: normal; }
 .post table.matrix tbody th { width: 150px; min-width: 150px; font-weight: 600; color: var(--color-ink); background: var(--color-card); position: sticky; left: 0; z-index: 1; border-right: 1px solid var(--color-line); }
@@ -305,3 +305,12 @@ html:not([data-mode="light"]) .mode-btn .i-sun { display: block; } html:not([dat
 .post table.matrix td:nth-child(3), .post table.matrix td:nth-child(4) { color: var(--color-ink); font-weight: 500; }
 .post table.matrix td { color: var(--color-ink-2); }
 .post table.matrix tbody tr:last-child th, .post table.matrix tbody tr:last-child td { border-bottom: 0; }
+/* stat table: short numeric table that stays inside the 68ch text column (no breakout, no side-scroll) */
+.post .stat-wrap { margin-top: 28px; border: 1px solid var(--color-line); border-radius: 6px; background: var(--color-card); overflow-x: auto; }
+.post table.stat { width: 100%; max-width: 100%; margin: 0; border-collapse: collapse; font-size: 15px; line-height: 22px; }
+.post table.stat th, .post table.stat td { padding: 12px 16px; border-bottom: 1px solid var(--color-line); vertical-align: middle; }
+.post table.stat thead th { font-size: 11.5px; line-height: 16px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-muted); background: var(--color-paper-2); }
+.post table.stat tbody th { width: 55%; text-align: left; font-weight: 600; color: var(--color-ink); }
+.post table.stat td, .post table.stat thead th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--color-ink); }
+.post table.stat tbody tr:last-child > * { border-bottom: 0; }
+@media (max-width: 719px) { .post table.stat { font-size: 13.5px; line-height: 19px; } .post table.stat th, .post table.stat td { padding: 10px 6px; } .post table.stat th:first-child { padding-left: 10px; } .post table.stat thead th { white-space: normal; letter-spacing: 0.04em; font-size: 10.5px; } .post table.stat tbody th { width: auto; } }
