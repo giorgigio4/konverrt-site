@@ -90,7 +90,7 @@ Prices come from published pages, checked in November 2026. Where a vendor does 
 
 It's really crazy, but you might think most owners are going to be ready to sell right now, even when they say "okay, I'm open to having a conversation". Most are not ready today. To catch an owner who is ready right now, you have to be super lucky to get in touch with them at that exact moment, which is a very, very low probability. Hoping for that is like going to the casino and putting everything on green.
 
-To put a number on it: across our sell-side campaigns, roughly 1 in every 475 owners we email says they are open to a conversation. And as I said, even most of those are not selling this month.
+To put a number on it: across our sell-side campaigns, roughly 1 in every 235 owners we email says they are open to a conversation. And as I said, even most of those are not selling this month.
 
 So if you realistically want to fill the pipeline, you build a reliable network of owners who can sell in a few months, in a year, in the next 2 years. If you fill that pipeline properly, you never have to worry about it running dry. They might be thinking about selling. They might be planning it. You want to be the first one to start building the relationship, so by the time they decide to sell, you are the advisor they come to.
 
